@@ -1,5 +1,5 @@
 import { createClient } from "npm:@supabase/supabase-js@2";
-import { PDFDocument, StandardFonts, rgb } from "npm:pdf-lib@1.17.1";
+import { PDFDocument, StandardFonts, rgb, pushGraphicsState, popGraphicsState, rectangle, clip, endPath } from "npm:pdf-lib@1.17.1";
 
 const ADMIN_EMAIL = "sancristobalpabloignacio@gmail.com";
 const CORS = {
@@ -249,27 +249,29 @@ Deno.serve(async (req: Request) => {
   page.drawText("Informe de seguimiento de venta", { x: margin, y: H-77, size: 24, font: serif, color: white });
   page.drawText("Por fanaticos, para fanaticos.", { x: margin, y: H-96, size: 8, font, color: rgb(.83,.81,.76) });
 
-  // Foto del vehículo integrada en el encabezado, sin invadir título ni métricas.
+  // Foto del vehículo a sangre dentro de su bloque: llena todo el cuadro y recorta el excedente.
   const cover = await fetchCover(pdf, vehicle.cover_image || vehicle.images?.[0] || null);
   if (cover) {
     const boxW = 138, boxH = 78;
     const x = W - margin - boxW;
     const imgY = H - 100;
     const dims = cover.scale(1);
-    const scale = Math.min(boxW/dims.width, boxH/dims.height);
+    const scale = Math.max(boxW/dims.width, boxH/dims.height);
     const iw = dims.width * scale, ih = dims.height * scale;
-    page.drawRectangle({
-      x, y: imgY, width: boxW, height: boxH,
-      color: rgb(1,1,1),
-      borderColor: rgb(.92,.90,.86),
-      borderWidth: 1
-    });
+
+    page.pushOperators(
+      pushGraphicsState(),
+      rectangle(x, imgY, boxW, boxH),
+      clip(),
+      endPath(),
+    );
     page.drawImage(cover, {
       x: x + (boxW-iw)/2,
       y: imgY + (boxH-ih)/2,
       width: iw,
       height: ih
     });
+    page.pushOperators(popGraphicsState());
   }
 
   let y = H - 148;
