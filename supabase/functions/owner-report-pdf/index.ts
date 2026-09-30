@@ -391,9 +391,9 @@ Deno.serve(async (req: Request) => {
     y -= 12;
   }
 
-  y -= 18;
+  y -= 24;
   page.drawText("Permutas recibidas", { x:margin, y, size:15, font:serifBold, color:green });
-  y -= 15;
+  y -= 24;
 
   if (tradeRows.length) {
     const tcols = [
