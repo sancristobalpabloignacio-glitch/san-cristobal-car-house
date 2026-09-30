@@ -173,21 +173,30 @@ Deno.serve(async (req: Request) => {
   let externalViews = 0, externalClicks = 0, externalInquiries = 0, externalFavorites = 0;
 
   for (const l of listings || []) {
-    const { data: metric } = await admin
+    const { data: metrics } = await admin
       .from("external_metrics")
       .select("metric_date,views,clicks,inquiries,favorites")
       .eq("listing_id", l.id)
-      .order("metric_date", { ascending: false })
-      .limit(1)
-      .maybeSingle();
+      .order("metric_date", { ascending: true })
+      .limit(5000);
+
+    const rowsForListing = metrics || [];
+    const latestDate = rowsForListing.length ? rowsForListing[rowsForListing.length - 1].metric_date : null;
+    const totals = rowsForListing.reduce((a:any,m:any) => {
+      a.views += Number(m.views || 0);
+      a.clicks += Number(m.clicks || 0);
+      a.inquiries += Number(m.inquiries || 0);
+      a.favorites += Number(m.favorites || 0);
+      return a;
+    }, { views:0, clicks:0, inquiries:0, favorites:0 });
 
     const row = {
       channel: channelName(l.channel),
-      metric_date: metric?.metric_date || null,
-      views: metric?.views || 0,
-      clicks: metric?.clicks || 0,
-      inquiries: metric?.inquiries || 0,
-      favorites: metric?.favorites || 0,
+      metric_date: latestDate,
+      views: totals.views,
+      clicks: totals.clicks,
+      inquiries: totals.inquiries,
+      favorites: totals.favorites,
     };
     externalRows.push(row);
     externalViews += row.views;
@@ -410,7 +419,7 @@ Deno.serve(async (req: Request) => {
   y -= 14;
   const notes = [
     "En la web propia, una consulta se registra cuando una persona toca el boton para consultar por WhatsApp.",
-    "Las metricas de Facebook Marketplace y Mercado Libre corresponden a la ultima medicion cargada en el panel administrativo.",
+    "Las metricas de Facebook Marketplace y Mercado Libre son acumuladas: cada carga por fecha se suma a las anteriores.",
     "Las ofertas recibidas son registros cargados manualmente desde el panel de Estadisticas.",
     "Las permutas recibidas tambien se registran manualmente y se detallan en una pagina adicional cuando existen.",
     "Este informe resume el rendimiento comercial del vehiculo y puede actualizarse en cualquier momento desde el panel."
