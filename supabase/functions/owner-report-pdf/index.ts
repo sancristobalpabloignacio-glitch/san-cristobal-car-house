@@ -289,13 +289,11 @@ Deno.serve(async (req: Request) => {
   y -= 42;
   const totalViews = webViews + externalViews;
   const totalInquiries = webInquiries + externalInquiries;
-  const conversion = webViews ? (webInquiries / webViews * 100) : 0;
-
   const cards = [
     ["VISTAS TOTALES", fmt(totalViews), "Web + canales externos"],
     ["CONSULTAS TOTALES", fmt(totalInquiries), "Interes registrado"],
     ["VISTAS EN LA WEB", fmt(webViews), "Ficha del vehiculo"],
-    ["CONVERSION WEB", conversion.toFixed(1).replace(".", ",") + "%", "Consultas / vistas"],
+    ["PERMUTAS", fmt(tradeRows.length), tradeRows.length ? "Propuestas registradas" : "Sin propuestas"],
   ];
   const cardGap = 8;
   const cardW = (W - margin*2 - cardGap*3) / 4;
@@ -394,42 +392,10 @@ Deno.serve(async (req: Request) => {
   }
 
   y -= 18;
-  page.drawText("Notas", { x:margin, y, size:11, font:bold, color:green });
-  y -= 14;
-  const notes = [
-    "En la web propia, una consulta se registra cuando una persona toca el boton para consultar por WhatsApp.",
-    "Las metricas de Facebook Marketplace y Mercado Libre son acumuladas: cada carga por fecha se suma a las anteriores.",
-    "Las ofertas recibidas son registros cargados manualmente desde el panel de Estadisticas.",
-    "Las permutas recibidas tambien se registran manualmente y se detallan en una pagina adicional cuando existen.",
-    "Este informe resume el rendimiento comercial del vehiculo y puede actualizarse en cualquier momento desde el panel."
-  ];
-  for (const n of notes) {
-    const lines = wrapText("- " + n, font, 7.2, W-margin*2);
-    for (const ln of lines) {
-      page.drawText(ln, { x:margin, y, size:7.2, font, color:muted });
-      y -= 9;
-    }
-    y -= 2;
-  }
-
-  page.drawLine({ start:{x:margin,y:43}, end:{x:W-margin,y:43}, thickness:.6, color:line });
-  const generated = new Date().toLocaleString("es-AR", { timeZone:"America/Argentina/Buenos_Aires" });
-  page.drawText("Generado el " + generated, { x:margin, y:28, size:6.7, font, color:muted });
-  page.drawText("San Cristobal Car House", { x:W-margin-96, y:28, size:6.7, font:bold, color:green });
+  page.drawText("Permutas recibidas", { x:margin, y, size:15, font:serifBold, color:green });
+  y -= 15;
 
   if (tradeRows.length) {
-    const p2 = pdf.addPage([595.28, 841.89]);
-    const PW = p2.getWidth(), PH = p2.getHeight();
-    p2.drawRectangle({ x:0, y:PH-82, width:PW, height:82, color:green });
-    p2.drawText("SAN CRISTOBAL CAR HOUSE", { x:margin, y:PH-31, size:8.5, font:bold, color:white, characterSpacing:1.2 });
-    p2.drawText("Permutas recibidas", { x:margin, y:PH-60, size:22, font:serifBold, color:white });
-
-    let py = PH - 118;
-    p2.drawText(vehicle.brand + " " + vehicle.model + " · " + vehicle.year, { x:margin, y:py, size:14, font:serifBold, color:green });
-    py -= 24;
-    p2.drawText("Propuestas de canje registradas para esta unidad.", { x:margin, y:py, size:8, font, color:muted });
-    py -= 26;
-
     const tcols = [
       { label:"Fecha", x:margin, w:62 },
       { label:"Vehiculo ofrecido", x:margin+66, w:180 },
@@ -437,14 +403,12 @@ Deno.serve(async (req: Request) => {
       { label:"Diferencia", x:margin+339, w:120 },
       { label:"Nota", x:margin+463, w:90 },
     ];
-    p2.drawRectangle({ x:margin, y:py-4, width:PW-margin*2, height:18, color:pale });
-    tcols.forEach(col=>p2.drawText(col.label.toUpperCase(),{x:col.x+3,y:py+2,size:6.2,font:bold,color:muted,characterSpacing:.3}));
-    py -= 17;
+    page.drawRectangle({ x:margin, y:y-4, width:W-margin*2, height:18, color:pale });
+    tcols.forEach(col=>page.drawText(col.label.toUpperCase(),{x:col.x+3,y:y+2,size:6.2,font:bold,color:muted,characterSpacing:.3}));
+    y -= 17;
 
-    for (const t of tradeRows.slice(0, 18)) {
-      py -= 26;
-      if (py < 65) break;
-      p2.drawLine({ start:{x:margin,y:py-3}, end:{x:PW-margin,y:py-3}, thickness:.45, color:line });
+    for (const t of tradeRows.slice(0, 3)) {
+      y -= 26;
       const date = new Date(t.trade_date + "T12:00:00").toLocaleDateString("es-AR");
       const offered = [t.offered_brand,t.offered_model,t.offered_version].filter(Boolean).join(" ");
       const meta = [t.offered_year || null, t.offered_kilometers != null ? fmt(t.offered_kilometers) + " km" : null].filter(Boolean).join(" / ");
@@ -453,18 +417,27 @@ Deno.serve(async (req: Request) => {
         const m = money(Number(t.cash_adjustment), t.currency);
         adjustment = t.cash_adjustment_direction === "to_us" ? m + " a nuestro favor" : m + " a favor del interesado";
       }
+      page.drawLine({ start:{x:margin,y:y-3}, end:{x:W-margin,y:y-3}, thickness:.45, color:line });
       const vals = [date,offered,meta,adjustment,String(t.notes || "-")];
       vals.forEach((v,i)=>{
         const col=tcols[i];
         const lines=wrapText(String(v), i===1?bold:font, 7, col.w-6).slice(0,2);
-        lines.forEach((ln,j)=>p2.drawText(ln,{x:col.x+3,y:py+8-j*8,size:7,font:i===1?bold:font,color:i===1?black:muted}));
+        lines.forEach((ln,j)=>page.drawText(ln,{x:col.x+3,y:y+8-j*8,size:7,font:i===1?bold:font,color:i===1?black:muted}));
       });
     }
-
-    p2.drawLine({ start:{x:margin,y:43}, end:{x:PW-margin,y:43}, thickness:.6, color:line });
-    p2.drawText("Total de permutas registradas: " + tradeRows.length, { x:margin, y:28, size:6.7, font, color:muted });
-    p2.drawText("San Cristobal Car House", { x:PW-margin-96, y:28, size:6.7, font:bold, color:green });
+    if (tradeRows.length > 3) {
+      y -= 15;
+      page.drawText("+" + (tradeRows.length - 3) + " permutas adicionales registradas en el panel.", { x:margin, y, size:7, font, color:muted });
+    }
+  } else {
+    page.drawText("Todavia no hay permutas registradas para este vehiculo.", { x:margin, y, size:7.5, font, color:muted });
+    y -= 12;
   }
+
+  page.drawLine({ start:{x:margin,y:43}, end:{x:W-margin,y:43}, thickness:.6, color:line });
+  const generated = new Date().toLocaleString("es-AR", { timeZone:"America/Argentina/Buenos_Aires" });
+  page.drawText("Generado el " + generated, { x:margin, y:28, size:6.7, font, color:muted });
+  page.drawText("San Cristobal Car House", { x:W-margin-96, y:28, size:6.7, font:bold, color:green });
 
   const bytes = await pdf.save();
   const safe = (vehicle.brand + "-" + vehicle.model + "-" + vehicle.year)
