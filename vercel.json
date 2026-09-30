@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/analytics",
+      "destination": "/analytics.html"
+    },
+    {
+      "source": "/propietarios",
+      "destination": "/analytics.html"
+    },
+    {
+      "source": "/autos/:path*",
+      "destination": "/auto.html"
+    }
+  ]
+}
