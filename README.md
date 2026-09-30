@@ -20,5 +20,4 @@ La clave que aparece en el frontend es la **publishable key** de Supabase. Las c
 
 ## Deploy
 
-El frontend puede importarse directamente en Vercel desde este repositorio.
-
+El frontend está conectado a Vercel mediante este repositorio de GitHub. Los cambios enviados a `main` deberían generar un nuevo deployment automáticamente.
