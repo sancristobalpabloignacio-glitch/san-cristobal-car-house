@@ -407,8 +407,8 @@ Deno.serve(async (req: Request) => {
     tcols.forEach(col=>page.drawText(col.label.toUpperCase(),{x:col.x+3,y:y+2,size:6.2,font:bold,color:muted,characterSpacing:.3}));
     y -= 17;
 
-    for (const t of tradeRows.slice(0, 3)) {
-      y -= 26;
+    for (const t of tradeRows.slice(0, 4)) {
+      y -= 23;
       const date = new Date(t.trade_date + "T12:00:00").toLocaleDateString("es-AR");
       const offered = [t.offered_brand,t.offered_model,t.offered_version].filter(Boolean).join(" ");
       const meta = [t.offered_year || null, t.offered_kilometers != null ? fmt(t.offered_kilometers) + " km" : null].filter(Boolean).join(" / ");
@@ -425,9 +425,9 @@ Deno.serve(async (req: Request) => {
         lines.forEach((ln,j)=>page.drawText(ln,{x:col.x+3,y:y+8-j*8,size:7,font:i===1?bold:font,color:i===1?black:muted}));
       });
     }
-    if (tradeRows.length > 3) {
-      y -= 15;
-      page.drawText("+" + (tradeRows.length - 3) + " permutas adicionales registradas en el panel.", { x:margin, y, size:7, font, color:muted });
+    if (tradeRows.length > 4) {
+      y -= 12;
+      page.drawText("+" + (tradeRows.length - 4) + " permutas adicionales registradas en el panel.", { x:margin, y, size:7, font, color:muted });
     }
   } else {
     page.drawText("Todavia no hay permutas registradas para este vehiculo.", { x:margin, y, size:7.5, font, color:muted });
