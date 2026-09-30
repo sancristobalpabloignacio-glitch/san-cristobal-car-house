@@ -308,28 +308,7 @@ Deno.serve(async (req: Request) => {
     page.drawText(c[2], { x:x+10, y:y-57, size:6.7, font, color:muted });
   });
 
-  y -= 105;
-  page.drawText("Actividad en la web - ultimos 30 dias", { x: margin, y, size: 16, font: serifBold, color: green });
-  y -= 15;
-  page.drawText("Vistas de ficha y consultas por WhatsApp registradas en la web propia.", { x: margin, y, size: 7.5, font, color: muted });
-  y -= 20;
-
-  const chartX = margin, chartY = y-92, chartW = W-margin*2, chartH = 82;
-  page.drawRectangle({ x: chartX, y: chartY, width: chartW, height: chartH, color: panel, borderColor: line, borderWidth: .7 });
-  const days = Object.values(daily);
-  const maxDaily = Math.max(1, ...days.flatMap((d:any) => [d.views, d.inquiries]));
-  const colW = chartW / 30;
-  days.forEach((d:any, i:number) => {
-    const vh = (d.views/maxDaily)*(chartH-22);
-    const qh = (d.inquiries/maxDaily)*(chartH-22);
-    const cx = chartX + i*colW + 2;
-    page.drawRectangle({ x: cx, y: chartY+10, width: Math.max(1.2,colW*.32), height: Math.max(1,vh), color: green });
-    page.drawRectangle({ x: cx+Math.max(2,colW*.38), y: chartY+10, width: Math.max(1.2,colW*.24), height: Math.max(1,qh), color: olive });
-  });
-  page.drawText("Vistas", { x: chartX+8, y: chartY+chartH-12, size: 6.5, font:bold, color:green });
-  page.drawText("Consultas", { x: chartX+42, y: chartY+chartH-12, size: 6.5, font:bold, color:olive });
-
-  y = chartY - 28;
+  y -= 96;
   page.drawText("Rendimiento por plataforma", { x: margin, y, size: 16, font: serifBold, color: green });
   y -= 20;
 
