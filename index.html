@@ -14,37 +14,45 @@
    if(logo.complete) buildTargets();
  }
  function buildTargets(){
-   const maxW=Math.min(980,Math.max(360,w*.78)), maxH=Math.min(560,Math.max(240,h*.52));
+   const maxW=Math.min(900,Math.max(420,w*.86)), maxH=Math.min(500,Math.max(250,h*.58));
    const scale=Math.min(maxW/logo.width,maxH/logo.height);
-   const ow=Math.max(280,Math.round(logo.width*scale)), oh=Math.max(120,Math.round(logo.height*scale));
+   const ow=Math.max(320,Math.round(logo.width*scale)), oh=Math.max(140,Math.round(logo.height*scale));
    off.width=ow;off.height=oh; octx.clearRect(0,0,ow,oh);
    octx.drawImage(logo,0,0,ow,oh);
    const img=octx.getImageData(0,0,ow,oh).data;
-   const step=Math.max(3,Math.floor(ow/220));
+   const step=2;
    targets=[];
    for(let y=0;y<oh;y+=step){
      for(let x=0;x<ow;x+=step){
        const i=(y*ow+x)*4; const r=img[i], g=img[i+1], b=img[i+2], a=img[i+3];
        const bright=(r+g+b)/3;
-       if(a>20 && bright<240) targets.push({x:(w-ow)/2+x,y:(h-oh)/2+y});
+       if(a>35 && bright<225) targets.push({x:(w-ow)/2+x,y:(h-oh)/2+y});
      }
    }
-   const max=1800;
-   if(targets.length>max){const s=Math.ceil(targets.length/max);targets=targets.filter((_,i)=>i%s===0)}
-   particles=targets.map(t=>({x:rand(0,w),y:rand(0,h),tx:t.x,ty:t.y,r:rand(.65,1.35),a:rand(.42,.95)}));
+   const max=w<700?4200:6800;
+   if(targets.length>max){
+     const stride=targets.length/max;
+     const reduced=[];
+     for(let i=0;i<max;i++) reduced.push(targets[Math.floor(i*stride)]);
+     targets=reduced;
+   }
+   particles=targets.map(t=>({x:rand(0,w),y:rand(0,h),tx:t.x,ty:t.y,r:rand(.48,.92),a:rand(.80,.98)}));
  }
  function ease(t){return 1-Math.pow(1-t,4)}
  function draw(now){
-   const elapsed=now-start,t=Math.min(1,Math.max(0,(elapsed-120)/1600)),e=ease(t);
+   const elapsed=now-start,t=Math.min(1,Math.max(0,(elapsed-120)/1550)),e=ease(t);
    ctx.clearRect(0,0,w,h);
+   const settled=Math.max(0,Math.min(1,(elapsed-1450)/420));
    for(const p of particles){
      const x=p.x+(p.tx-p.x)*e,y=p.y+(p.ty-p.y)*e;
-     ctx.beginPath();ctx.arc(x,y,p.r,0,Math.PI*2);ctx.fillStyle='rgba(234,229,218,'+p.a+')';ctx.fill();
+     const alpha=Math.min(1,p.a+settled*.12);
+     const radius=p.r+(settled*.08);
+     ctx.beginPath();ctx.arc(x,y,radius,0,Math.PI*2);ctx.fillStyle='rgba(234,229,218,'+alpha+')';ctx.fill();
    }
-   if(elapsed<2450) raf=requestAnimationFrame(draw); else setTimeout(()=>root.classList.add('done'),240);
+   if(elapsed<3050) raf=requestAnimationFrame(draw); else setTimeout(()=>root.classList.add('done'),220);
  }
  logo.onload=()=>{resize();addEventListener('resize',resize,{passive:true});raf=requestAnimationFrame(draw)};
- setTimeout(()=>root.classList.add('done'),3400);
+ setTimeout(()=>root.classList.add('done'),3800);
 })();</script><script type="module">
 import{createClient}from'https://esm.sh/@supabase/supabase-js@2.117.1';
 const s=createClient('https://hljeiqgrumtlukdvaspz.supabase.co','sb_publishable_gUvMtgIyXLAwuYFOTV6z-Q_KKpevr63'),W='5491138487025',wa=m=>'https://wa.me/'+W+'?text='+encodeURIComponent(m);
