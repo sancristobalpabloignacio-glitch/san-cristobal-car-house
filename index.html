@@ -86,7 +86,7 @@
  }
  logo.onload=()=>{resize();addEventListener('resize',resize,{passive:true});raf=requestAnimationFrame(draw)};
  setTimeout(()=>root.classList.add('done'),3800);
-})();</script><script type="module">
+})();</script><script src="/zero-km-photos.js"></script><script type="module">
 import{createClient}from'https://esm.sh/@supabase/supabase-js@2.117.1';
 const s=createClient('https://hljeiqgrumtlukdvaspz.supabase.co','sb_publishable_gUvMtgIyXLAwuYFOTV6z-Q_KKpevr63'),W='5491138487025',wa=m=>'https://wa.me/'+W+'?text='+encodeURIComponent(m);
 const sid=(()=>{let x=localStorage.getItem('scch_sid');if(!x){x=crypto.randomUUID();localStorage.setItem('scch_sid',x)}return x})();
@@ -145,14 +145,7 @@ const zeroPreview=document.getElementById('zeroCarPreview'),
   zeroPreviewTitle=document.getElementById('zeroCarPreviewTitle'),
   zeroPreviewSource=document.getElementById('zeroCarPreviewSource'),
   zeroPreviewCredit=document.getElementById('zeroCarPreviewCredit');
-const zeroPreviewKnown={
-  'Toyota|Hilux':'https://media.toyota.com.ar/07d63556-7bc8-4d97-896d-5600477a315c.jpeg',
-  'Volkswagen|Tera':'https://media.lmneuquen.com/p/9e57c840abbe27631e23d4e129ebd35e/adjuntos/195/imagenes/008/084/0008084749/volkswagen-tera.jpg',
-  'Ford|Ranger':'https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/ranger/jcr%3Acontent/par/splitter_921832207/splitter0/image_copy/image.imgs.full.high.jpg',
-  'Ford|Territory':'https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/territory/2025/overview/billboard/far-nueva-territory-platinum-overview-billboard-desk.jpg',
-  'Chevrolet|Tracker':'https://cdn.motor1.com/images/mgl/Ak4ERO/s1/chevrolet-tracker-2025.jpg',
-  'Peugeot|208':'https://cdn.motor1.com/images/mgl/P30KMA/s1/peugeot-208-2025---argentina.jpg'
-};
+const zeroPreviewKnown=window.SCZeroKmPhotos||{};
 const zeroPreviewCache=new Map();
 let zeroPreviewRequest=0,zeroPreviewTimer;
 const normCar=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[_–-]/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
@@ -213,7 +206,7 @@ function showZeroModelPreview(model){
  zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
  const key=openZeroBrand+'|'+model;
  if(zeroPreviewKnown[key]){
-  loadZeroPreviewPhoto({url:zeroPreviewKnown[key],source:zeroPreviewKnown[key],credit:'Imagen ilustrativa'},requestId);
+  loadZeroPreviewPhoto(zeroPreviewKnown[key],requestId);
   return
  }
  zeroPreviewTimer=setTimeout(async()=>{
