@@ -184,39 +184,88 @@ async function searchZeroModelImage(brand,model){
  }
  return null;
 }
-function loadZeroPreviewPhoto(photo,requestId){
+
+let zeroPreviewLoadTimer=null;
+function showZeroPreviewError(requestId,message){
  if(requestId!==zeroPreviewRequest)return;
- if(!photo){zeroPreviewImage.hidden=true;zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Todavía no hay una foto disponible de este modelo.';zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';return}
- zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Cargando imagen...';zeroPreviewImage.hidden=true;
- zeroPreviewImage.onload=()=>{if(requestId===zeroPreviewRequest){zeroPreviewImage.hidden=false;zeroPreviewStatus.hidden=true}};
- zeroPreviewImage.onerror=()=>{if(requestId===zeroPreviewRequest){zeroPreviewImage.hidden=true;zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='No fue posible mostrar esta foto.'}};
- zeroPreviewImage.alt='Foto ilustrativa de '+zeroPreviewTitle.textContent;
- zeroPreviewImage.src=photo.url;
- zeroPreviewSource.href=photo.source||photo.url;zeroPreviewSource.hidden=false;
- zeroPreviewCredit.textContent=photo.credit?('Foto: '+photo.credit):'Imagen ilustrativa · Consultá la versión disponible';
+ clearTimeout(zeroPreviewLoadTimer);
+ zeroPreviewImage.hidden=true;
+ zeroPreviewStatus.hidden=false;
+ zeroPreviewStatus.textContent=message||'No se pudo cargar una foto de este modelo.';
+}
+function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false){
+ if(requestId!==zeroPreviewRequest)return;
+ clearTimeout(zeroPreviewLoadTimer);
+ zeroPreviewImage.hidden=true;
+ zeroPreviewImage.removeAttribute('src');
+ zeroPreviewStatus.hidden=false;
+ zeroPreviewStatus.textContent='Cargando imagen...';
+ zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
+ if(!photo){showZeroPreviewError(requestId,'No encontramos una foto disponible de este modelo.');return}
+ const urls=[photo.url,photo.fallbackUrl].filter((value,index,all)=>typeof value==='string'&&value.startsWith('https://')&&all.indexOf(value)===index);
+ let nextUrl=0;
+ const tryNext=()=>{
+  if(requestId!==zeroPreviewRequest)return;
+  clearTimeout(zeroPreviewLoadTimer);
+  if(nextUrl>=urls.length){
+   if(alreadySearched||!brand||!model){
+    showZeroPreviewError(requestId,'La foto de este modelo no está disponible en este momento.');
+    return
+   }
+   zeroPreviewStatus.textContent='Buscando otra fotografía...';
+   const searchTimeout=new Promise(resolve=>{zeroPreviewLoadTimer=setTimeout(()=>resolve(null),6500)});
+   Promise.race([searchZeroModelImage(brand,model),searchTimeout]).then(candidate=>{
+    if(requestId!==zeroPreviewRequest)return;
+    clearTimeout(zeroPreviewLoadTimer);
+    if(candidate&&!urls.includes(candidate.url))loadZeroPreviewPhoto(candidate,requestId,brand,model,true);
+    else showZeroPreviewError(requestId,'La foto de este modelo no está disponible en este momento.')
+   }).catch(()=>showZeroPreviewError(requestId));
+   return
+  }
+  const url=urls[nextUrl++],tempImage=new Image();
+  let settled=false;
+  const finish=success=>{
+   if(settled)return;
+   settled=true;clearTimeout(zeroPreviewLoadTimer);
+   tempImage.onload=null;tempImage.onerror=null;
+   if(requestId!==zeroPreviewRequest)return;
+   if(!success){tryNext();return}
+   zeroPreviewImage.alt='Foto ilustrativa de '+brand+' '+model;
+   zeroPreviewImage.src=url;
+   zeroPreviewImage.hidden=false;
+   zeroPreviewStatus.hidden=true;
+   zeroPreviewSource.href=photo.source||url;zeroPreviewSource.hidden=false;
+   zeroPreviewCredit.textContent=photo.credit||'Imagen ilustrativa · Consultá la versión disponible'
+  };
+  tempImage.onload=()=>finish(true);
+  tempImage.onerror=()=>finish(false);
+  zeroPreviewLoadTimer=setTimeout(()=>finish(false),6000);
+  tempImage.src=url
+ };
+ tryNext()
 }
 function showZeroModelPreview(model){
  if(!openZeroBrand||!model)return;
- clearTimeout(zeroPreviewTimer);
+ clearTimeout(zeroPreviewTimer);clearTimeout(zeroPreviewLoadTimer);
  const requestId=++zeroPreviewRequest;
  zeroPreview.hidden=false;
  zeroPreviewTitle.textContent=openZeroBrand+' '+model;
  zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
- zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Buscando una imagen del vehículo...';
+ zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Cargando imagen...';
  zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
  const key=openZeroBrand+'|'+model;
  if(zeroPreviewKnown[key]){
-  loadZeroPreviewPhoto(zeroPreviewKnown[key],requestId);
+  loadZeroPreviewPhoto(zeroPreviewKnown[key],requestId,openZeroBrand,model);
   return
  }
  zeroPreviewTimer=setTimeout(async()=>{
   if(!zeroPreviewCache.has(key))zeroPreviewCache.set(key,searchZeroModelImage(openZeroBrand,model));
-  const photo=await zeroPreviewCache.get(key);
-  loadZeroPreviewPhoto(photo,requestId)
+  try{const photo=await Promise.race([zeroPreviewCache.get(key),new Promise(resolve=>setTimeout(()=>resolve(null),6500))]);loadZeroPreviewPhoto(photo,requestId,openZeroBrand,model,true)}
+  catch(_error){showZeroPreviewError(requestId)}
  },170)
 }
 function resetZeroModelPreview(){
- clearTimeout(zeroPreviewTimer);++zeroPreviewRequest;
+ clearTimeout(zeroPreviewTimer);clearTimeout(zeroPreviewLoadTimer);++zeroPreviewRequest;
  zeroPreview.hidden=true;zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
 }
 zeroBrandsBox.addEventListener('click',resetZeroModelPreview);
