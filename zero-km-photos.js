@@ -1,70 +1,60 @@
-// Catálogo 0 km: enlaces directos a Wikimedia Commons (miniaturas) y respaldo original.
-// Atribución y página de licencia accesibles desde el visor de cada modelo.
+// Catálogo ilustrativo de modelos 0 km.
+// Imágenes Toyota aportadas para el sitio; demás marcas conservan sus referencias originales.
 window.SCZeroKmPhotos = {
   "Toyota|Yaris Hatchback": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Toyota_YARiS_Z_(5BA-MXPA10-AHXEB)_front.jpg/960px-Toyota_YARiS_Z_(5BA-MXPA10-AHXEB)_front.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AToyota_YARiS_Z_(5BA-MXPA10-AHXEB)_front.jpg",
-    "credit": "Foto: Tokumeigakarinoaoshima · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Toyota_YARiS_Z_(5BA-MXPA10-AHXEB)_front.jpg"
+    "url": "/assets/toyota/yaris-hatchback.webp",
+    "source": "/assets/toyota/yaris-hatchback.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Yaris Cross": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Toyota_Yaris_Cross_1.5_V_2025_(3).jpg/960px-Toyota_Yaris_Cross_1.5_V_2025_(3).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AToyota_Yaris_Cross_1.5_V_2025_(3).jpg",
-    "credit": "Foto: Captainmorlypogi1959 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/7/77/Toyota_Yaris_Cross_1.5_V_2025_(3).jpg"
+    "url": "/assets/toyota/yaris-cross.webp",
+    "source": "/assets/toyota/yaris-cross.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Corolla": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/TOYOTA_COROLLA_SEDAN_(E210)_China_(10).jpg/960px-TOYOTA_COROLLA_SEDAN_(E210)_China_(10).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3ATOYOTA_COROLLA_SEDAN_(E210)_China_(10).jpg",
-    "credit": "Foto: Dinkun Chen · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/TOYOTA_COROLLA_SEDAN_(E210)_China_(10).jpg"
+    "url": "/assets/toyota/corolla.webp",
+    "source": "/assets/toyota/corolla.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Corolla Cross": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Toyota_Corolla_Cross_HEV_XEi_2025.jpg/960px-Toyota_Corolla_Cross_HEV_XEi_2025.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AToyota_Corolla_Cross_HEV_XEi_2025.jpg",
-    "credit": "Foto: RL GNZLZ · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Toyota_Corolla_Cross_HEV_XEi_2025.jpg"
+    "url": "/assets/toyota/corolla-cross.webp",
+    "source": "/assets/toyota/corolla-cross.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Hilux": {
-    "url": "https://media.toyota.com.ar/07d63556-7bc8-4d97-896d-5600477a315c.jpeg",
-    "source": "https://www.toyota.com.ar/",
-    "credit": "Imagen ilustrativa · Toyota"
+    "url": "/assets/toyota/hilux.webp",
+    "source": "/assets/toyota/hilux.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|SW4": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/2024_Toyota_Fortuner_2.4_G_4x2_in_Gray_Metallic%2C_front_right%2C_06-27-2024.jpg/960px-2024_Toyota_Fortuner_2.4_G_4x2_in_Gray_Metallic%2C_front_right%2C_06-27-2024.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Toyota_Fortuner_2.4_G_4x2_in_Gray_Metallic%2C_front_right%2C_06-27-2024.jpg",
-    "credit": "Foto: Ethan Llamas · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/2024_Toyota_Fortuner_2.4_G_4x2_in_Gray_Metallic%2C_front_right%2C_06-27-2024.jpg"
+    "url": "/assets/toyota/sw4.webp",
+    "source": "/assets/toyota/sw4.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|RAV4": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/2024_Toyota_RAV4_2.5_LTD_HEV_in_White_Pearl_Crystal_Shine%2C_front_right%2C_06-09-2024.jpg/960px-2024_Toyota_RAV4_2.5_LTD_HEV_in_White_Pearl_Crystal_Shine%2C_front_right%2C_06-09-2024.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Toyota_RAV4_2.5_LTD_HEV_in_White_Pearl_Crystal_Shine%2C_front_right%2C_06-09-2024.jpg",
-    "credit": "Foto: Ethan Llamas · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/2024_Toyota_RAV4_2.5_LTD_HEV_in_White_Pearl_Crystal_Shine%2C_front_right%2C_06-09-2024.jpg"
+    "url": "/assets/toyota/rav4.webp",
+    "source": "/assets/toyota/rav4.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Land Cruiser 300": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Toyota_Land_Cruiser_300_4x4_VXR_2025.jpg/960px-Toyota_Land_Cruiser_300_4x4_VXR_2025.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AToyota_Land_Cruiser_300_4x4_VXR_2025.jpg",
-    "credit": "Foto: Captainmorlypogi1959 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Toyota_Land_Cruiser_300_4x4_VXR_2025.jpg"
+    "url": "/assets/toyota/land-cruiser-300.webp",
+    "source": "/assets/toyota/land-cruiser-300.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|GR86": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2025_Toyota_GR86.jpg/960px-2025_Toyota_GR86.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Toyota_GR86.jpg",
-    "credit": "Foto: Chanokchon · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/2025_Toyota_GR86.jpg"
+    "url": "/assets/toyota/gr86.webp",
+    "source": "/assets/toyota/gr86.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|GR Yaris": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/2024_Toyota_GR_Yaris_(TH).jpg/960px-2024_Toyota_GR_Yaris_(TH).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Toyota_GR_Yaris_(TH).jpg",
-    "credit": "Foto: Chanokchon · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/2024_Toyota_GR_Yaris_(TH).jpg"
+    "url": "/assets/toyota/gr-yaris.webp",
+    "source": "/assets/toyota/gr-yaris.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Hiace": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/2024_Toyota_Hiace_2.8_Super_Grandia_Elite_in_Black%2C_front_right.jpg/960px-2024_Toyota_Hiace_2.8_Super_Grandia_Elite_in_Black%2C_front_right.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Toyota_Hiace_2.8_Super_Grandia_Elite_in_Black%2C_front_right.jpg",
-    "credit": "Foto: Ethan Llamas · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1d/2024_Toyota_Hiace_2.8_Super_Grandia_Elite_in_Black%2C_front_right.jpg"
+    "url": "/assets/toyota/hiace.webp",
+    "source": "/assets/toyota/hiace.webp",
+    "credit": "Imagen aportada para el catálogo · Toyota"
   },
   "Toyota|Crown": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Toyota_Crown_Crossover_RS.jpg/960px-Toyota_Crown_Crossover_RS.jpg",

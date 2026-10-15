@@ -202,7 +202,7 @@ function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false)
  zeroPreviewStatus.textContent='Cargando imagen...';
  zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
  if(!photo){showZeroPreviewError(requestId,'No encontramos una foto disponible de este modelo.');return}
- const urls=[photo.url,photo.fallbackUrl].filter((value,index,all)=>typeof value==='string'&&value.startsWith('https://')&&all.indexOf(value)===index);
+ const urls=[photo.url,photo.fallbackUrl].filter((value,index,all)=>typeof value==='string'&&(value.startsWith('https://')||(value.startsWith('/')&&!value.startsWith('//')))&&all.indexOf(value)===index);
  let nextUrl=0;
  const tryNext=()=>{
   if(requestId!==zeroPreviewRequest)return;
