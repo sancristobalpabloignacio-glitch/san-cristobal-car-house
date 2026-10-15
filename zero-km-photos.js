@@ -1,4 +1,4 @@
-// Fotografías de catálogo, actualizadas por marca. Selección ilustrativa de las versiones.
+// Catálogo de fotografías ilustrativas por modelo. Se preservan las fotos de Toyota.
 window.SCZeroKmPhotos = {
   "Toyota|Yaris Hatchback": {
     "url": "/assets/toyota/yaris-hatchback.webp",
@@ -62,64 +62,64 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Toyota_Crown_Crossover_RS.jpg"
   },
   "Volkswagen|Tera": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Volkswagen_Tera.jpg/960px-Volkswagen_Tera.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVolkswagen_Tera.jpg",
-    "credit": "Foto: NeroRezend · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Volkswagen_Tera.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Tera",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Volkswagen_Tera.jpg/960px-Volkswagen_Tera.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Polo": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Volkswagen_Polo_(2024)_(53984501628).jpg/960px-Volkswagen_Polo_(2024)_(53984501628).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVolkswagen_Polo_(2024)_(53984501628).jpg",
-    "credit": "Foto: Wikimedia Commons · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Volkswagen_Polo_(2024)_(53984501628).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Polo",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Volkswagen_Polo_(2024)_(53984501628).jpg/960px-Volkswagen_Polo_(2024)_(53984501628).jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Virtus": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Volkswagen_Virtus_Topline_front_20230520.jpg/960px-2023_Volkswagen_Virtus_Topline_front_20230520.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2023_Volkswagen_Virtus_Topline_front_20230520.jpg",
-    "credit": "Foto: Dairokkan9 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ef/2023_Volkswagen_Virtus_Topline_front_20230520.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Virtus",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/2023_Volkswagen_Virtus_Topline_front_20230520.jpg/960px-2023_Volkswagen_Virtus_Topline_front_20230520.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Nivus": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg/960px-2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Nivus",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg/960px-2025_Volkswagen_Nivus_1.0_TSi_200_Comfortline_(facelift).jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|T-Cross": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/VW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg/960px-VW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg",
-    "credit": "Foto: M 93 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/VW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=T-Cross",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/VW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg/960px-VW_T-Cross_Style_(Facelift)_%E2%80%93_f_22022025.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Taos": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Volkswagen_Taos_(20240301).jpg/960px-Volkswagen_Taos_(20240301).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVolkswagen_Taos_(20240301).jpg",
-    "credit": "Foto: Mateusmatsuda · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Volkswagen_Taos_(20240301).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Taos",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Volkswagen_Taos_(20240301).jpg/960px-Volkswagen_Taos_(20240301).jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Vento GLI": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25_Volkswagen_Jetta_GLI_Autobahn.jpg/960px-25_Volkswagen_Jetta_GLI_Autobahn.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A25_Volkswagen_Jetta_GLI_Autobahn.jpg",
-    "credit": "Foto: HJUdall · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/25_Volkswagen_Jetta_GLI_Autobahn.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Vento%20GLI",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25_Volkswagen_Jetta_GLI_Autobahn.jpg/960px-25_Volkswagen_Jetta_GLI_Autobahn.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Saveiro": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg/960px-2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Saveiro",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg/960px-2024_Volkswagen_Saveiro_1.6_MSi_Trendline_(front).jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Amarok": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Volkswagen_Amarok_Mk2_153008.jpg/960px-Volkswagen_Amarok_Mk2_153008.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVolkswagen_Amarok_Mk2_153008.jpg",
-    "credit": "Foto: Trop86 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Volkswagen_Amarok_Mk2_153008.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Amarok",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Volkswagen_Amarok_Mk2_153008.jpg/960px-Volkswagen_Amarok_Mk2_153008.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Tiguan": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg/960px-Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AVolkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg",
-    "credit": "Foto: Tokumeigakarinoaoshima · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Tiguan",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg/960px-Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg",
+    "source": "https://www.volkswagen.com.ar/es/modelos.html",
+    "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Ford|Territory": {
     "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/territory/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg/1749847522377.jpg",
@@ -239,51 +239,51 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/pickups/silverado/silverado.jpg"
   },
   "Peugeot|208": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Peugeot_208_B_facelift_DSC_7227.jpg/960px-Peugeot_208_B_facelift_DSC_7227.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3APeugeot_208_B_facelift_DSC_7227.jpg",
-    "credit": "Foto: Alexander Migl · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Peugeot_208_B_facelift_DSC_7227.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=208",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Peugeot_208_B_facelift_DSC_7227.jpg/960px-Peugeot_208_B_facelift_DSC_7227.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|408": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Peugeot_408_(2024)_(53971759965).jpg/960px-Peugeot_408_(2024)_(53971759965).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3APeugeot_408_(2024)_(53971759965).jpg",
-    "credit": "Foto: Charles · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Peugeot_408_(2024)_(53971759965).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=408",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Peugeot_408_(2024)_(53971759965).jpg/960px-Peugeot_408_(2024)_(53971759965).jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|2008": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Peugeot_2008_(2024)_(53984688840).jpg/960px-Peugeot_2008_(2024)_(53984688840).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3APeugeot_2008_(2024)_(53984688840).jpg",
-    "credit": "Foto: Wikimedia Commons · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Peugeot_2008_(2024)_(53984688840).jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=2008",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Peugeot_2008_(2024)_(53984688840).jpg/960px-Peugeot_2008_(2024)_(53984688840).jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|3008": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/2024_Peugeot_3008.jpg/960px-2024_Peugeot_3008.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Peugeot_3008.jpg",
-    "credit": "Foto: Oleg Yunakov · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/1/12/2024_Peugeot_3008.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=3008",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/2024_Peugeot_3008.jpg/960px-2024_Peugeot_3008.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|5008": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/MIAS_2024_-_2024_Peugeot_5008.jpg/960px-MIAS_2024_-_2024_Peugeot_5008.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AMIAS_2024_-_2024_Peugeot_5008.jpg",
-    "credit": "Foto: Ethan Llamas · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/MIAS_2024_-_2024_Peugeot_5008.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=5008",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/MIAS_2024_-_2024_Peugeot_5008.jpg/960px-MIAS_2024_-_2024_Peugeot_5008.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|Partner": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2024_Peugeot_Partner_Mk3_DSC_3755.jpg/960px-2024_Peugeot_Partner_Mk3_DSC_3755.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Peugeot_Partner_Mk3_DSC_3755.jpg",
-    "credit": "Foto: Alexander Migl · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/50/2024_Peugeot_Partner_Mk3_DSC_3755.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Partner",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2024_Peugeot_Partner_Mk3_DSC_3755.jpg/960px-2024_Peugeot_Partner_Mk3_DSC_3755.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|Expert": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg/960px-2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg",
-    "credit": "Foto: Alexander Migl · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/0/08/2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Expert",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg/960px-2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   },
   "Peugeot|Boxer": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Peugeot_Boxer_(2024)_DSC_8787.jpg/960px-Peugeot_Boxer_(2024)_DSC_8787.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3APeugeot_Boxer_(2024)_DSC_8787.jpg",
-    "credit": "Foto: Alexander Migl · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/Peugeot_Boxer_(2024)_DSC_8787.jpg"
+    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Boxer",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Peugeot_Boxer_(2024)_DSC_8787.jpg/960px-Peugeot_Boxer_(2024)_DSC_8787.jpg",
+    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
+    "credit": "Imagen ilustrativa · Peugeot Argentina"
   }
 };
