@@ -67,8 +67,8 @@
 /* Previsualización de modelos 0 km al pasar el cursor, enfocar o seleccionar */
 .zero-car-preview[hidden]{display:none!important}
 .zero-car-preview{margin:17px 0 4px;border:1px solid #d8e2e8;border-radius:13px;overflow:hidden;background:#f9faf9;box-shadow:0 8px 24px rgba(34,56,74,.07);animation:zeroPreviewIn .24s ease both}
-.zero-car-preview-photo{position:relative;display:grid;place-items:center;width:100%;height:clamp(190px,22vw,260px);background:linear-gradient(135deg,#e9eef0 0%,#f4f3ef 70%);overflow:hidden}
-.zero-car-preview-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.zero-car-preview-photo{position:relative;display:grid;place-items:center;width:100%;height:clamp(190px,22vw,260px);background:#fff;overflow:hidden}
+.zero-car-preview-photo img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;padding:10px}
 .zero-car-preview-photo img[hidden]{display:none!important}
 .zero-car-preview-status{padding:18px 26px;max-width:340px;text-align:center;color:#657381;font:600 12px/1.5 "Manrope",Arial,sans-serif}
 .zero-car-preview-status[hidden]{display:none!important}
