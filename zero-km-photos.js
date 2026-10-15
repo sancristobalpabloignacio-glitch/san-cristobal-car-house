@@ -1,4 +1,4 @@
-// Catálogo de fotografías ilustrativas por modelo. Se preservan las fotos de Toyota.
+// Catálogo de imágenes de vehículos 0 km. Peugeot: imágenes oficiales verificadas.
 window.SCZeroKmPhotos = {
   "Toyota|Yaris Hatchback": {
     "url": "/assets/toyota/yaris-hatchback.webp",
@@ -239,51 +239,51 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/pickups/silverado/silverado.jpg"
   },
   "Peugeot|208": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=208",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/208/bbc-208-my27.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Peugeot_208_B_facelift_DSC_7227.jpg/960px-Peugeot_208_B_facelift_DSC_7227.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|408": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=408",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/408/bbc-408-6.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Peugeot_408_(2024)_(53971759965).jpg/960px-Peugeot_408_(2024)_(53971759965).jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|2008": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=2008",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/2008/20260901-bbc-2008.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Peugeot_2008_(2024)_(53984688840).jpg/960px-Peugeot_2008_(2024)_(53984688840).jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|3008": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=3008",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/3008/bbc-3008.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/2024_Peugeot_3008.jpg/960px-2024_Peugeot_3008.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|5008": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=5008",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/5008/bbc-5008.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/MIAS_2024_-_2024_Peugeot_5008.jpg/960px-MIAS_2024_-_2024_Peugeot_5008.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|Partner": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Partner",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/partner/bbc-partner3.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/2024_Peugeot_Partner_Mk3_DSC_3755.jpg/960px-2024_Peugeot_Partner_Mk3_DSC_3755.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|Expert": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Expert",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/expert/bbc-expert.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg/960px-2024_Peugeot_Expert_III_Sunvan_DSC_8839.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   },
   "Peugeot|Boxer": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Peugeot&model=Boxer",
+    "url": "https://www.peugeot.com.ar/content/dam/peugeot/argentina/b2c/our-range/bbc/boxer/bbc-boxer.png",
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Peugeot_Boxer_(2024)_DSC_8787.jpg/960px-Peugeot_Boxer_(2024)_DSC_8787.jpg",
-    "source": "https://www.peugeot.com.ar/modelos/peugeot-gama.html",
-    "credit": "Imagen ilustrativa · Peugeot Argentina"
+    "source": "https://www.peugeot.com.ar/gama/208.html",
+    "credit": "Imagen oficial de catálogo · Peugeot Argentina"
   }
 };
