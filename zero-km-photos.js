@@ -163,16 +163,14 @@ window.SCZeroKmPhotos = {
     "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|F-150": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/2024_Ford_F-150_XLT_front_view.jpg/960px-2024_Ford_F-150_XLT_front_view.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Ford_F-150_XLT_front_view.jpg",
-    "credit": "Foto: Deathpallie325 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/2024_Ford_F-150_XLT_front_view.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/f-150-lariat/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg/1786719990656.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/f-150-lariat/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Transit": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/FORD_TRANSIT_T8.jpg/960px-FORD_TRANSIT_T8.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFORD_TRANSIT_T8.jpg",
-    "credit": "Foto: Dinkun Chen · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/FORD_TRANSIT_T8.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/transit-van/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/transit-van/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Chevrolet|Onix": {
     "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/cars/onix/flyout-jelly-onix-my26.png?imwidth=960",
