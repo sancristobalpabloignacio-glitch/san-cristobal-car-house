@@ -1,5 +1,4 @@
-// Catálogo ilustrativo de modelos 0 km.
-// Imágenes Toyota aportadas para el sitio; demás marcas conservan sus referencias originales.
+// Fotografías de catálogo, actualizadas por marca. Selección ilustrativa de las versiones.
 window.SCZeroKmPhotos = {
   "Toyota|Yaris Hatchback": {
     "url": "/assets/toyota/yaris-hatchback.webp",
@@ -183,70 +182,70 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/56/FORD_TRANSIT_T8.jpg"
   },
   "Chevrolet|Onix": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/ChevroletOnix-Tandil.jpg/960px-ChevroletOnix-Tandil.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AChevroletOnix-Tandil.jpg",
-    "credit": "Foto: Ezarate · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/ChevroletOnix-Tandil.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/cars/onix/flyout-jelly-onix-my26.png?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/cars/onix/flyout-jelly-onix-my26.png"
   },
   "Chevrolet|Onix Plus": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/2025_Chevrolet_Onix_Plus_1.0T_LT_(2).jpg/960px-2025_Chevrolet_Onix_Plus_1.0T_LT_(2).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Chevrolet_Onix_Plus_1.0T_LT_(2).jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/2025_Chevrolet_Onix_Plus_1.0T_LT_(2).jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/cars/onix-plus/flyout-jelly-onix-plus-my26.png?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/cars/onix-plus/flyout-jelly-onix-plus-my26.png"
   },
   "Chevrolet|Tracker": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Chevrolet_Tracker_173107.jpg/960px-Chevrolet_Tracker_173107.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AChevrolet_Tracker_173107.jpg",
-    "credit": "Foto: Trop86 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Chevrolet_Tracker_173107.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2026/suvs/tracker/tracker-flyout-abril-2026.jpeg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2026/suvs/tracker/tracker-flyout-abril-2026.jpeg"
   },
   "Chevrolet|Spin": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/2025_Chevrolet_Spin_1.8_LT_(front).jpg/960px-2025_Chevrolet_Spin_1.8_LT_(front).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Chevrolet_Spin_1.8_LT_(front).jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/2025_Chevrolet_Spin_1.8_LT_(front).jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/crossovers-and-suvs/spin/spin.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/crossovers-and-suvs/spin/spin.jpg"
   },
   "Chevrolet|Sonic": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Chevrolet_Sonic_(Brazil)_2026.jpg/960px-Chevrolet_Sonic_(Brazil)_2026.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AChevrolet_Sonic_(Brazil)_2026.jpg",
-    "credit": "Foto: FANDESANTIMOTORIZADO · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Chevrolet_Sonic_(Brazil)_2026.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2027/crossovers-and-suvs/sonic/jelly/Sonic-jelly-version2.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2027/crossovers-and-suvs/sonic/jelly/Sonic-jelly-version2.jpg"
   },
   "Chevrolet|Captiva Híbrida": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Chevrolet_Captiva_PHEV_Premier_2026.jpg/960px-Chevrolet_Captiva_PHEV_Premier_2026.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AChevrolet_Captiva_PHEV_Premier_2026.jpg",
-    "credit": "Foto: RL GNZLZ · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/2/29/Chevrolet_Captiva_PHEV_Premier_2026.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/todos-los-vehiculos/03-images/jelly-captiva-phev-1268x634.jpeg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/index/todos-los-vehiculos/03-images/jelly-captiva-phev-1268x634.jpeg"
   },
   "Chevrolet|Spark EUV": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/2025_Chevrolet_Spark_EUV.jpg/960px-2025_Chevrolet_Spark_EUV.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Chevrolet_Spark_EUV.jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/2/24/2025_Chevrolet_Spark_EUV.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/electric-vehicles/spark-euv/spark.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/electric-vehicles/spark-euv/spark.jpg"
   },
   "Chevrolet|Montana": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/2023_Chevrolet_Montana_LTZ_front.jpg/960px-2023_Chevrolet_Montana_LTZ_front.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2023_Chevrolet_Montana_LTZ_front.jpg",
-    "credit": "Foto: Wikimedia Commons · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4f/2023_Chevrolet_Montana_LTZ_front.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/pickups/montanta/nueva-jelly/jelly-montana.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/pickups/montanta/nueva-jelly/jelly-montana.jpg"
   },
   "Chevrolet|S10": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/2025_Chevrolet_S-10_2.8_Duramax_LTZ_4x4.jpg/960px-2025_Chevrolet_S-10_2.8_Duramax_LTZ_4x4.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Chevrolet_S-10_2.8_Duramax_LTZ_4x4.jpg",
-    "credit": "Foto: Wikimedia Commons · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/2025_Chevrolet_S-10_2.8_Duramax_LTZ_4x4.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/pickups/s10/jelly-flyout-s10-my27.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2025/pickups/s10/jelly-flyout-s10-my27.jpg"
   },
   "Chevrolet|Trailblazer": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/2025_Chevrolet_TrailBlazer_High_Country_2.8_(facelift).jpg/960px-2025_Chevrolet_TrailBlazer_High_Country_2.8_(facelift).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2025_Chevrolet_TrailBlazer_High_Country_2.8_(facelift).jpg",
-    "credit": "Foto: Just a Man · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/0/05/2025_Chevrolet_TrailBlazer_High_Country_2.8_(facelift).jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/suvs/trailblazer/trailblazer.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/suvs/trailblazer/trailblazer.jpg"
   },
   "Chevrolet|Silverado": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Chevrolet_Silverado_ZR2_2024.jpg/960px-Chevrolet_Silverado_ZR2_2024.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AChevrolet_Silverado_ZR2_2024.jpg",
-    "credit": "Foto: RL GNZLZ · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Chevrolet_Silverado_ZR2_2024.jpg"
+    "url": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/pickups/silverado/silverado.jpg?imwidth=960",
+    "source": "https://www.chevrolet.com.ar/todos-los-vehiculos",
+    "credit": "Imagen ilustrativa · Chevrolet Argentina",
+    "fallbackUrl": "https://www.chevrolet.com.ar/content/dam/chevrolet/sa/argentina/espanol/vdc-collections/2024/pickups/silverado/silverado.jpg"
   },
   "Peugeot|208": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Peugeot_208_B_facelift_DSC_7227.jpg/960px-Peugeot_208_B_facelift_DSC_7227.jpg",
