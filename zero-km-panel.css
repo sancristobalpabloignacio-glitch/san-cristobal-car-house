@@ -48,3 +48,9 @@
 .zero-form .zero-whatsapp-note{display:block;margin:10px 0 0;color:#65707a;font:500 11px/1.45 "Manrope",Arial,sans-serif}
 .zero-disclaimer{margin:17px 0 0;padding-top:13px;border-top:1px solid #e7e6e0;color:#899198;font:400 10px/1.5 "Manrope",Arial,sans-serif}
 @media(max-width:620px){.zero-panel{padding:21px 18px;border-radius:14px;gap:20px}.zero-panel h3{font-size:29px}.zero-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.zero-brand-chip,.zero-brand-more{min-height:82px}.zero-form-grid{grid-template-columns:1fr}.zero-field.full{grid-column:auto}.zero-models-head{align-items:flex-start}.zero-form .btn.zero-cta{font-size:10px}.zero-panel-copy{font-size:12px}}
+
+/* El paso de cotización aparece después de seleccionar una marca. */
+.zero-panel #zeroForm[hidden]{display:none!important}
+.zero-panel #zeroForm.zero-revealed{animation:zeroStepReveal .38s ease both}
+@keyframes zeroStepReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.zero-panel #zeroForm.zero-revealed{animation:none}}
