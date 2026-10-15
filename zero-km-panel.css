@@ -1,0 +1,50 @@
+/* San Cristóbal Car House — cotización 0 km */
+.zero-panel{background:#f8f7f3;color:#222831;padding:clamp(22px,2vw,34px);display:flex;flex-direction:column;justify-content:flex-start;gap:22px;border:1px solid #e4e0d7;border-radius:18px;box-shadow:0 22px 55px rgba(12,24,33,.12)}
+.zero-panel-top{width:100%;min-width:0}
+.zero-panel .zero-eyebrow{display:flex;align-items:center;gap:9px;margin:0 0 14px;font:800 10px/1.4 "Manrope",Arial,sans-serif;letter-spacing:.13em;color:#3a6582}
+.zero-live-dot{display:inline-block;flex:0 0 7px;width:7px;height:7px;border-radius:50%;background:#3b91ad;box-shadow:0 0 0 4px rgba(59,145,173,.12)}
+.zero-panel h3{font:500 clamp(26px,2.6vw,37px)/1.13 "Oxanium","Manrope",Arial,sans-serif;letter-spacing:-.025em;margin:0 0 12px;max-width:490px}
+.zero-panel-copy{font:400 13px/1.65 "Manrope",Arial,sans-serif;color:#60646a;margin:0 0 23px;max-width:510px}
+.zero-step-title{display:flex;align-items:center;gap:12px;margin:0 0 14px}
+.zero-step-title>span{flex:0 0 36px;width:36px;height:36px;border-radius:10px;background:#e5eef3;color:#235775;display:flex;align-items:center;justify-content:center;font:800 12px "Manrope",Arial,sans-serif}
+.zero-step-title>div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.zero-step-title b{font:800 14px/1.3 "Manrope",Arial,sans-serif;color:#202c37}
+.zero-step-title small,.zero-form .zero-step-title small{display:block;margin:0;font:500 11px/1.35 "Manrope",Arial,sans-serif;color:#747d86;letter-spacing:0}
+.zero-brands{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 14px}
+.zero-brand-chip{min-width:0;min-height:88px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:11px 7px;border:1px solid #e1dfd9;border-radius:12px;background:#fff;box-shadow:0 1px 2px rgba(20,34,43,.025);cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .2s,background .2s}
+.zero-brand-chip img{display:block;width:100%;max-width:90px;height:34px;object-fit:contain}
+.zero-brand-chip span{display:block;font:700 11px/1.25 "Manrope",Arial,sans-serif;color:#394552;text-transform:none;letter-spacing:0}
+.zero-brand-chip:hover,.zero-brand-chip.active{border-color:#3a7599;box-shadow:0 5px 18px rgba(35,87,117,.12);transform:translateY(-1px);background:#f7fbfd}
+.zero-brand-chip.active{outline:1px solid #3a7599}
+.zero-brand-chip:focus-visible,.zero-model:focus-visible,.zero-cta:focus-visible{outline:3px solid #83c9ff;outline-offset:2px}
+.zero-brand-more{grid-column:auto;min-height:88px;background:#edf2f5;border:1px dashed #b8c9d5;border-radius:12px;color:#325b78;letter-spacing:0}
+.zero-brand-more .zero-more-icon{font-size:28px;line-height:1;font-weight:400;color:#316b8d}
+.zero-brand-more span:last-child{color:#315a75;font-size:11px}
+.zero-brand-more:hover,.zero-brand-more.active{background:#e2edf4;border-color:#3a7599;color:#235775}
+.zero-models-wrap{display:none;background:#fff;border:1px solid #dce4e8;border-radius:14px;margin:0 0 12px;padding:16px}
+.zero-models-wrap.open{display:block;animation:zeroModelsIn .22s ease}
+.zero-models-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:13px;flex-wrap:wrap}
+.zero-models-head b{font:600 20px/1.15 "Oxanium","Manrope",Arial,sans-serif;color:#24374a}
+.zero-models-head small{font:700 9px/1.3 "Manrope",Arial,sans-serif;letter-spacing:.05em;color:#78828b;text-transform:uppercase}
+.zero-models{display:flex;flex-wrap:wrap;gap:8px}
+.zero-model{min-height:37px;border:1px solid #dfe4e7;border-radius:9px;padding:9px 12px;background:#f7f8f8;color:#293b4b;font:700 11px/1.25 "Manrope",Arial,sans-serif;letter-spacing:0;transition:background .2s,color .2s,border-color .2s;cursor:pointer}
+.zero-model:hover{background:#e6eff4;border-color:#82a6bd;color:#194c70}
+.zero-model.selected{background:#285a7a;border-color:#285a7a;color:#fff}
+.zero-model-note{font:400 11px/1.5 "Manrope",Arial,sans-serif;color:#79818a;margin:13px 0 0}
+.zero-panel .zero-form{border-top:1px solid #e1dfd8;padding-top:22px}
+.zero-step-title-form{margin-bottom:18px}
+.zero-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 12px}
+.zero-field{position:relative;display:flex;flex-direction:column;gap:7px;font:800 10px/1.3 "Manrope",Arial,sans-serif;letter-spacing:.07em;text-transform:uppercase;color:#4a535b;min-width:0}
+.zero-field.full{grid-column:1/-1}
+.zero-optional{position:absolute;right:0;top:0;font-size:9px;font-weight:500;color:#89919a;letter-spacing:0;text-transform:none}
+.zero-field input,.zero-field textarea{width:100%;border:1px solid #dcdedc;border-radius:10px;background:#fff;color:#25323f;padding:13px 14px;font:500 13px/1.4 "Manrope",Arial,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+.zero-field input{height:50px}
+.zero-field textarea{min-height:78px;resize:vertical}
+.zero-field input::placeholder,.zero-field textarea::placeholder{color:#a0a5aa;opacity:1}
+.zero-field input:focus,.zero-field textarea:focus{border-color:#437e9f;box-shadow:0 0 0 3px rgba(67,126,159,.14)}
+.zero-form .btn.zero-cta{width:100%;min-height:56px;margin:18px 0 0;padding:0 17px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;border-radius:11px;background:#243b4d;border:1px solid #243b4d;color:#fff;box-shadow:0 7px 17px rgba(34,56,74,.12);font:800 11px/1.4 "Manrope",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+.zero-form .btn.zero-cta:hover{background:#315d7b;transform:translateY(-1px);box-shadow:0 10px 25px rgba(34,56,74,.2)}
+.zero-cta-icon{width:32px;height:32px;flex:0 0 32px;display:flex;align-items:center;justify-content:center;border-radius:9px;background:rgba(255,255,255,.13);font:700 20px/1 "Manrope",Arial,sans-serif}
+.zero-form .zero-whatsapp-note{display:block;margin:10px 0 0;color:#65707a;font:500 11px/1.45 "Manrope",Arial,sans-serif}
+.zero-disclaimer{margin:17px 0 0;padding-top:13px;border-top:1px solid #e7e6e0;color:#899198;font:400 10px/1.5 "Manrope",Arial,sans-serif}
+@media(max-width:620px){.zero-panel{padding:21px 18px;border-radius:14px;gap:20px}.zero-panel h3{font-size:29px}.zero-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.zero-brand-chip,.zero-brand-more{min-height:82px}.zero-form-grid{grid-template-columns:1fr}.zero-field.full{grid-column:auto}.zero-models-head{align-items:flex-start}.zero-form .btn.zero-cta{font-size:10px}.zero-panel-copy{font-size:12px}}
