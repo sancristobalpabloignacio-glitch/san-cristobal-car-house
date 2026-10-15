@@ -127,10 +127,9 @@ window.SCZeroKmPhotos = {
     "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Ranger": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Ford_Ranger_XLS_2024_(53660452907).jpg/960px-Ford_Ranger_XLS_2024_(53660452907).jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFord_Ranger_XLS_2024_(53660452907).jpg",
-    "credit": "Foto: RL GNZLZ · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Ford_Ranger_XLS_2024_(53660452907).jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/ranger/jcr%3Acontent/par/splitter_921832207/splitter0/image_copy/image.imgs.full.high.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/ranger/",
+    "credit": "Imagen ilustrativa oficial · Ford Argentina"
   },
   "Ford|Ranger Raptor": {
     "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/ranger-raptor/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg",
