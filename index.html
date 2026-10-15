@@ -6,7 +6,19 @@
 <p class="zero-panel-copy">Elegí tu próximo auto y pedinos una cotización personalizada, sin vueltas.</p>
 <div class="zero-step-title"><span>01</span><div><b>Elegí la marca</b><small>Seleccioná la que estás buscando</small></div></div>
 <div class="zero-brands" id="zeroBrands"><button class="zero-brand-chip" type="button" data-zero-brand="Toyota" aria-label="Toyota" title="Toyota"><img src="https://cdn.simpleicons.org/toyota/EB0A1E" alt="" loading="lazy"><span>Toyota</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Volkswagen" aria-label="Volkswagen" title="Volkswagen"><img src="https://cdn.simpleicons.org/volkswagen/001E50" alt="" loading="lazy"><span>Volkswagen</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Ford" aria-label="Ford" title="Ford"><img src="https://cdn.simpleicons.org/ford/003478" alt="" loading="lazy"><span>Ford</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Chevrolet" aria-label="Chevrolet" title="Chevrolet"><img src="https://cdn.simpleicons.org/chevrolet/CD9834" alt="" loading="lazy"><span>Chevrolet</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Peugeot" aria-label="Peugeot" title="Peugeot"><img src="https://cdn.simpleicons.org/peugeot/1D4ED8" alt="" loading="lazy"><span>Peugeot</span></button><button class="zero-brand-chip zero-brand-more" type="button" data-zero-brand="Otra"><span class="zero-more-icon" aria-hidden="true">+</span><span>Otra marca</span></button></div>
-<div class="zero-manual-choice" id="zeroManualChoice" hidden><p class="zero-manual-title">¿Qué marca y modelo buscás?</p><div class="zero-manual-grid"><label class="zero-field">Marca<input id="zeroManualBrand" type="text" placeholder="Ej. Nissan" autocomplete="off"></label><label class="zero-field">Modelo<input id="zeroManualModel" type="text" placeholder="Ej. Frontier" autocomplete="off"></label></div><p class="zero-manual-help">Al completar ambos campos, se habilita el paso 2.</p></div><div class="zero-models-wrap" id="zeroModelsWrap"><div class="zero-models-head"><b id="zeroModelsBrand"></b><small>Modelos para consultar</small></div><div class="zero-models" id="zeroModels"></div><p class="zero-model-note">Seleccioná un modelo para completar tu consulta. Confirmamos versiones y disponibilidad al cotizar.</p></div>
+<div class="zero-manual-choice" id="zeroManualChoice" hidden><p class="zero-manual-title">¿Qué marca y modelo buscás?</p><div class="zero-manual-grid"><label class="zero-field">Marca<input id="zeroManualBrand" type="text" placeholder="Ej. Nissan" autocomplete="off"></label><label class="zero-field">Modelo<input id="zeroManualModel" type="text" placeholder="Ej. Frontier" autocomplete="off"></label></div><p class="zero-manual-help">Al completar ambos campos, se habilita el paso 2.</p></div><div class="zero-models-wrap" id="zeroModelsWrap"><div class="zero-models-head"><b id="zeroModelsBrand"></b><small>Modelos para consultar</small></div><div class="zero-models" id="zeroModels"></div>
+<div class="zero-car-preview" id="zeroCarPreview" hidden>
+  <div class="zero-car-preview-photo">
+    <img id="zeroCarPreviewImage" alt="" hidden loading="lazy">
+    <div id="zeroCarPreviewStatus" class="zero-car-preview-status">Buscando una imagen del vehículo...</div>
+  </div>
+  <div class="zero-car-preview-details">
+    <div><span class="zero-car-preview-eyebrow">VISTA PREVIA DEL MODELO</span><strong id="zeroCarPreviewTitle"></strong><span class="zero-car-preview-note">Imagen ilustrativa. La versión final puede variar.</span></div>
+    <a id="zeroCarPreviewSource" class="zero-car-preview-source" target="_blank" rel="noopener noreferrer" hidden>Fuente de la foto ↗</a>
+  </div>
+  <small id="zeroCarPreviewCredit" class="zero-car-preview-credit"></small>
+</div>
+<p class="zero-model-note">Seleccioná un modelo para completar tu consulta. Confirmamos versiones y disponibilidad al cotizar.</p></div>
 </div>
 <form id="zeroForm" class="zero-form" hidden>
 <div class="zero-step-title zero-step-title-form"><span>02</span><div><b>Pedí tu cotización</b><small>Completá o ajustá los datos del vehículo</small></div></div>
@@ -126,6 +138,108 @@ zeroModelsBox.addEventListener('click',e=>{
 function updateZeroManualChoice(){if(!zeroManualChoice.hidden){zeroBrandInput.value=zeroManualBrand.value.trim();zeroModelInput.value=zeroManualModel.value.trim();if(zeroBrandInput.value&&zeroModelInput.value)revealZeroForm();else hideZeroForm()}}
 zeroManualBrand.addEventListener('input',updateZeroManualChoice);
 zeroManualModel.addEventListener('input',updateZeroManualChoice);
+
+const zeroPreview=document.getElementById('zeroCarPreview'),
+  zeroPreviewImage=document.getElementById('zeroCarPreviewImage'),
+  zeroPreviewStatus=document.getElementById('zeroCarPreviewStatus'),
+  zeroPreviewTitle=document.getElementById('zeroCarPreviewTitle'),
+  zeroPreviewSource=document.getElementById('zeroCarPreviewSource'),
+  zeroPreviewCredit=document.getElementById('zeroCarPreviewCredit');
+const zeroPreviewKnown={
+  'Toyota|Hilux':'https://media.toyota.com.ar/07d63556-7bc8-4d97-896d-5600477a315c.jpeg',
+  'Volkswagen|Tera':'https://media.lmneuquen.com/p/9e57c840abbe27631e23d4e129ebd35e/adjuntos/195/imagenes/008/084/0008084749/volkswagen-tera.jpg',
+  'Ford|Ranger':'https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/ranger/jcr%3Acontent/par/splitter_921832207/splitter0/image_copy/image.imgs.full.high.jpg',
+  'Ford|Territory':'https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/territory/2025/overview/billboard/far-nueva-territory-platinum-overview-billboard-desk.jpg',
+  'Chevrolet|Tracker':'https://cdn.motor1.com/images/mgl/Ak4ERO/s1/chevrolet-tracker-2025.jpg',
+  'Peugeot|208':'https://cdn.motor1.com/images/mgl/P30KMA/s1/peugeot-208-2025---argentina.jpg'
+};
+const zeroPreviewCache=new Map();
+let zeroPreviewRequest=0,zeroPreviewTimer;
+const normCar=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[_–-]/g,' ').replace(/[^a-z0-9 ]/g,' ').replace(/\s+/g,' ').trim();
+const modelImageTerms={'Yaris Hatchback':'Yaris','Ranger Raptor':'Ranger Raptor','Land Cruiser 300':'Land Cruiser','T-Cross':'T-Cross','Vento GLI':'Vento','GR Yaris':'GR Yaris','Corolla Cross':'Corolla Cross'};
+const authorText=s=>String(s||'').replace(/<[^>]+>/g,' ').replace(/&(?:nbsp|#160);/gi,' ').replace(/&amp;/gi,'&').replace(/\s+/g,' ').trim().slice(0,95);
+async function searchZeroModelImage(brand,model){
+ const searchModel=modelImageTerms[model]||model;
+ const normalizedModel=normCar(searchModel);
+ const modelParts=normalizedModel.split(' ').filter(Boolean);
+ const searches=[brand+' '+searchModel,brand+' '+searchModel+' car'];
+ for(const term of searches){
+  try{
+   const params=new URLSearchParams({action:'query',format:'json',origin:'*',generator:'search',gsrnamespace:'6',gsrlimit:'12',gsrsearch:term+' filetype:bitmap',prop:'imageinfo',iiprop:'url|mime|size|extmetadata',iiextmetadatafilter:'Artist|LicenseShortName|LicenseUrl',iiurlwidth:'800'});
+   const response=await fetch('https://commons.wikimedia.org/w/api.php?'+params.toString(),{mode:'cors',credentials:'omit'});
+   if(!response.ok)continue;
+   const data=await response.json();
+   const photos=Object.values(data.query?.pages||{}).map(page=>{
+    const image=page.imageinfo?.[0];if(!image)return null;
+    const mime=image.mime||'';
+    if(!['image/jpeg','image/png','image/webp'].includes(mime))return null;
+    const title=normCar(page.title||'');
+    if(!modelParts.every(word=>(' '+title+' ').includes(' '+word+' ')))return null;
+    const isBrand=title.includes(normCar(brand))||(brand==='Volkswagen'&&title.includes(' vw '));
+    let score=35+(isBrand?25:0)+(title.includes(normalizedModel)?15:0);
+    if(/\b(2023|2024|2025|2026)\b/.test(title))score+=8;
+    if(/\b(front|side|rear|suv|sedan|pickup|hatchback)\b/.test(title))score+=3;
+    if(/\b(interior|engine|logo|badge|dashboard|wheel|grille|police|crash|accident|drawing|sketch|toy)\b/.test(title))score-=45;
+    if(image.width&&image.height&&image.width>=620&&image.height>=300)score+=10;
+    const thumb=image.thumburl||image.url;
+    if(!thumb||!thumb.startsWith('https://upload.wikimedia.org/'))return null;
+    const meta=image.extmetadata||{};
+    return {url:thumb,source:image.descriptionurl||'https://commons.wikimedia.org/',credit:[authorText(meta.Artist?.value),authorText(meta.LicenseShortName?.value)].filter(Boolean).join(' · '),score,index:page.index||99};
+   }).filter(Boolean).sort((a,b)=>b.score-a.score||a.index-b.index);
+   if(photos.length)return photos[0];
+  }catch(_error){/* Si no hay conexión, se muestra un aviso en lugar de otro modelo. */}
+ }
+ return null;
+}
+function loadZeroPreviewPhoto(photo,requestId){
+ if(requestId!==zeroPreviewRequest)return;
+ if(!photo){zeroPreviewImage.hidden=true;zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Todavía no hay una foto disponible de este modelo.';zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';return}
+ zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Cargando imagen...';zeroPreviewImage.hidden=true;
+ zeroPreviewImage.onload=()=>{if(requestId===zeroPreviewRequest){zeroPreviewImage.hidden=false;zeroPreviewStatus.hidden=true}};
+ zeroPreviewImage.onerror=()=>{if(requestId===zeroPreviewRequest){zeroPreviewImage.hidden=true;zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='No fue posible mostrar esta foto.'}};
+ zeroPreviewImage.alt='Foto ilustrativa de '+zeroPreviewTitle.textContent;
+ zeroPreviewImage.src=photo.url;
+ zeroPreviewSource.href=photo.source||photo.url;zeroPreviewSource.hidden=false;
+ zeroPreviewCredit.textContent=photo.credit?('Foto: '+photo.credit):'Imagen ilustrativa · Consultá la versión disponible';
+}
+function showZeroModelPreview(model){
+ if(!openZeroBrand||!model)return;
+ clearTimeout(zeroPreviewTimer);
+ const requestId=++zeroPreviewRequest;
+ zeroPreview.hidden=false;
+ zeroPreviewTitle.textContent=openZeroBrand+' '+model;
+ zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
+ zeroPreviewStatus.hidden=false;zeroPreviewStatus.textContent='Buscando una imagen del vehículo...';
+ zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
+ const key=openZeroBrand+'|'+model;
+ if(zeroPreviewKnown[key]){
+  loadZeroPreviewPhoto({url:zeroPreviewKnown[key],source:zeroPreviewKnown[key],credit:'Imagen ilustrativa'},requestId);
+  return
+ }
+ zeroPreviewTimer=setTimeout(async()=>{
+  if(!zeroPreviewCache.has(key))zeroPreviewCache.set(key,searchZeroModelImage(openZeroBrand,model));
+  const photo=await zeroPreviewCache.get(key);
+  loadZeroPreviewPhoto(photo,requestId)
+ },170)
+}
+function resetZeroModelPreview(){
+ clearTimeout(zeroPreviewTimer);++zeroPreviewRequest;
+ zeroPreview.hidden=true;zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
+}
+zeroBrandsBox.addEventListener('click',resetZeroModelPreview);
+zeroModelsBox.addEventListener('pointerover',e=>{
+ const btn=e.target.closest('.zero-model');
+ if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+});
+zeroModelsBox.addEventListener('focusin',e=>{
+ const btn=e.target.closest('.zero-model');
+ if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+});
+zeroModelsBox.addEventListener('click',e=>{
+ const btn=e.target.closest('.zero-model');
+ if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+});
+
 const zeroVisual=document.getElementById('zeroVisual'),zeroSlides=[...zeroVisual.querySelectorAll('.zero-slide')],zeroDots=[...document.querySelectorAll('#zeroDots button')],zeroCaption=document.getElementById('zeroSlideCaption');let zeroSlideIndex=0,zeroAutoTimer=null;
 function showZeroSlide(index,manual=false){if(!zeroSlides.length)return;zeroSlideIndex=(index+zeroSlides.length)%zeroSlides.length;zeroSlides.forEach((slide,i)=>{slide.classList.toggle('active',i===zeroSlideIndex);slide.setAttribute('aria-hidden',i===zeroSlideIndex?'false':'true')});zeroDots.forEach((dot,i)=>{dot.classList.toggle('active',i===zeroSlideIndex);dot.setAttribute('aria-pressed',i===zeroSlideIndex?'true':'false')});zeroCaption.textContent=zeroSlides[zeroSlideIndex].dataset.caption;if(manual&&zeroAutoTimer){clearInterval(zeroAutoTimer);zeroAutoTimer=null}}
 if(zeroSlides.length>1){showZeroSlide(0);zeroAutoTimer=setInterval(()=>{if(!zeroVisual.matches(':hover')&&!document.hidden)showZeroSlide(zeroSlideIndex+1)},5500);zeroVisual.querySelectorAll('[data-zero-direction]').forEach(btn=>btn.addEventListener('click',()=>showZeroSlide(zeroSlideIndex+Number(btn.dataset.zeroDirection),true)));zeroDots.forEach((dot,i)=>dot.addEventListener('click',()=>showZeroSlide(i,true)));let zeroTouchStartX=null;zeroVisual.addEventListener('touchstart',e=>{if(e.touches.length===1)zeroTouchStartX=e.touches[0].clientX},{passive:true});zeroVisual.addEventListener('touchend',e=>{if(zeroTouchStartX===null)return;const delta=e.changedTouches[0].clientX-zeroTouchStartX;zeroTouchStartX=null;if(Math.abs(delta)>45)showZeroSlide(zeroSlideIndex+(delta<0?1:-1),true)},{passive:true});}document.getElementById('zeroForm').addEventListener('submit',e=>{e.preventDefault();const marca=document.getElementById('zeroBrand').value.trim(),modelo=document.getElementById('zeroModel').value.trim(),version=document.getElementById('zeroVersion').value.trim(),nota=document.getElementById('zeroNotes').value.trim();let m='Hola, quiero consultar por un 0 km al mejor precio de contado.\n\nMarca: '+marca+'\nModelo: '+modelo;if(version)m+='\nVersión / detalle: '+version;if(nota)m+='\nComentario: '+nota;track('whatsapp_click',null,'zero_km_inquiry');window.open(wa(m),'_blank','noopener')});
