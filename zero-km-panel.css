@@ -62,3 +62,24 @@
 .zero-manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .zero-manual-help{font:500 11px/1.5 "Manrope",Arial,sans-serif;color:#77838d;margin:11px 0 0}
 @media(max-width:620px){.zero-manual-grid{grid-template-columns:1fr}}
+
+
+/* Previsualización de modelos 0 km al pasar el cursor, enfocar o seleccionar */
+.zero-car-preview[hidden]{display:none!important}
+.zero-car-preview{margin:17px 0 4px;border:1px solid #d8e2e8;border-radius:13px;overflow:hidden;background:#f9faf9;box-shadow:0 8px 24px rgba(34,56,74,.07);animation:zeroPreviewIn .24s ease both}
+.zero-car-preview-photo{position:relative;display:grid;place-items:center;width:100%;height:clamp(190px,22vw,260px);background:linear-gradient(135deg,#e9eef0 0%,#f4f3ef 70%);overflow:hidden}
+.zero-car-preview-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.zero-car-preview-photo img[hidden]{display:none!important}
+.zero-car-preview-status{padding:18px 26px;max-width:340px;text-align:center;color:#657381;font:600 12px/1.5 "Manrope",Arial,sans-serif}
+.zero-car-preview-status[hidden]{display:none!important}
+.zero-car-preview-details{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:15px 17px 9px}
+.zero-car-preview-details>div{display:flex;flex-direction:column;gap:5px;min-width:0}
+.zero-car-preview-eyebrow{font:800 9px/1.2 "Manrope",Arial,sans-serif;letter-spacing:.12em;color:#437d9f}
+.zero-car-preview-details strong{font:650 20px/1.12 "Oxanium","Manrope",Arial,sans-serif;color:#243747}
+.zero-car-preview-note{font:500 10px/1.5 "Manrope",Arial,sans-serif;color:#75828d}
+.zero-car-preview-source{flex:0 0 auto;max-width:165px;text-align:right;color:#356c90;font:700 10px/1.3 "Manrope",Arial,sans-serif;text-decoration:underline;text-underline-offset:3px}
+.zero-car-preview-source[hidden]{display:none!important}
+.zero-car-preview-credit{display:block;margin:0;padding:0 17px 14px;color:#8a929b;font:500 10px/1.5 "Manrope",Arial,sans-serif;overflow-wrap:anywhere}
+@keyframes zeroPreviewIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:620px){.zero-car-preview-photo{height:210px}.zero-car-preview-details{align-items:flex-start;gap:12px}.zero-car-preview-details strong{font-size:19px}.zero-car-preview-source{max-width:110px}}
+@media(prefers-reduced-motion:reduce){.zero-car-preview{animation:none}}
