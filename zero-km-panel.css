@@ -49,8 +49,16 @@
 .zero-disclaimer{margin:17px 0 0;padding-top:13px;border-top:1px solid #e7e6e0;color:#899198;font:400 10px/1.5 "Manrope",Arial,sans-serif}
 @media(max-width:620px){.zero-panel{padding:21px 18px;border-radius:14px;gap:20px}.zero-panel h3{font-size:29px}.zero-brands{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.zero-brand-chip,.zero-brand-more{min-height:82px}.zero-form-grid{grid-template-columns:1fr}.zero-field.full{grid-column:auto}.zero-models-head{align-items:flex-start}.zero-form .btn.zero-cta{font-size:10px}.zero-panel-copy{font-size:12px}}
 
-/* El paso de cotización aparece después de seleccionar una marca. */
+/* El paso de cotización aparece después de elegir marca y modelo. */
 .zero-panel #zeroForm[hidden]{display:none!important}
 .zero-panel #zeroForm.zero-revealed{animation:zeroStepReveal .38s ease both}
 @keyframes zeroStepReveal{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){.zero-panel #zeroForm.zero-revealed{animation:none}}
+
+/* Selección manual para marcas no listadas */
+.zero-manual-choice[hidden]{display:none!important}
+.zero-manual-choice{background:#fff;border:1px solid #dce4e8;border-radius:14px;padding:16px;margin:0 0 13px;animation:zeroModelsIn .22s ease}
+.zero-manual-title{font:800 13px/1.35 "Manrope",Arial,sans-serif;color:#273e52;margin:0 0 13px}
+.zero-manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.zero-manual-help{font:500 11px/1.5 "Manrope",Arial,sans-serif;color:#77838d;margin:11px 0 0}
+@media(max-width:620px){.zero-manual-grid{grid-template-columns:1fr}}
