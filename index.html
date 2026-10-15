@@ -223,10 +223,10 @@ function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false)
    return
   }
   const url=urls[nextUrl++],tempImage=new Image();
-  let settled=false;
+  let settled=false,localTimer=null;
   const finish=success=>{
    if(settled)return;
-   settled=true;clearTimeout(zeroPreviewLoadTimer);
+   settled=true;clearTimeout(localTimer);
    tempImage.onload=null;tempImage.onerror=null;
    if(requestId!==zeroPreviewRequest)return;
    if(!success){tryNext();return}
@@ -239,13 +239,14 @@ function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false)
   };
   tempImage.onload=()=>finish(true);
   tempImage.onerror=()=>finish(false);
-  zeroPreviewLoadTimer=setTimeout(()=>finish(false),6000);
+  localTimer=setTimeout(()=>finish(false),6000);zeroPreviewLoadTimer=localTimer;
   tempImage.src=url
  };
  tryNext()
 }
 function showZeroModelPreview(model){
  if(!openZeroBrand||!model)return;
+ if(!zeroPreview.hidden&&zeroPreviewTitle.textContent===openZeroBrand+' '+model)return;
  clearTimeout(zeroPreviewTimer);clearTimeout(zeroPreviewLoadTimer);
  const requestId=++zeroPreviewRequest;
  zeroPreview.hidden=false;
