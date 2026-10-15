@@ -122,10 +122,9 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/4/44/Volkswagen_TIGUAN_eTSI_R-Line_(3AA-CT15)_front.jpg"
   },
   "Ford|Territory": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2026_Ford_Territory_Titanium_(facelift)_in_Argentina.jpg/960px-2026_Ford_Territory_Titanium_(facelift)_in_Argentina.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2026_Ford_Territory_Titanium_(facelift)_in_Argentina.jpg",
-    "credit": "Foto: Elcondelvp · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2c/2026_Ford_Territory_Titanium_(facelift)_in_Argentina.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/territory/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg/1749847522377.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/territory/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Ranger": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Ford_Ranger_XLS_2024_(53660452907).jpg/960px-Ford_Ranger_XLS_2024_(53660452907).jpg",
@@ -134,40 +133,34 @@ window.SCZeroKmPhotos = {
     "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Ford_Ranger_XLS_2024_(53660452907).jpg"
   },
   "Ford|Ranger Raptor": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Ford_Ranger_Raptor_(P703)_DSC_7062.jpg/960px-Ford_Ranger_Raptor_(P703)_DSC_7062.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFord_Ranger_Raptor_(P703)_DSC_7062.jpg",
-    "credit": "Foto: Alexander Migl · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/6/63/Ford_Ranger_Raptor_(P703)_DSC_7062.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/ranger-raptor/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/ranger-raptor/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Maverick": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/2024_Ford_Maverick_XL%2C_front_left%2C_08-21-2026.jpg/960px-2024_Ford_Maverick_XL%2C_front_left%2C_08-21-2026.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Ford_Maverick_XL%2C_front_left%2C_08-21-2026.jpg",
-    "credit": "Foto: BuickRiviera99 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/2024_Ford_Maverick_XL%2C_front_left%2C_08-21-2026.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/maverick/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg/1745370987485.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/maverick/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Bronco Sport": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Ford_Bronco_Sport_001.jpg/960px-Ford_Bronco_Sport_001.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFord_Bronco_Sport_001.jpg",
-    "credit": "Foto: JustAnotherCarDesigner · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Ford_Bronco_Sport_001.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/bronco-sport/jcr%3Acontent/par/splitter/splitter0/image/image.imgs.full.high.jpg/1744306318965.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/bronco-sport/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Bronco": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/2024_Ford_Bronco_2P_au_SIAM_2024.jpg/960px-2024_Ford_Bronco_2P_au_SIAM_2024.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Ford_Bronco_2P_au_SIAM_2024.jpg",
-    "credit": "Foto: Bull-Doser · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/2024_Ford_Bronco_2P_au_SIAM_2024.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/bronco/jcr%3Acontent/par/splitter_1171099059/splitter0/image_copy/image.imgs.full.high.jpg/1744306804517.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/bronco/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Everest": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Ford_Everest_4x2_Titanium_2024.jpg/960px-Ford_Everest_4x2_Titanium_2024.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3AFord_Everest_4x2_Titanium_2024.jpg",
-    "credit": "Foto: Captainmorlypogi1959 · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/1/13/Ford_Everest_4x2_Titanium_2024.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/everest/jcr%3Acontent/par/splitter_1171099059/splitter0/image/image.imgs.full.high.jpg/1747778382636.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/everest/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|Mustang": {
-    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/2024_Ford_Mustang_5.0_GT_in_Race_Red%2C_front_left.jpg/960px-2024_Ford_Mustang_5.0_GT_in_Race_Red%2C_front_left.jpg",
-    "source": "https://commons.wikimedia.org/wiki/File%3A2024_Ford_Mustang_5.0_GT_in_Race_Red%2C_front_left.jpg",
-    "credit": "Foto: Ethan Llamas · Wikimedia Commons (licencia en la fuente)",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/2024_Ford_Mustang_5.0_GT_in_Race_Red%2C_front_left.jpg"
+    "url": "https://www.ford.com.ar/content/ford/ar/es_ar/home/cotizacion/mustang/jcr%3Acontent/par/splitter/splitter0/image_copy_copy/image.imgs.full.high.jpg/1754670579226.jpg",
+    "source": "https://www.ford.com.ar/cotizacion/mustang/",
+    "credit": "Imagen ilustrativa · Ford Argentina"
   },
   "Ford|F-150": {
     "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/2024_Ford_F-150_XLT_front_view.jpg/960px-2024_Ford_F-150_XLT_front_view.jpg",
