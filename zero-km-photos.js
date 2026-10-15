@@ -1,4 +1,4 @@
-// Catálogo de imágenes de vehículos 0 km. Peugeot: imágenes oficiales verificadas.
+// Previews de modelos 0 km: fotografías oficiales de VW/Ford/Chevrolet/Peugeot; Toyota original.
 window.SCZeroKmPhotos = {
   "Toyota|Yaris Hatchback": {
     "url": "/assets/toyota/yaris-hatchback.webp",
@@ -98,10 +98,10 @@ window.SCZeroKmPhotos = {
     "credit": "Imagen ilustrativa · Volkswagen Argentina"
   },
   "Volkswagen|Vento GLI": {
-    "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Vento%20GLI",
-    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25_Volkswagen_Jetta_GLI_Autobahn.jpg/960px-25_Volkswagen_Jetta_GLI_Autobahn.jpg",
-    "source": "https://www.volkswagen.com.ar/es/modelos.html",
-    "credit": "Imagen ilustrativa · Volkswagen Argentina"
+    "url": "https://assets.volkswagen.com/is/image/volkswagenag/vento40?Zm10PXBuZy1hbHBoYSZ3aWQ9ODAwJmJmYz1vZmYmMGFmYw==",
+    "source": "https://www.volkswagen.com.ar/es/modelos/vento.html",
+    "credit": "Imagen oficial de catálogo · Volkswagen Argentina",
+    "fallbackUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/25_Volkswagen_Jetta_GLI_Autobahn.jpg/960px-25_Volkswagen_Jetta_GLI_Autobahn.jpg"
   },
   "Volkswagen|Saveiro": {
     "url": "https://san-cristobal-car-house.vercel.app/api/catalogo-imagen?brand=Volkswagen&model=Saveiro",
