@@ -1,0 +1,130 @@
+/* Ficha de usados · diseño de publicación tipo marketplace, identidad SC Car House */
+.vehicle-page{--vd-ink:#222831;--vd-muted:#77746e;--vd-sand:#948979;--vd-line:#e2ded6;--vd-paper:#F2F0EA;background:var(--vd-paper);color:var(--vd-ink)}
+.vehicle-page .shell{width:min(1280px,calc(100% - 48px))}
+.vehicle-page .head{position:relative;z-index:5;background:rgba(242,240,234,.97);border-bottom:1px solid #d9d3c9}
+.vehicle-page .nav{height:78px}
+.vehicle-page .brand{font-size:13px;letter-spacing:.09em;font-family:"Oxanium","Manrope",sans-serif;font-weight:700}
+.vehicle-page .back{display:inline-flex;align-items:center;gap:6px;padding:11px 16px;border:1px solid #d5d0c7;background:#fff;border-radius:999px;font-size:10px;font-weight:800;color:#222831;transition:.18s}
+.vehicle-page .back:hover{border-color:#948979;background:#ebe7df;color:#222831}
+.vehicle-page .vehicle-breadcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:27px 0 19px;font-size:11px;font-weight:600;color:#77746e}
+.vehicle-page .vehicle-breadcrumb a{color:#6d675e;text-decoration:none}
+.vehicle-page .vehicle-breadcrumb a:hover{text-decoration:underline;color:#222831}
+.vehicle-page .vehicle-breadcrumb .separator{color:#c4beb3}
+.vehicle-page .vehicle-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:22px}
+.vehicle-page .vehicle-eyebrows{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:10px}
+.vehicle-page .vehicle-tag{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;background:#e8e3d9;color:#4c463c;font-size:10px;font-weight:800;letter-spacing:.025em}
+.vehicle-page .vehicle-tag.outline{border:1px solid #dad4c9;background:transparent}
+.vehicle-page .vehicle-tag.reserved{background:#f4e1c7;color:#735528}
+.vehicle-page .vehicle-tag.sold{background:#e3e4e7;color:#585b62}
+.vehicle-page .vehicle-heading h1{font:700 clamp(32px,3.5vw,49px)/1.12 "Oxanium","Manrope",sans-serif;margin:0;letter-spacing:-.035em;color:#222831}
+.vehicle-page .vehicle-subtitle{margin:9px 0 0;font-size:13px;font-weight:500;line-height:1.55;color:#77746e}
+.vehicle-page .vehicle-layout{display:grid;grid-template-columns:minmax(0,1fr) 354px;align-items:start;gap:22px;margin-bottom:56px}
+.vehicle-page .vehicle-main{min-width:0;display:grid;gap:22px}
+.vehicle-page .vehicle-gallery-card,.vehicle-page .vehicle-section-card,.vehicle-page .vehicle-buybox{background:#fff;border:1px solid var(--vd-line);border-radius:15px;box-shadow:0 5px 18px rgba(34,40,49,.04)}
+.vehicle-page .vehicle-gallery-card{padding:12px}
+.vehicle-page .vehicle-photo-stage{height:clamp(340px,40vw,535px);position:relative;background:#f7f7f5;display:flex;align-items:center;justify-content:center;border-radius:10px;overflow:hidden}
+.vehicle-page .vehicle-hero-button{display:flex;align-items:center;justify-content:center;width:100%;height:100%;border:0;padding:0;background:transparent;cursor:zoom-in}
+.vehicle-page .vehicle-hero-button img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;transition:transform .24s ease}
+.vehicle-page .vehicle-hero-button:hover img{transform:scale(1.025)}
+.vehicle-page .vehicle-photo-count{position:absolute;left:16px;bottom:15px;padding:8px 11px;border-radius:6px;background:rgba(34,40,49,.88);color:#fff;font-size:11px;font-weight:800;pointer-events:none}
+.vehicle-page .vehicle-zoom-hint{position:absolute;right:16px;bottom:15px;display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:6px;background:rgba(255,255,255,.96);border:1px solid #e7e3da;color:#222831;font-size:10px;font-weight:700;pointer-events:none}
+.vehicle-page .vehicle-photo-step{position:absolute;top:50%;transform:translateY(-50%);display:flex;justify-content:center;align-items:center;width:42px;height:42px;border:1px solid #ddd7cc;border-radius:50%;background:#fff;color:#222831;font-size:27px;font-weight:400;cursor:pointer;box-shadow:0 4px 17px rgba(0,0,0,.09);transition:background .2s,border-color .2s}
+.vehicle-page .vehicle-photo-step:hover{background:#f0ece4;border-color:#948979}
+.vehicle-page .vehicle-photo-step.prev{left:14px}
+.vehicle-page .vehicle-photo-step.next{right:14px}
+.vehicle-page .vehicle-preview-thumbs{display:flex;gap:9px;overflow-x:auto;margin-top:12px;padding:1px 0 5px;scrollbar-width:thin}
+.vehicle-page .vehicle-preview-thumb{position:relative;flex:0 0 99px;width:99px;height:75px;border:2px solid transparent;border-radius:8px;overflow:hidden;padding:0;background:#f6f5f2;cursor:pointer;transition:border-color .16s}
+.vehicle-page .vehicle-preview-thumb.active{border-color:#948979}
+.vehicle-page .vehicle-preview-thumb:hover{border-color:#b5a797}
+.vehicle-page .vehicle-preview-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.vehicle-page .vehicle-preview-more{display:flex;align-items:center;justify-content:center;min-width:90px;padding:8px;font-size:10px;font-weight:800;background:#eeeae1;color:#222831}
+.vehicle-page .vehicle-gallery-help{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:10px;color:#817c75;font-size:10px}
+.vehicle-page .vehicle-gallery-help button{border:0;background:transparent;font:800 10px "Manrope",sans-serif;color:#665b4b;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.vehicle-page .vehicle-gallery-empty{height:400px;display:grid;place-items:center;align-content:center;gap:9px;color:#77746e;background:#f4f2ed;border-radius:11px}
+.vehicle-page .vehicle-gallery-empty strong{font:700 25px "Oxanium",sans-serif;color:#222831}
+.vehicle-page .vehicle-section-card{padding:25px 28px 28px}
+.vehicle-page .vehicle-section-kicker{display:block;color:#948979;font-size:10px;font-weight:800;letter-spacing:.115em;text-transform:uppercase;margin:0 0 7px}
+.vehicle-page .vehicle-section-card h2{margin:0 0 21px;color:#222831;font:700 25px/1.2 "Oxanium","Manrope",sans-serif;letter-spacing:-.02em}
+.vehicle-page .vehicle-keyfacts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid #e5e0d7;border-radius:9px;overflow:hidden;margin-bottom:23px}
+.vehicle-page .vehicle-keyfact{padding:17px 13px;border-right:1px solid #e5e0d7;background:#fbfaf8;min-width:0}
+.vehicle-page .vehicle-keyfact:last-child{border-right:0}
+.vehicle-page .vehicle-keyfact small,.vehicle-page .vehicle-spec-label{display:block;margin-bottom:7px;font-size:10px;line-height:1.5;font-weight:600;color:#77746e}
+.vehicle-page .vehicle-keyfact strong{display:block;overflow-wrap:anywhere;font-size:13px;line-height:1.3;font-weight:800;color:#222831}
+.vehicle-page .vehicle-specs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px}
+.vehicle-page .vehicle-spec-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-width:0;padding:14px 0;border-bottom:1px solid #ede9e1;font-size:12px}
+.vehicle-page .vehicle-spec-row .vehicle-spec-label{margin:0}
+.vehicle-page .vehicle-spec-row b{text-align:right;color:#222831;font-weight:750;overflow-wrap:anywhere}
+.vehicle-page .vehicle-desc{margin:0;color:#55565a;font:500 13px/1.95 "Manrope",sans-serif;white-space:pre-line;overflow-wrap:anywhere}
+.vehicle-page .vehicle-buybox{position:sticky;top:18px;padding:25px 24px 23px}
+.vehicle-page .vehicle-buybox .vehicle-stock-label{display:inline-flex;align-items:center;gap:7px;color:#706b60;font-size:10px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
+.vehicle-page .vehicle-stock-label:before{content:"";width:7px;height:7px;border-radius:50%;background:#948979}
+.vehicle-page .vehicle-buybox h2{font:750 20px/1.2 "Oxanium","Manrope",sans-serif;color:#222831;letter-spacing:-.02em;margin:17px 0 9px}
+.vehicle-page .vehicle-buybox .vehicle-price{font:800 clamp(28px,2.5vw,35px)/1.2 "Manrope",sans-serif;color:#222831;letter-spacing:-.045em;margin:4px 0 11px;overflow-wrap:anywhere}
+.vehicle-page .vehicle-price-note{margin:0;color:#77746e;font-size:11px;line-height:1.65}
+.vehicle-page .vehicle-buybox-rule{border:0;border-top:1px solid #e6e1da;margin:20px 0}
+.vehicle-page .vehicle-buybox-summary{display:grid;gap:13px}
+.vehicle-page .vehicle-buybox-summary div{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:11px}
+.vehicle-page .vehicle-buybox-summary span{color:#77746e}
+.vehicle-page .vehicle-buybox-summary b{color:#222831;font-size:11px;text-align:right}
+.vehicle-page .vehicle-primary-cta{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:53px;padding:13px 14px;background:#222831;color:#fff;border-radius:9px;border:1px solid #222831;font:800 12px/1.3 "Manrope",sans-serif;text-align:center;transition:background .18s,transform .18s}
+.vehicle-page .vehicle-primary-cta:hover{background:#393E46;color:#fff;transform:translateY(-1px)}
+.vehicle-page .vehicle-primary-cta svg{width:17px;height:17px;flex:none}
+.vehicle-page .vehicle-buybox-contact{margin:10px 0 0;text-align:center;font-size:10px;line-height:1.6;color:#77746e}
+.vehicle-page .vehicle-support{margin-top:19px;padding:14px 15px;background:#F5F2EC;border-radius:9px;color:#655e54;font-size:11px;line-height:1.7}
+.vehicle-page .vehicle-support strong{display:block;margin-bottom:2px;color:#222831;font-weight:800}
+.vehicle-page .vehicle-mobile-action{display:none}
+.vehicle-page .vehicle-gallery-card button:focus-visible,.vehicle-page .vehicle-primary-cta:focus-visible{outline:2px solid #948979;outline-offset:3px}
+@media(max-width:1060px){
+ .vehicle-page .vehicle-layout{grid-template-columns:minmax(0,1fr) 315px;gap:15px}
+ .vehicle-page .vehicle-buybox{padding:22px 18px}
+ .vehicle-page .vehicle-keyfacts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .vehicle-page .vehicle-keyfact:nth-child(2){border-right:0}
+ .vehicle-page .vehicle-keyfact:nth-child(-n+2){border-bottom:1px solid #e5e0d7}
+}
+@media(max-width:780px){
+ .vehicle-page .vehicle-layout{grid-template-columns:1fr;gap:17px}
+ .vehicle-page .vehicle-buybox{position:relative;top:auto;order:-1;padding:22px}
+ .vehicle-page .vehicle-main{display:contents}
+ .vehicle-page .vehicle-gallery-card{order:-2}
+ .vehicle-page .vehicle-section-card{order:1}
+ .vehicle-page .vehicle-photo-stage{height:clamp(300px,62vw,530px)}
+ .vehicle-page .vehicle-keyfacts{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .vehicle-page .vehicle-keyfact{border-bottom:0!important;border-right:1px solid #e5e0d7!important}
+ .vehicle-page .vehicle-keyfact:last-child{border-right:0!important}
+}
+@media(max-width:570px){
+ .vehicle-page .shell{width:calc(100% - 24px)}
+ .vehicle-page .nav{height:66px}
+ .vehicle-page .brand{font-size:10px;letter-spacing:.045em}
+ .vehicle-page .back{padding:9px 10px;font-size:9px}
+ .vehicle-page .vehicle-breadcrumb{padding:17px 0 13px;font-size:10px}
+ .vehicle-page .vehicle-heading{margin-bottom:16px}
+ .vehicle-page .vehicle-heading h1{font-size:31px}
+ .vehicle-page .vehicle-subtitle{font-size:11px}
+ .vehicle-page .vehicle-layout{gap:13px;margin-bottom:35px}
+ .vehicle-page .vehicle-gallery-card{padding:7px;border-radius:12px}
+ .vehicle-page .vehicle-photo-stage{height:315px}
+ .vehicle-page .vehicle-photo-step{height:36px;width:36px;font-size:22px}
+ .vehicle-page .vehicle-photo-step.prev{left:7px}
+ .vehicle-page .vehicle-photo-step.next{right:7px}
+ .vehicle-page .vehicle-photo-count{left:9px;bottom:9px;font-size:9px}
+ .vehicle-page .vehicle-zoom-hint{right:9px;bottom:9px;font-size:9px}
+ .vehicle-page .vehicle-preview-thumb{flex-basis:74px;width:74px;height:60px}
+ .vehicle-page .vehicle-gallery-help{padding:0 3px}
+ .vehicle-page .vehicle-buybox{padding:20px 18px}
+ .vehicle-page .vehicle-buybox .vehicle-price{font-size:32px}
+ .vehicle-page .vehicle-section-card{padding:23px 18px}
+ .vehicle-page .vehicle-section-card h2{font-size:23px}
+ .vehicle-page .vehicle-keyfacts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .vehicle-page .vehicle-keyfact{border-right:1px solid #e5e0d7!important}
+ .vehicle-page .vehicle-keyfact:nth-child(2){border-right:0!important}
+ .vehicle-page .vehicle-keyfact:nth-child(-n+2){border-bottom:1px solid #e5e0d7!important}
+ .vehicle-page .vehicle-specs{grid-template-columns:1fr}
+ .vehicle-page .vehicle-mobile-action{position:sticky;z-index:9;bottom:0;display:flex;align-items:center;justify-content:space-between;gap:9px;padding:10px 12px;background:rgba(242,240,234,.98);border-top:1px solid #d7d0c6;box-shadow:0 -5px 18px rgba(34,40,49,.08)}
+ .vehicle-page .vehicle-mobile-action .mobile-action-price{color:#222831;font:800 16px "Manrope",sans-serif;min-width:0;overflow-wrap:anywhere}
+ .vehicle-page .vehicle-mobile-action .vehicle-primary-cta{width:auto;min-width:155px;min-height:42px;padding:9px 11px;font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+ .vehicle-page .vehicle-hero-button img,.vehicle-page .vehicle-primary-cta{transition:none}
+ .vehicle-page .vehicle-hero-button:hover img,.vehicle-page .vehicle-primary-cta:hover{transform:none}
+}
