@@ -1,6 +1,6 @@
 /* Ficha de usados · diseño de publicación tipo marketplace, identidad SC Car House */
 .vehicle-page{--vd-ink:#222831;--vd-muted:#77746e;--vd-sand:#948979;--vd-line:#e2ded6;--vd-paper:#F2F0EA;background:var(--vd-paper);color:var(--vd-ink)}
-.vehicle-page .shell{width:min(1280px,calc(100% - 48px))}
+.vehicle-page .shell{width:min(1420px,calc(100% - 48px))}
 .vehicle-page .head{position:relative;z-index:5;background:rgba(242,240,234,.97);border-bottom:1px solid #d9d3c9}
 .vehicle-page .nav{height:78px}
 .vehicle-page .brand{font-size:13px;letter-spacing:.09em;font-family:"Oxanium","Manrope",sans-serif;font-weight:700}
@@ -18,8 +18,8 @@
 .vehicle-page .vehicle-tag.sold{background:#e3e4e7;color:#585b62}
 .vehicle-page .vehicle-heading h1{font:700 clamp(32px,3.5vw,49px)/1.12 "Oxanium","Manrope",sans-serif;margin:0;letter-spacing:-.035em;color:#222831}
 .vehicle-page .vehicle-subtitle{margin:9px 0 0;font-size:13px;font-weight:500;line-height:1.55;color:#77746e}
-.vehicle-page .vehicle-layout{display:grid;grid-template-columns:minmax(0,1fr) 354px;align-items:start;gap:22px;margin-bottom:56px}
-.vehicle-page .vehicle-main{min-width:0;display:grid;gap:22px}
+.vehicle-page .vehicle-layout{display:grid;grid-template-columns:minmax(0,1fr) 324px;align-items:start;column-gap:clamp(38px,4.2vw,72px);row-gap:22px;margin-bottom:56px;min-width:0}
+.vehicle-page .vehicle-main{min-width:0;max-width:100%;display:grid;gap:22px}
 .vehicle-page .vehicle-gallery-card,.vehicle-page .vehicle-section-card,.vehicle-page .vehicle-buybox{background:#fff;border:1px solid var(--vd-line);border-radius:15px;box-shadow:0 5px 18px rgba(34,40,49,.04)}
 .vehicle-page .vehicle-gallery-card{padding:12px}
 .vehicle-page .vehicle-photo-stage{height:clamp(340px,40vw,535px);position:relative;background:#f7f7f5;display:flex;align-items:center;justify-content:center;border-radius:10px;overflow:hidden}
@@ -55,7 +55,7 @@
 .vehicle-page .vehicle-spec-row .vehicle-spec-label{margin:0}
 .vehicle-page .vehicle-spec-row b{text-align:right;color:#222831;font-weight:750;overflow-wrap:anywhere}
 .vehicle-page .vehicle-desc{margin:0;color:#55565a;font:500 13px/1.95 "Manrope",sans-serif;white-space:pre-line;overflow-wrap:anywhere}
-.vehicle-page .vehicle-buybox{position:sticky;top:18px;padding:25px 24px 23px}
+.vehicle-page .vehicle-buybox{position:sticky;top:18px;justify-self:end;min-width:0;width:100%;max-width:324px;padding:25px 24px 23px}
 .vehicle-page .vehicle-buybox .vehicle-stock-label{display:inline-flex;align-items:center;gap:7px;color:#706b60;font-size:10px;font-weight:800;letter-spacing:.045em;text-transform:uppercase}
 .vehicle-page .vehicle-stock-label:before{content:"";width:7px;height:7px;border-radius:50%;background:#948979}
 .vehicle-page .vehicle-buybox h2{font:750 20px/1.2 "Oxanium","Manrope",sans-serif;color:#222831;letter-spacing:-.02em;margin:17px 0 9px}
@@ -75,15 +75,16 @@
 .vehicle-page .vehicle-mobile-action{display:none}
 .vehicle-page .vehicle-gallery-card button:focus-visible,.vehicle-page .vehicle-primary-cta:focus-visible{outline:2px solid #948979;outline-offset:3px}
 @media(max-width:1060px){
- .vehicle-page .vehicle-layout{grid-template-columns:minmax(0,1fr) 315px;gap:15px}
+ .vehicle-page .vehicle-layout{grid-template-columns:minmax(0,1fr) 295px;column-gap:26px;row-gap:17px}
+ .vehicle-page .vehicle-buybox{max-width:295px}
  .vehicle-page .vehicle-buybox{padding:22px 18px}
  .vehicle-page .vehicle-keyfacts{grid-template-columns:repeat(2,minmax(0,1fr))}
  .vehicle-page .vehicle-keyfact:nth-child(2){border-right:0}
  .vehicle-page .vehicle-keyfact:nth-child(-n+2){border-bottom:1px solid #e5e0d7}
 }
-@media(max-width:780px){
- .vehicle-page .vehicle-layout{grid-template-columns:1fr;gap:17px}
- .vehicle-page .vehicle-buybox{position:relative;top:auto;order:-1;padding:22px}
+@media(max-width:980px){
+ .vehicle-page .vehicle-layout{grid-template-columns:minmax(0,1fr);gap:17px}
+ .vehicle-page .vehicle-buybox{position:relative;top:auto;order:-1;max-width:none;justify-self:stretch;padding:22px}
  .vehicle-page .vehicle-main{display:contents}
  .vehicle-page .vehicle-gallery-card{order:-2}
  .vehicle-page .vehicle-section-card{order:1}
