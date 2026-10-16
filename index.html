@@ -186,6 +186,7 @@ async function searchZeroModelImage(brand,model){
 }
 
 let zeroPreviewLoadTimer=null;
+const zeroLoadedPreviewImages=new Map();
 function showZeroPreviewError(requestId,message){
  if(requestId!==zeroPreviewRequest)return;
  clearTimeout(zeroPreviewLoadTimer);
@@ -203,6 +204,15 @@ function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false)
  zeroPreviewSource.hidden=true;zeroPreviewCredit.textContent='';
  if(!photo){showZeroPreviewError(requestId,'No encontramos una foto disponible de este modelo.');return}
  const urls=[photo.url,photo.fallbackUrl].filter((value,index,all)=>typeof value==='string'&&(value.startsWith('https://')||(value.startsWith('/')&&!value.startsWith('//')))&&all.indexOf(value)===index);
+ const cachedUrl=zeroLoadedPreviewImages.get(brand+'|'+model);
+ if(cachedUrl&&urls.includes(cachedUrl)){
+  zeroPreviewImage.alt='Foto ilustrativa de '+brand+' '+model;
+  zeroPreviewImage.src=cachedUrl;zeroPreviewImage.hidden=false;
+  zeroPreviewStatus.hidden=true;
+  zeroPreviewSource.href=photo.source||cachedUrl;zeroPreviewSource.hidden=false;
+  zeroPreviewCredit.textContent=photo.credit||'Imagen ilustrativa · Consultá la versión disponible';
+  return
+ }
  let nextUrl=0;
  const tryNext=()=>{
   if(requestId!==zeroPreviewRequest)return;
@@ -231,6 +241,7 @@ function loadZeroPreviewPhoto(photo,requestId,brand,model,alreadySearched=false)
    if(requestId!==zeroPreviewRequest)return;
    if(!success){tryNext();return}
    zeroPreviewImage.alt='Foto ilustrativa de '+brand+' '+model;
+   zeroLoadedPreviewImages.set(brand+'|'+model,url);
    zeroPreviewImage.src=url;
    zeroPreviewImage.hidden=false;
    zeroPreviewStatus.hidden=true;
@@ -269,42 +280,69 @@ function resetZeroModelPreview(){
  clearTimeout(zeroPreviewTimer);clearTimeout(zeroPreviewLoadTimer);++zeroPreviewRequest;
  zeroPreview.hidden=true;zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
 }
-zeroBrandsBox.addEventListener('click',resetZeroModelPreview);
+// Evita parpadeos entre botones y mantiene la foto del modelo seleccionado.
+let zeroPreviewHoverTimer=null,zeroPreviewRestoreTimer=null;
+function queueZeroPreviewRestore(){
+ clearTimeout(zeroPreviewHoverTimer);
+ clearTimeout(zeroPreviewRestoreTimer);
+ zeroPreviewRestoreTimer=setTimeout(()=>{
+  const hovered=zeroModelsBox.querySelector('.zero-model:hover');
+  if(hovered){showZeroModelPreview(hovered.dataset.zeroModel);return}
+  restoreZeroModelPreview()
+ },240)
+}
+zeroBrandsBox.addEventListener('click',()=>{
+ clearTimeout(zeroPreviewHoverTimer);clearTimeout(zeroPreviewRestoreTimer);
+ resetZeroModelPreview()
+});
 zeroModelsBox.addEventListener('pointerover',e=>{
+ if(e.pointerType==='touch')return;
  const btn=e.target.closest('.zero-model');
- if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+ if(!btn||!zeroModelsBox.contains(btn))return;
+ if(e.relatedTarget&&btn.contains(e.relatedTarget))return;
+ clearTimeout(zeroPreviewRestoreTimer);clearTimeout(zeroPreviewHoverTimer);
+ const model=btn.dataset.zeroModel;
+ zeroPreviewHoverTimer=setTimeout(()=>{
+  if(btn.isConnected&&btn.matches(':hover'))showZeroModelPreview(model)
+ },95)
+});
+zeroModelsBox.addEventListener('pointerout',e=>{
+ if(e.pointerType==='touch')return;
+ const btn=e.target.closest('.zero-model');
+ if(!btn||!zeroModelsBox.contains(btn))return;
+ if(e.relatedTarget&&btn.contains(e.relatedTarget))return;
+ // Al cruzar directamente a otro modelo, el nuevo pointerover se encarga.
+ const next=e.relatedTarget?.closest?.('.zero-model');
+ if(next&&zeroModelsBox.contains(next))return;
+ queueZeroPreviewRestore()
 });
 zeroModelsBox.addEventListener('focusin',e=>{
  const btn=e.target.closest('.zero-model');
- if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+ // Clics con mouse no deben competir con los eventos hover.
+ if(btn&&zeroModelsBox.contains(btn)&&btn.matches(':focus-visible')){
+  clearTimeout(zeroPreviewHoverTimer);clearTimeout(zeroPreviewRestoreTimer);
+  showZeroModelPreview(btn.dataset.zeroModel)
+ }
+});
+zeroModelsBox.addEventListener('focusout',e=>{
+ const btn=e.target.closest('.zero-model');
+ if(!btn||!zeroModelsBox.contains(btn))return;
+ const next=e.relatedTarget?.closest?.('.zero-model');
+ if(next&&zeroModelsBox.contains(next))return;
+ queueZeroPreviewRestore()
 });
 zeroModelsBox.addEventListener('click',e=>{
  const btn=e.target.closest('.zero-model');
- if(btn&&zeroModelsBox.contains(btn))showZeroModelPreview(btn.dataset.zeroModel)
+ if(btn&&zeroModelsBox.contains(btn)){
+  clearTimeout(zeroPreviewHoverTimer);clearTimeout(zeroPreviewRestoreTimer);
+  showZeroModelPreview(btn.dataset.zeroModel)
+ }
 });
-// La foto en hover es temporal: al salir se vuelve al modelo elegido,
-// o se oculta si todavía no se seleccionó ninguno.
 function restoreZeroModelPreview(){
  const selected=zeroModelsBox.querySelector('.zero-model.selected');
  if(selected&&openZeroBrand)showZeroModelPreview(selected.dataset.zeroModel);
  else resetZeroModelPreview()
 }
-zeroModelsBox.addEventListener('pointerout',e=>{
- const btn=e.target.closest('.zero-model');
- if(!btn||!zeroModelsBox.contains(btn))return;
- if(e.relatedTarget&&btn.contains(e.relatedTarget))return;
- // Pasar directamente a otro modelo dispara su propio pointerover.
- if(e.relatedTarget&&e.relatedTarget.closest&&e.relatedTarget.closest('.zero-model'))return;
- restoreZeroModelPreview()
-});
-zeroModelsBox.addEventListener('focusout',e=>{
- const btn=e.target.closest('.zero-model');
- if(!btn||!zeroModelsBox.contains(btn))return;
- if(e.relatedTarget&&e.relatedTarget.closest&&e.relatedTarget.closest('.zero-model'))return;
- const hovered=zeroModelsBox.querySelector('.zero-model:hover');
- if(hovered)showZeroModelPreview(hovered.dataset.zeroModel);
- else restoreZeroModelPreview()
-});
 
 const zeroVisual=document.getElementById('zeroVisual'),zeroSlides=[...zeroVisual.querySelectorAll('.zero-slide')],zeroDots=[...document.querySelectorAll('#zeroDots button')],zeroCaption=document.getElementById('zeroSlideCaption');let zeroSlideIndex=0,zeroAutoTimer=null;
 function showZeroSlide(index,manual=false){if(!zeroSlides.length)return;zeroSlideIndex=(index+zeroSlides.length)%zeroSlides.length;zeroSlides.forEach((slide,i)=>{slide.classList.toggle('active',i===zeroSlideIndex);slide.setAttribute('aria-hidden',i===zeroSlideIndex?'false':'true')});zeroDots.forEach((dot,i)=>{dot.classList.toggle('active',i===zeroSlideIndex);dot.setAttribute('aria-pressed',i===zeroSlideIndex?'true':'false')});zeroCaption.textContent=zeroSlides[zeroSlideIndex].dataset.caption;if(manual&&zeroAutoTimer){clearInterval(zeroAutoTimer);zeroAutoTimer=null}}
