@@ -24,13 +24,13 @@
 .stock-carousel-wrap .stock-arrow svg{width:22px;height:22px;display:block;transition:transform .22s ease}
 .stock-carousel-wrap .stock-arrow-prev{left:-24px}
 .stock-carousel-wrap .stock-arrow-next{
- right:-28px;width:60px;height:60px;
+ right:67px;width:60px;height:60px;
  background:linear-gradient(135deg,#222831 0%,#393E46 100%);
  border-color:#222831;color:#F2F0EA;
  box-shadow:0 12px 28px rgba(34,40,49,.28),0 0 0 8px rgba(148,137,121,.13);
 }
 .stock-carousel-wrap .stock-arrow-next::before{
- content:"Más autos";position:absolute;right:72px;top:50%;transform:translateY(-50%);
+ content:"Más autos";position:absolute;left:72px;right:auto;top:50%;transform:translateY(-50%);
  white-space:nowrap;padding:10px 13px;border-radius:999px;
  background:rgba(34,40,49,.94);color:#F2F0EA;
  font:800 9px/1 "Manrope",Arial,sans-serif;letter-spacing:.09em;text-transform:uppercase;
@@ -53,8 +53,8 @@
 @media(max-width:900px){
  .stock-carousel-wrap .stock-arrow{width:46px;height:46px}
  .stock-carousel-wrap .stock-arrow-prev{left:-10px}
- .stock-carousel-wrap .stock-arrow-next{right:-10px;width:52px;height:52px}
- .stock-carousel-wrap .stock-arrow-next::before{right:62px;padding:8px 10px;font-size:8px}
+ .stock-carousel-wrap .stock-arrow-next{right:65px;width:52px;height:52px}
+ .stock-carousel-wrap .stock-arrow-next::before{left:62px;right:auto;padding:8px 10px;font-size:8px}
 }
 @media(max-width:620px){
  .stock-title-meta{gap:9px;margin-top:9px}
