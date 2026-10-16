@@ -7,13 +7,13 @@
 <div class="zero-step-title"><span>01</span><div><b>Elegí la marca</b><small>Seleccioná la que estás buscando</small></div></div>
 <div class="zero-brands" id="zeroBrands"><button class="zero-brand-chip" type="button" data-zero-brand="Toyota" aria-label="Toyota" title="Toyota"><img src="https://cdn.simpleicons.org/toyota/EB0A1E" alt="" loading="lazy"><span>Toyota</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Volkswagen" aria-label="Volkswagen" title="Volkswagen"><img src="https://cdn.simpleicons.org/volkswagen/001E50" alt="" loading="lazy"><span>Volkswagen</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Ford" aria-label="Ford" title="Ford"><img src="https://cdn.simpleicons.org/ford/003478" alt="" loading="lazy"><span>Ford</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Chevrolet" aria-label="Chevrolet" title="Chevrolet"><img src="https://cdn.simpleicons.org/chevrolet/CD9834" alt="" loading="lazy"><span>Chevrolet</span></button><button class="zero-brand-chip" type="button" data-zero-brand="Peugeot" aria-label="Peugeot" title="Peugeot"><img src="https://cdn.simpleicons.org/peugeot/1D4ED8" alt="" loading="lazy"><span>Peugeot</span></button><button class="zero-brand-chip zero-brand-more" type="button" data-zero-brand="Otra"><span class="zero-more-icon" aria-hidden="true">+</span><span>Otra marca</span></button></div>
 <div class="zero-manual-choice" id="zeroManualChoice" hidden><p class="zero-manual-title">¿Qué marca y modelo buscás?</p><div class="zero-manual-grid"><label class="zero-field">Marca<input id="zeroManualBrand" type="text" placeholder="Ej. Nissan" autocomplete="off"></label><label class="zero-field">Modelo<input id="zeroManualModel" type="text" placeholder="Ej. Frontier" autocomplete="off"></label></div><p class="zero-manual-help">Al completar ambos campos, se habilita el paso 2.</p></div><div class="zero-models-wrap" id="zeroModelsWrap"><div class="zero-models-head"><b id="zeroModelsBrand"></b><small>Modelos para consultar</small></div><div class="zero-models" id="zeroModels"></div>
-<div class="zero-car-preview" id="zeroCarPreview" hidden>
+<div class="zero-car-preview" id="zeroCarPreview">
   <div class="zero-car-preview-photo">
     <img id="zeroCarPreviewImage" alt="" hidden loading="lazy">
-    <div id="zeroCarPreviewStatus" class="zero-car-preview-status">Buscando una imagen del vehículo...</div>
+    <div id="zeroCarPreviewStatus" class="zero-car-preview-status">Pasá el cursor por un modelo para ver su foto.</div>
   </div>
   <div class="zero-car-preview-details">
-    <div><span class="zero-car-preview-eyebrow">VISTA PREVIA DEL MODELO</span><strong id="zeroCarPreviewTitle"></strong><span class="zero-car-preview-note">Imagen ilustrativa. La versión final puede variar.</span></div>
+    <div><span class="zero-car-preview-eyebrow">VISTA PREVIA DEL MODELO</span><strong id="zeroCarPreviewTitle">Explorá los modelos</strong><span class="zero-car-preview-note">Imagen ilustrativa. La versión final puede variar.</span></div>
     <a id="zeroCarPreviewSource" class="zero-car-preview-source" target="_blank" rel="noopener noreferrer" hidden>Fuente de la foto ↗</a>
   </div>
   <small id="zeroCarPreviewCredit" class="zero-car-preview-credit"></small>
@@ -278,7 +278,12 @@ function showZeroModelPreview(model){
 }
 function resetZeroModelPreview(){
  clearTimeout(zeroPreviewTimer);clearTimeout(zeroPreviewLoadTimer);++zeroPreviewRequest;
- zeroPreview.hidden=true;zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
+ zeroPreview.hidden=false;zeroPreviewImage.hidden=true;zeroPreviewImage.removeAttribute('src');
+ zeroPreviewStatus.hidden=false;
+ zeroPreviewStatus.textContent='Pasá el cursor por un modelo para ver su foto.';
+ zeroPreviewTitle.textContent='Explorá los modelos';
+ zeroPreviewSource.hidden=true;zeroPreviewSource.removeAttribute('href');
+ zeroPreviewCredit.textContent='';
 }
 // Evita parpadeos entre botones y mantiene la foto del modelo seleccionado.
 let zeroPreviewHoverTimer=null,zeroPreviewRestoreTimer=null;
