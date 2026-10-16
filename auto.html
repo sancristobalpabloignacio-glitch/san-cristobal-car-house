@@ -2,7 +2,7 @@
 :root{--ink:#111210;--paper:#f8f6f0;--cream:#f1eee5;--line:#d9d5cb;--muted:#73746d;--acid:#d9ff46}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,sans-serif}a{text-decoration:none;color:inherit}.shell{width:min(1180px,calc(100% - 40px));margin:auto}.head{background:var(--ink);color:#fff}.nav{height:76px;display:flex;align-items:center;justify-content:space-between}.brand{font-size:12px;font-weight:800;letter-spacing:.16em}.back{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c5c4ba}.top{padding:60px 0 30px;display:flex;justify-content:space-between;gap:30px;align-items:end}.top h1{font:400 clamp(45px,6vw,72px)/.95 Georgia,serif;margin:0;letter-spacing:-.045em}.top p{color:var(--muted)}.price{font-size:28px;font-weight:800}.gallery{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:260px 260px;gap:6px}.shot{position:relative;overflow:hidden;background:#1b1c19;cursor:zoom-in}.shot:first-child{grid-row:1/3}.shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .25s}.shot:hover img{transform:scale(1.015)}.all-badge{position:absolute;right:14px;bottom:14px;background:rgba(17,18,16,.88);color:#fff;border:1px solid rgba(255,255,255,.35);padding:10px 12px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.detail{display:grid;grid-template-columns:1fr 340px;gap:70px;padding:60px 0 90px}.desc{font-size:16px;line-height:1.75;color:#5d5e57}.specs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:35px}.spec{padding:20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.spec span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:8px}.contact{background:#eae7de;padding:28px;height:max-content;position:sticky;top:20px}.contact h2{font:400 30px Georgia,serif;margin:0}.btn{display:flex;margin-top:22px;background:var(--ink);color:#fff;min-height:50px;align-items:center;justify-content:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.state{padding:80px 0;font:400 34px Georgia,serif}
 .lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,9,8,.97);display:none;flex-direction:column;color:#fff;overflow:hidden}.lightbox.open{display:flex}.lb-top{height:60px;flex:0 0 60px;display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid #333}.lb-title{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#c2c2b8}.lb-close{background:none;border:0;color:#fff;font-size:28px;cursor:pointer}.lb-main{position:relative;flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;padding:22px 80px}.lb-main img{display:block;width:auto;height:auto;max-width:min(82vw,1400px);max-height:calc(100vh - 195px);object-fit:contain}.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border:1px solid #555;background:rgba(0,0,0,.25);color:#fff;font-size:25px;cursor:pointer}.lb-prev{left:18px}.lb-next{right:18px}.lb-bottom{flex:0 0 105px;border-top:1px solid #333;padding:10px 18px 14px;background:#0b0c0a}.lb-count{text-align:center;font-size:10px;color:#aaa;margin-bottom:8px}.thumbs{display:flex;gap:8px;overflow-x:auto;justify-content:center;max-width:100%;padding-bottom:2px}.thumbs button{padding:0;border:2px solid transparent;background:none;cursor:pointer;flex:0 0 auto}.thumbs button.active{border-color:var(--acid)}.thumbs img{width:78px;height:55px;object-fit:cover;display:block}
 @media(max-width:800px){.top{display:block}.price{margin-top:20px}.gallery{grid-template-columns:1fr 1fr;grid-template-rows:250px 130px}.shot:first-child{grid-column:1/3;grid-row:auto}.detail{grid-template-columns:1fr}.contact{position:static}.specs{grid-template-columns:1fr 1fr}.lb-main{padding:14px 52px}.lb-main img{max-width:88vw;max-height:calc(100vh - 190px)}.thumbs{justify-content:flex-start}}@media(max-width:520px){.shell{width:calc(100% - 28px)}.gallery{grid-template-columns:1fr;grid-template-rows:300px}.shot:first-child{grid-column:auto}.shot:nth-child(n+2){display:none}.all-badge{display:block}.lb-top{height:54px;flex-basis:54px;padding:0 16px}.lb-main{padding:10px 40px}.lb-main img{max-width:86vw;max-height:calc(100vh - 175px)}.lb-nav{width:36px;height:36px}.lb-prev{left:6px}.lb-next{right:6px}.lb-bottom{flex-basis:92px;padding:8px 10px 10px}.thumbs img{width:64px;height:46px}}
-</style><link rel="stylesheet" href="/backoffice-theme.css"></head><body class="vehicle-page"><header class="head"><div class="shell nav"><a href="/" class="brand">SAN CRISTÓBAL · CAR HOUSE</a><a href="/#stock" class="back">← Volver al inventario</a></div></header><main class="shell" id="app"><div class="state">Cargando vehículo…</div></main>
+</style><link rel="stylesheet" href="/backoffice-theme.css"><link rel="stylesheet" href="/vehicle-detail.css"></head><body class="vehicle-page"><header class="head"><div class="shell nav"><a href="/" class="brand">SAN CRISTÓBAL · CAR HOUSE</a><a href="/#stock" class="back">← Volver al inventario</a></div></header><main class="shell" id="app"><div class="state">Cargando vehículo…</div></main>
 <div id="lightbox" class="lightbox" aria-hidden="true"><div class="lb-top"><div id="lbTitle" class="lb-title"></div><button id="lbClose" class="lb-close" aria-label="Cerrar">×</button></div><div class="lb-main"><button id="lbPrev" class="lb-nav lb-prev" aria-label="Anterior">‹</button><img id="lbImg" alt=""><button id="lbNext" class="lb-nav lb-next" aria-label="Siguiente">›</button></div><div class="lb-bottom"><div id="lbCount" class="lb-count"></div><div id="thumbs" class="thumbs"></div></div></div>
 <script type="module">
 import{createClient}from'https://esm.sh/@supabase/supabase-js@2.117.1';
@@ -14,6 +14,133 @@ function openLightbox(i=0){if(!allImages.length)return;current=i;document.queryS
 function closeLightbox(){document.querySelector('#lightbox').classList.remove('open');document.querySelector('#lightbox').setAttribute('aria-hidden','true');document.body.style.overflow=''}
 function paintLightbox(){document.querySelector('#lbImg').src=allImages[current];document.querySelector('#lbCount').textContent=`Foto ${current+1} de ${allImages.length}`;document.querySelectorAll('[data-thumb]').forEach((b,i)=>b.classList.toggle('active',i===current));document.querySelector('#lbPrev').style.visibility=allImages.length>1?'visible':'hidden';document.querySelector('#lbNext').style.visibility=allImages.length>1?'visible':'hidden'}
 function step(d){if(!allImages.length)return;current=(current+d+allImages.length)%allImages.length;paintLightbox()}
-if(error||!c){document.querySelector('#app').innerHTML='<div class="state">La publicación no está disponible.</div>'}else{document.title=`${c.brand} ${c.model} | San Cristóbal Car House`;allImages=uniqueImages(c);const visible=allImages.slice(0,3);const wa=`https://wa.me/5491138487025?text=${encodeURIComponent(`Hola, quiero consultar por el ${c.brand} ${c.model} ${c.version||''} ${c.year} publicado en la web.`)}`;document.querySelector('#app').innerHTML=`<section class="top"><div><p>${c.status==='reserved'?'RESERVADO · ':''}${c.year}${c.version?' · '+c.version:''}</p><h1>${c.brand} ${c.model}</h1></div><div class="price">${money(c)}</div></section>${allImages.length?`<div class="gallery">${visible.map((x,i)=>`<div class="shot" data-photo="${i}"><img src="${x}" alt="${c.brand} ${c.model} - foto ${i+1}">${i===visible.length-1&&allImages.length>3?`<span class="all-badge">Ver todas · ${allImages.length}</span>`:''}</div>`).join('')}</div>`:''}<section class="detail"><div><p class="desc">${c.description||'Consultanos por más información sobre esta unidad.'}</p><div class="specs">${[['Kilómetros',km(c.kilometers)],['Motor',c.engine||'—'],['Transmisión',c.transmission||'—'],['Combustible',c.fuel||'—'],['Color',c.color||'—'],['Ubicación',c.location||'Buenos Aires']].map(x=>`<div class="spec"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')}</div></div><aside class="contact"><h2>¿Te interesa esta unidad?</h2><p>Escribinos y coordinamos para verla o resolver cualquier consulta.</p><a class="btn" id="waInquiry" href="${wa}" target="_blank">Consultar por WhatsApp</a></aside></section>`;track('vehicle_view',c.id,'detail');document.querySelector('#waInquiry').onclick=()=>track('whatsapp_click',c.id,'vehicle_detail');document.querySelectorAll('[data-photo]').forEach(el=>el.onclick=()=>openLightbox(Number(el.dataset.photo)));document.querySelector('#lbTitle').textContent=`${c.brand} ${c.model} · ${c.year}`;document.querySelector('#thumbs').innerHTML=allImages.map((x,i)=>`<button data-thumb="${i}" aria-label="Ver foto ${i+1}"><img src="${x}" alt=""></button>`).join('');document.querySelectorAll('[data-thumb]').forEach(b=>b.onclick=()=>{current=Number(b.dataset.thumb);paintLightbox()})}
+const esc=x=>String(x??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+const safePhoto=x=>{try{const u=new URL(String(x));return u.protocol==='https:'||u.protocol==='http:'?u.href:''}catch{return ''}};
+const transmissionText=x=>String(x||'—');
+let pagePhotoIndex=0;
+function paintProductPhoto(i){
+ if(!allImages.length)return;
+ pagePhotoIndex=(i+allImages.length)%allImages.length;
+ const main=document.querySelector('#vehicleHeroPhoto');
+ if(main){main.src=allImages[pagePhotoIndex];main.alt=`${c.brand} ${c.model} - foto ${pagePhotoIndex+1}`}
+ const count=document.querySelector('#vehiclePhotoCount');
+ if(count)count.textContent=`${pagePhotoIndex+1} / ${allImages.length} fotos`;
+ document.querySelectorAll('[data-preview-thumb]').forEach(el=>{
+  const active=Number(el.dataset.previewThumb)===pagePhotoIndex;
+  el.classList.toggle('active',active);
+  el.setAttribute('aria-pressed',String(active));
+ });
+}
+if(error||!c){
+ document.querySelector('#app').innerHTML='<div class="state">La publicación no está disponible. <a href="/#stock">Volver al inventario</a></div>';
+}else{
+ document.title=`${c.brand} ${c.model} ${c.year} | San Cristóbal Car House`;
+ allImages=uniqueImages(c).map(safePhoto).filter(Boolean);
+ const title=`${esc(c.brand)} ${esc(c.model)}`;
+ const priceLabel=money(c);
+ const year=esc(c.year);
+ const condition=c.vehicle_category==='zero_km'?'0 km':'Usado';
+ const availability=c.status==='reserved'?'Reservado':c.status==='sold'?'Vendido':null;
+ const wa=`https://wa.me/5491138487025?text=${encodeURIComponent(`Hola, quiero consultar por el ${c.brand} ${c.model} ${c.version||''} ${c.year} publicado en la web.`)}`;
+ const summaryItems=[
+  ['Año',esc(c.year)],['Kilómetros',esc(km(c.kilometers))],
+  ['Combustible',esc(c.fuel||'A consultar')],['Transmisión',esc(c.transmission||'A consultar')]
+ ];
+ const specs=[
+  ['Marca',c.brand],['Modelo',c.model],['Versión',c.version],['Año',c.year],
+  ['Kilometraje',km(c.kilometers)],['Motor',c.engine],['Transmisión',c.transmission],
+  ['Combustible',c.fuel],['Color',c.color],['Ubicación',c.location||'Buenos Aires']
+ ].filter(([_,value])=>value!==null&&value!==undefined&&String(value).trim()!=='');
+ const chatIcon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>';
+ const imageSection=allImages.length?`
+  <section class="vehicle-gallery-card" aria-label="Fotos del vehículo">
+   <div class="vehicle-photo-stage">
+    <button type="button" class="vehicle-hero-button" id="vehicleMainPhoto" aria-label="Ampliar foto del vehículo">
+      <img id="vehicleHeroPhoto" src="${esc(allImages[0])}" alt="${title} - foto 1" fetchpriority="high">
+    </button>
+    ${allImages.length>1?`<button type="button" class="vehicle-photo-step prev" id="vehiclePrev" aria-label="Foto anterior">‹</button><button type="button" class="vehicle-photo-step next" id="vehicleNext" aria-label="Foto siguiente">›</button>`:''}
+    <span class="vehicle-photo-count" id="vehiclePhotoCount">1 / ${allImages.length} fotos</span>
+    <span class="vehicle-zoom-hint">⌕ &nbsp; Ampliar foto</span>
+   </div>
+   ${allImages.length>1?`<div class="vehicle-preview-thumbs" aria-label="Elegir foto">
+     ${allImages.slice(0,9).map((url,i)=>`<button class="vehicle-preview-thumb ${i===0?'active':''}" type="button" data-preview-thumb="${i}" aria-pressed="${i===0}" aria-label="Mostrar foto ${i+1}"><img loading="lazy" src="${esc(url)}" alt=""></button>`).join('')}
+     ${allImages.length>9?`<button type="button" class="vehicle-preview-thumb vehicle-preview-more" id="vehicleMore">+${allImages.length-9} fotos</button>`:''}
+    </div>`:''}
+   <div class="vehicle-gallery-help"><span>Fotos de la unidad publicada</span><button type="button" id="vehicleAllPhotos">Ver todas las fotos ↗</button></div>
+  </section>`:
+  '<section class="vehicle-gallery-card"><div class="vehicle-gallery-empty"><strong>Fotos próximamente</strong><span>Consultanos por imágenes de esta unidad.</span></div></section>';
+ document.querySelector('#app').innerHTML=`
+  <nav class="vehicle-breadcrumb" aria-label="Ubicación">
+    <a href="/">Inicio</a><span class="separator">/</span>
+    <a href="/#stock">Usados</a><span class="separator">/</span>
+    <span aria-current="page">${title}</span>
+  </nav>
+  <div class="vehicle-heading">
+    <div>
+      <div class="vehicle-eyebrows">
+       <span class="vehicle-tag">${condition}</span>
+       ${availability?`<span class="vehicle-tag ${c.status==='reserved'?'reserved':'sold'}">${availability}</span>`:''}
+       <span class="vehicle-tag outline">${year}</span>
+      </div>
+      <h1>${title}</h1>
+      <p class="vehicle-subtitle">${esc(c.version||'')}${c.version?' · ':''}${esc(km(c.kilometers))}${c.location?' · '+esc(c.location):''}</p>
+    </div>
+  </div>
+  <div class="vehicle-layout">
+    <div class="vehicle-main">
+     ${imageSection}
+     <section class="vehicle-section-card" aria-labelledby="vehicleDetailHeading">
+      <span class="vehicle-section-kicker">CONOCÉ EL VEHÍCULO</span>
+      <h2 id="vehicleDetailHeading">Características principales</h2>
+      <div class="vehicle-keyfacts">
+       ${summaryItems.map(([label,value])=>`<div class="vehicle-keyfact"><small>${label}</small><strong>${value}</strong></div>`).join('')}
+      </div>
+      <div class="vehicle-specs">
+       ${specs.map(([label,value])=>`<div class="vehicle-spec-row"><span class="vehicle-spec-label">${label}</span><b>${esc(value)}</b></div>`).join('')}
+      </div>
+     </section>
+     <section class="vehicle-section-card" aria-labelledby="vehicleDescriptionHeading">
+      <span class="vehicle-section-kicker">MÁS DETALLES</span>
+      <h2 id="vehicleDescriptionHeading">Descripción</h2>
+      <p class="vehicle-desc">${esc(c.description||'Consultanos por más información sobre esta unidad, su estado y disponibilidad.')}</p>
+     </section>
+    </div>
+    <aside class="vehicle-buybox" aria-label="Precio y consulta">
+     <span class="vehicle-stock-label">${c.status==='reserved'?'Unidad reservada':c.status==='sold'?'Unidad vendida':'Publicación de San Cristóbal'}</span>
+     <h2>${title}</h2>
+     <div class="vehicle-price">${esc(priceLabel)}</div>
+     <p class="vehicle-price-note">${c.price==null?'Consultanos para conocer el precio de esta unidad.':'Precio publicado de referencia. Consultá por disponibilidad y condiciones.'}</p>
+     <hr class="vehicle-buybox-rule">
+     <div class="vehicle-buybox-summary">
+       <div><span>Año</span><b>${year}</b></div>
+       <div><span>Kilómetros</span><b>${esc(km(c.kilometers))}</b></div>
+       <div><span>Transmisión</span><b>${esc(transmissionText(c.transmission))}</b></div>
+       ${c.location?`<div><span>Ubicación</span><b>${esc(c.location)}</b></div>`:''}
+     </div>
+     <hr class="vehicle-buybox-rule">
+     <a id="waInquiry" data-wa-inquiry class="vehicle-primary-cta" href="${wa}" target="_blank" rel="noopener noreferrer">${chatIcon} Consultar por WhatsApp</a>
+     <p class="vehicle-buybox-contact">Consultá directamente por esta unidad y coordiná una visita.</p>
+     <div class="vehicle-support"><strong>Atención personalizada</strong>Te respondemos sobre el estado del vehículo, las características y cómo coordinar para verlo.</div>
+    </aside>
+  </div>
+  <div class="vehicle-mobile-action" aria-label="Consultar publicación">
+    <span class="mobile-action-price">${esc(priceLabel)}</span>
+    <a id="waMobile" data-wa-inquiry class="vehicle-primary-cta" href="${wa}" target="_blank" rel="noopener noreferrer">${chatIcon} Consultar</a>
+  </div>
+ `;
+ track('vehicle_view',c.id,'detail');
+ document.querySelectorAll('[data-wa-inquiry]').forEach(el=>el.addEventListener('click',()=>track('whatsapp_click',c.id,'vehicle_detail')));
+ document.querySelector('#lbTitle').textContent=`${c.brand} ${c.model} · ${c.year}`;
+ document.querySelector('#thumbs').innerHTML=allImages.map((url,i)=>`<button data-thumb="${i}" aria-label="Ver foto ${i+1}"><img src="${esc(url)}" alt=""></button>`).join('');
+ document.querySelectorAll('[data-thumb]').forEach(btn=>btn.onclick=()=>{current=Number(btn.dataset.thumb);paintLightbox()});
+ if(allImages.length){
+  document.querySelector('#vehicleMainPhoto').onclick=()=>openLightbox(pagePhotoIndex);
+  document.querySelector('#vehicleAllPhotos').onclick=()=>openLightbox(pagePhotoIndex);
+  document.querySelector('#vehiclePrev')?.addEventListener('click',()=>paintProductPhoto(pagePhotoIndex-1));
+  document.querySelector('#vehicleNext')?.addEventListener('click',()=>paintProductPhoto(pagePhotoIndex+1));
+  document.querySelectorAll('[data-preview-thumb]').forEach(btn=>btn.onclick=()=>paintProductPhoto(Number(btn.dataset.previewThumb)));
+  document.querySelector('#vehicleMore')?.addEventListener('click',()=>openLightbox(9));
+ }
+}
 document.querySelector('#lbClose').onclick=closeLightbox;document.querySelector('#lbPrev').onclick=()=>step(-1);document.querySelector('#lbNext').onclick=()=>step(1);document.querySelector('#lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeLightbox()});document.addEventListener('keydown',e=>{if(!document.querySelector('#lightbox').classList.contains('open'))return;if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1)});let touchX=null;document.querySelector('#lbImg').addEventListener('touchstart',e=>{touchX=e.touches[0].clientX},{passive:true});document.querySelector('#lbImg').addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>45)step(dx>0?-1:1);touchX=null},{passive:true});
 </script></body></html>
