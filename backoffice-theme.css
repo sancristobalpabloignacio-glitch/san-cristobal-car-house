@@ -1,0 +1,92 @@
+/* Identidad compartida de San Cristóbal · Car House
+   Paleta del sitio principal: carbón #222831, arena #948979, marfil #F2F0EA. */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oxanium:wght@400;500;600;700&display=swap');
+:root{
+ --ink:#222831;--paper:#F2F0EA;--panel:#FBFAF7;--line:#D4CFC4;
+ --muted:#6E6C65;--stone:#DAD5CB;--olive:#948979;--acid:#948979;
+ --cream:#E8E3D9;--white:#fff;--danger:#A33;--sand:#948979;
+}
+body{background:var(--paper);color:var(--ink);font-family:"Manrope",Arial,sans-serif}
+button,input,select,textarea{font-family:"Manrope",Arial,sans-serif}
+:focus-visible{outline:2px solid #948979;outline-offset:3px}
+.brand{color:var(--ink);font-weight:800;letter-spacing:.105em}
+:is(.title h1,.top h1,.form-head h2,.login h1,.section h2,.formbox h2,.contact h2){
+ font-family:"Oxanium","Manrope",Arial,sans-serif;font-weight:600;letter-spacing:-.04em;
+}
+a:hover{color:#665C50}
+:is(.head,.panel,.metric,.section,.formbox,.report-row,.listing,.offer-card,.channel-card){
+ border-color:var(--line);
+}
+:is(.metric,.section,.formbox,.report-row,.listing,.offer-card,.channel-card){background:#fff}
+:is(.metric,.section,.formbox,.report-row,.listing,.offer-card,.channel-card,.panel){border-radius:10px}
+:is(.btn,.primary,.report-btn.primary){background:#222831;color:#F2F0EA;border-color:#222831}
+:is(.btn,.primary,.report-btn.primary):hover{background:#393E46;color:#fff}
+:is(.btn.alt,.secondary,.report-btn:not(.primary),.mini){background:#fff;color:#222831;border:1px solid var(--line)}
+:is(.btn.alt,.secondary,.report-btn:not(.primary),.mini):hover{background:#F2F0EA;color:#222831}
+:is(.table th,.table td,.event,.chart){border-color:var(--line)}
+:is(.pill,.status){background:#E8E3D9;color:#49463F}
+:is(.stack input,.field input,.field select,.field textarea,.range){
+ background:#fff;color:#222831;border-color:var(--line);border-radius:6px
+}
+:is(.stack input,.field input,.field select,.field textarea,.range):focus{
+ border-color:#948979;outline:2px solid rgba(148,137,121,.22);outline-offset:0;
+}
+/* Inventario y acceso privado */
+.login{background:#F2F0EA}
+.login-card{background:#fff;color:#222831;border:1px solid var(--line);border-radius:14px;
+ box-shadow:0 20px 65px rgba(34,40,49,.08)}
+.login .brand{color:#222831}
+.login p{color:var(--muted)}
+.login h1,.title h1{color:#222831}
+.admin{background:var(--paper)}
+.admin .head{background:transparent}
+.admin .head-actions a:hover,.admin .head-actions button:hover{color:#948979}
+.admin .panel{background:#fff}
+.admin .table th,.admin .table td{border-bottom-color:#E7E3DB}
+.admin .thumb{background:#E8E3D9}
+.admin .modal{background:rgba(34,40,49,.72)}
+.admin .form{background:#F2F0EA;border:1px solid #D4CFC4;border-radius:12px}
+.admin .photo{background:#E8E3D9}
+.admin .photo.cover{border-color:#948979}
+.admin .photo-label{background:#948979;color:#fff}
+.admin .photo-controls button{background:rgba(34,40,49,.92)}
+.admin .photo-controls .remove{background:#842F31}
+.admin .msg{background:#E8E3D9;color:#474238;border-left:3px solid #948979;border-radius:4px}
+.admin .msg.err{background:#F7E2DF;color:#7D3030;border-left-color:#A33}
+/* El login se muestra fuera de .admin */
+.login .msg{background:#E8E3D9;color:#474238;border-left:3px solid #948979}
+.login .err{background:#F7E2DF;color:#7D3030;border-left-color:#A33}
+/* Estadísticas, ofertas, permutas y reportes */
+.analytics .metric{border:1px solid var(--line)}
+.analytics .metric strong,.analytics .channel-card strong,.analytics .offer-card strong{
+ font-family:"Oxanium","Manrope",Arial,sans-serif;font-weight:600
+}
+.analytics .bar{background:#222831}
+.analytics .bar.inquiry,.analytics .dot.inquiries{background:#948979}
+.analytics .dot.visits{background:#222831}
+.analytics .error{background:#F7E2DF;border-color:#E1B9B3;color:#7D3030}
+.analytics .ok{background:#E9E7DD;border-color:#C8C1B5;color:#49463F}
+.analytics .section-head p,.analytics .sub,.analytics .notice{color:var(--muted)}
+.analytics .actions :is(a,button):hover{color:#948979}
+.analytics .report-btn.primary,.analytics .primary{color:#F2F0EA}
+/* Ficha pública: continuidad entre el listado y el detalle */
+.vehicle-page .head{background:rgba(242,240,234,.98);color:#222831;border-bottom:1px solid #948979}
+.vehicle-page .nav{color:#222831}
+.vehicle-page .brand{color:#222831}
+.vehicle-page .back{color:#6E6C65}
+.vehicle-page .top h1{color:#222831}
+.vehicle-page .top p,.vehicle-page .desc{color:#6E6C65}
+.vehicle-page .contact{background:#fff;border:1px solid var(--line);border-radius:10px}
+.vehicle-page .btn{background:#222831;color:#F2F0EA;border-radius:7px}
+.vehicle-page .btn:hover{background:#393E46;color:#fff}
+.vehicle-page .specs,.vehicle-page .spec{border-color:var(--line)}
+.vehicle-page .shot{background:#E8E3D9}
+.vehicle-page .all-badge{background:rgba(34,40,49,.9)}
+.vehicle-page .lightbox{background:rgba(34,40,49,.98)}
+.vehicle-page .lb-bottom{background:#222831}
+.vehicle-page .thumbs button.active{border-color:#948979}
+.vehicle-page .lb-title{color:#F2F0EA}
+@media(max-width:650px){
+ .login-card{padding:25px}
+ .login h1,.title h1{font-size:clamp(35px,8vw,50px)}
+}
