@@ -1,0 +1,70 @@
+/* San Cristóbal — densidad visual desktop.
+   No se usa zoom, transform:scale ni porcentajes globales: se ajustan
+   las proporciones originales para que entre más contenido sin alterar el responsive. */
+@media (min-width:901px){
+  /* Ancho editorial más contenido: tarjetas y fotos proporcionadas en monitores grandes */
+  .shell{width:min(90vw,1360px)}
+  .nav{height:66px}
+  .brand{height:58px}
+  .brand img{height:49px}
+  .nav nav{font-size:9px;gap:5px}
+  .nav nav a{min-height:34px;padding:0 13px}
+  .nav nav a:last-child{padding:0 16px}
+
+  /* Portada: deja entrever la sección de publicaciones sin perder presencia */
+  .hero-grid{
+    min-height:min(78svh,720px);
+    grid-template-columns:minmax(0,1.08fr) minmax(365px,.92fr);
+    gap:clamp(30px,3.3vw,52px);
+    padding:40px 0 56px;
+  }
+  .hero h1{font-size:clamp(59px,5.75vw,101px);line-height:1.01}
+  .hero p{margin-top:19px;line-height:1.5}
+  .hero .buttons{margin-top:22px}
+  .feature{height:min(55vh,545px);min-height:360px}
+  .fi h2{font-size:clamp(25px,2.1vw,34px)}
+  .hero-scroll{bottom:18px}
+  .btn{min-height:44px;padding:0 18px;font-size:9px}
+
+  /* Usados: tres columnas, pero imágenes y tarjetas menos sobredimensionadas */
+  .section{padding:51px 0 68px}
+  .title{padding-bottom:15px;margin-bottom:19px}
+  .title h2{font-size:clamp(36px,3.05vw,50px)}
+  .filters{gap:10px;margin-bottom:18px}
+  .filters input,.filters select{height:44px}
+  .grid{gap:16px}
+  .card{border-radius:15px;box-shadow:0 8px 19px rgba(34,40,49,.07)}
+  .photo{aspect-ratio:16/9}
+  .body{padding:14px 16px}
+  .body h3{font-size:clamp(23px,1.7vw,30px);margin:8px 0}
+  .version{margin-bottom:7px}
+  .cardmeta{gap:7px 12px;padding:9px 0 10px}
+  .carbottom{padding-top:10px}
+  .priceblock b{font-size:clamp(22px,1.6vw,27px)}
+  .detailbtn{min-height:37px;padding:0 13px;font-size:8px}
+  .stock-navigation{margin-top:21px}
+  .stock-arrow{width:46px;height:46px}
+
+  /* Sección 0 km: panel y fotografía más compactos */
+  .zero-section{padding:65px 0 76px}
+  .zero-section .title{margin-bottom:23px}
+  .zero-showcase{gap:23px}
+  .zero-visual{min-height:485px}
+  .zero-visual-copy h3{font-size:clamp(31px,3.1vw,46px)}
+  .zero-panel{padding:25px;gap:17px}
+  .zero-panel .zero-eyebrow{margin-bottom:11px}
+  .zero-panel-copy{margin-bottom:18px}
+  .zero-brand-chip,.zero-brand-more{min-height:76px;padding:9px 7px}
+  .zero-brands{gap:8px;margin-bottom:10px}
+  .zero-step-title{margin-bottom:11px}
+
+  /* Resto de secciones: mismo lenguaje visual, menos aire innecesario */
+  .cons{padding:60px 0}
+  .cons-grid{gap:clamp(28px,4vw,62px)}
+  .cons h2{font-size:clamp(31px,3vw,44px)}
+  .rate{padding:17px 0}
+  .rate b{font-size:37px}
+  .manifesto{padding:65px 0}
+  .manifesto h2{font-size:clamp(41px,4.7vw,65px)}
+  .foot{padding:33px 0}
+}
