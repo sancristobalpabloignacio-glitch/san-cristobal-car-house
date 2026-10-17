@@ -176,7 +176,7 @@ const siteHead=document.querySelector('.head');let lastScrollY=window.scrollY,na
 let cars=[];const money=c=>c.price==null?'Consultar':new Intl.NumberFormat('es-AR',{style:'currency',currency:c.currency||'USD',maximumFractionDigits:0}).format(Number(c.price)),km=n=>new Intl.NumberFormat('es-AR').format(n||0)+' km';
 const heroFeatureFrame=document.getElementById('heroFeatureFrame'),heroFeaturedNav=document.getElementById('heroFeaturedNav'),heroFeaturedPrev=document.getElementById('heroFeaturedPrev'),heroFeaturedNext=document.getElementById('heroFeaturedNext');
 const heroSlideImages=[document.getElementById('heroImage'),document.getElementById('heroSwapImage')];
-let heroFeaturedVehicles=[],heroFeaturedIndex=0,heroVisibleSlot=0,heroRenderToken=0,heroAutoTimer=null,heroPointerOver=false,heroFocusInside=false;
+let heroFeaturedVehicles=[],heroFeaturedIndex=0,heroVisibleSlot=0,heroRenderToken=0,heroAutoTimer=null;
 function updateHeroDetails(c){
  heroVehicle.textContent=[c.brand,c.model].filter(Boolean).join(' ');
  heroPrice.textContent=money(c);
@@ -222,9 +222,11 @@ function showFeaturedVehicle(nextIndex,initial=false){
 }
 function resetHeroAutoplay(){
  if(heroAutoTimer!==null){clearInterval(heroAutoTimer);heroAutoTimer=null}
- if(heroFeaturedVehicles.length<2||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ if(heroFeaturedVehicles.length<2)return;
  heroAutoTimer=setInterval(()=>{
-  if(document.hidden||heroPointerOver||heroFocusInside)return;
+  // La portada sigue rotando aun si el mouse está encima o se usaron las flechas.
+  // Solo se suspende cuando la pestaña no está visible.
+  if(document.hidden)return;
   showFeaturedVehicle(heroFeaturedIndex+1);
  },6500);
 }
@@ -240,10 +242,6 @@ function hero(){
 }
 heroFeaturedPrev.addEventListener('click',()=>{showFeaturedVehicle(heroFeaturedIndex-1);resetHeroAutoplay()});
 heroFeaturedNext.addEventListener('click',()=>{showFeaturedVehicle(heroFeaturedIndex+1);resetHeroAutoplay()});
-heroFeatureFrame.addEventListener('mouseenter',()=>{heroPointerOver=true});
-heroFeatureFrame.addEventListener('mouseleave',()=>{heroPointerOver=false;resetHeroAutoplay()});
-heroFeatureFrame.addEventListener('focusin',()=>{heroFocusInside=true});
-heroFeatureFrame.addEventListener('focusout',event=>{if(!event.relatedTarget||!heroFeatureFrame.contains(event.relatedTarget)){heroFocusInside=false;resetHeroAutoplay()}});
 
 function card(c){
  const im=c.cover_image||c.images?.[0]||'',st=c.status==='reserved'?'RESERVADO':c.status==='sold'?'VENDIDO':c.featured?'DESTACADO':'',fuel=c.fuel||'',trans=c.transmission||'';
