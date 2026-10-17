@@ -1,0 +1,45 @@
+/* Carrusel de autos destacados – portada San Cristóbal Car House. */
+.hero-feature-frame{position:relative;min-width:0}
+.hero-feature-frame .feature{width:100%}
+.hero-feature-frame .feature img.hero-slide-image{
+ position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+ display:block;opacity:0;
+ transition:opacity .72s ease,transform .55s ease;
+}
+.hero-feature-frame .feature img.hero-slide-image.is-visible{opacity:1}
+.hero-feature-nav[hidden]{display:none!important}
+.hero-feature-nav{position:absolute;inset:0;z-index:7;pointer-events:none}
+.hero-feature-nav-button{
+ position:absolute;top:50%;transform:translateY(-50%);
+ display:grid;place-items:center;width:45px;height:45px;padding:0;
+ border:1px solid rgba(255,255,255,.48);border-radius:50%;
+ background:rgba(34,40,49,.66);color:#F2F0EA;
+ box-shadow:0 7px 24px rgba(0,0,0,.20);
+ backdrop-filter:blur(9px);cursor:pointer;pointer-events:auto;
+ transition:background .22s,border-color .22s,transform .22s,box-shadow .22s;
+}
+.hero-feature-nav-button svg{width:21px;height:21px;display:block;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.hero-feature-nav-button.prev{left:13px}
+.hero-feature-nav-button.next{right:13px}
+.hero-feature-nav-button:hover{background:#F2F0EA;border-color:#F2F0EA;color:#222831;transform:translateY(-50%) scale(1.06);box-shadow:0 11px 28px rgba(0,0,0,.3)}
+.hero-feature-nav-button:focus-visible{outline:3px solid #C1B095;outline-offset:3px}
+.hero-feature-progress{
+ position:absolute;top:22px;left:50%;transform:translateX(-50%);
+ display:flex;align-items:center;justify-content:center;gap:10px;
+ min-height:29px;padding:5px 12px;border:1px solid rgba(255,255,255,.26);
+ border-radius:999px;background:rgba(34,40,49,.59);color:#fff;
+ backdrop-filter:blur(9px);pointer-events:none;
+ font:800 10px/1 "Manrope",Arial,sans-serif;letter-spacing:.12em;
+}
+.hero-feature-progress:before{content:"";width:5px;height:5px;background:#C5B59D;border-radius:50%}
+@media(max-width:620px){
+ .hero-feature-nav-button{width:40px;height:40px}
+ .hero-feature-nav-button.prev{left:9px}
+ .hero-feature-nav-button.next{right:9px}
+ .hero-feature-progress{top:17px;min-height:26px;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .hero-feature-frame .feature img.hero-slide-image,
+ .hero-feature-nav-button{transition:none}
+ .hero-feature-nav-button:hover{transform:translateY(-50%)}
+}
