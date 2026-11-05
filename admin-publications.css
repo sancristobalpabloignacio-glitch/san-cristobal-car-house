@@ -1,0 +1,109 @@
+/* San Cristóbal · Inventario — publicaciones claras y gestionables. */
+.admin .inventory-title{padding:38px 0 22px;gap:24px;align-items:center}
+.admin .inventory-title h1{font:600 clamp(37px,4.1vw,57px)/1.04 "Oxanium","Manrope",Arial,sans-serif;letter-spacing:-.045em;margin:9px 0 12px}
+.admin .inventory-title .small:first-child{color:#948979;font-size:10px;font-weight:800;letter-spacing:.16em}
+.admin .inventory-title #count{margin:0;color:#6E6C65;font-size:12px}
+.admin .inventory-title #new{min-height:47px;border-radius:8px;padding:0 22px;white-space:nowrap;font:800 11px "Manrope",Arial,sans-serif;letter-spacing:.035em;text-transform:none}
+.admin .inventory-toolbar{display:flex;align-items:center;gap:12px;padding:13px 14px;background:#fff;border:1px solid #DEDAD2;border-radius:15px;box-shadow:0 6px 20px rgba(34,40,49,.035)}
+.admin .inventory-search{position:relative;min-width:0;flex:1}
+.admin .inventory-search svg{position:absolute;top:50%;left:15px;transform:translateY(-50%);width:20px;height:20px;fill:none;stroke:#85847F;stroke-width:1.9;pointer-events:none}
+.admin .inventory-search input{display:block;width:100%;height:46px;padding:0 17px 0 45px;border:1px solid transparent;border-radius:10px;background:#F3F3F1;color:#222831;outline:0;font:500 12px "Manrope",Arial,sans-serif}
+.admin .inventory-search input::placeholder{color:#85847F}
+.admin .inventory-search input:focus{background:#fff;border-color:#948979;box-shadow:0 0 0 3px rgba(148,137,121,.14)}
+.admin .inventory-filter{display:flex;align-items:center;gap:9px;margin-left:auto;color:#6E6C65;font-size:11px;font-weight:700}
+.admin .inventory-filter select{height:46px;min-width:148px;background:#fff;color:#222831;border:1px solid #DEDAD2;border-radius:9px;padding:0 11px;font:600 11px "Manrope",Arial,sans-serif;cursor:pointer}
+.admin .inventory-views{display:flex;gap:4px;padding:4px;border-radius:10px;background:#F1F0EC;flex-shrink:0}
+.admin .inventory-view-button{width:40px;height:38px;border:0;border-radius:7px;background:transparent;color:#767976;cursor:pointer;display:grid;place-items:center;transition:background .18s,color .18s}
+.admin .inventory-view-button svg{width:19px;height:19px;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.admin .inventory-view-button[aria-pressed="true"]{color:#fff;background:#222831;box-shadow:0 3px 9px rgba(34,40,49,.15)}
+.admin .inventory-view-button:hover:not([aria-pressed="true"]){background:#E5E2DB;color:#222831}
+.admin .inventory-summary{display:flex;justify-content:space-between;gap:10px;padding:18px 3px 13px;font-size:11px;color:#79776F}
+.admin .inventory-summary b{color:#222831;font-weight:800}
+.admin .inventory-collection{display:flex;flex-direction:column;gap:15px}
+.admin .publication-card{position:relative;display:grid;grid-template-columns:182px minmax(0,1fr);gap:23px;padding:17px;background:#fff;border:1px solid #E1DED7;border-radius:16px;box-shadow:0 3px 10px rgba(34,40,49,.055);transition:border-color .18s,box-shadow .18s}
+.admin .publication-card:hover{border-color:#CFC8BB;box-shadow:0 7px 24px rgba(34,40,49,.09)}
+.admin .publication-image{width:182px;height:176px;display:grid;place-items:center;overflow:hidden;background:#EAE7E0;border-radius:11px;align-self:stretch}
+.admin .publication-image img{display:block;width:100%;height:100%;object-fit:cover}
+.admin .publication-image-placeholder{display:grid;place-items:center;gap:9px;color:#89857E;font-size:10px}
+.admin .publication-image-placeholder svg{width:40px;height:40px;fill:none;stroke:currentColor;stroke-width:1.2}
+.admin .publication-body{display:flex;flex-direction:column;min-width:0;justify-content:space-between;gap:14px}
+.admin .publication-kicker{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:2px 0 8px;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#918778}
+.admin .publication-featured{color:#6F5C36;background:#F4ECDA;border:1px solid #E6D8BA;border-radius:999px;padding:4px 8px;font-size:8px;letter-spacing:.09em}
+.admin .publication-name{font:700 clamp(17px,1.8vw,21px)/1.24 "Manrope",Arial,sans-serif;letter-spacing:-.035em;margin:0 0 5px;color:#222831}
+.admin .publication-price{font:600 clamp(17px,1.8vw,21px)/1.2 "Oxanium","Manrope",Arial,sans-serif;color:#222831;margin:0 0 7px}
+.admin .publication-specs{color:#7D7B75;font-size:11px;line-height:1.5;margin-bottom:7px}
+.admin .publication-details{display:flex;align-items:center;flex-wrap:wrap;gap:7px 11px;color:#727671;font-size:11px;line-height:1.4}
+.admin .publication-details .pub-divider{color:#C5C1B7}
+.admin .publication-status{display:inline-flex;align-items:center;gap:6px;color:#2E704F;font-weight:700}
+.admin .publication-status::before{content:"";width:7px;height:7px;background:#4BA776;border-radius:50%}
+.admin .publication-status.reserved{color:#9C6D26}
+.admin .publication-status.reserved::before{background:#DBA44E}
+.admin .publication-status.sold{color:#8F4E4E}
+.admin .publication-status.sold::before{background:#C57676}
+.admin .publication-status.hidden{color:#76736D}
+.admin .publication-status.hidden::before{background:#A8A49B}
+.admin .publication-actions{display:flex;align-items:stretch;flex-wrap:wrap;gap:8px}
+.admin .publication-action{border:1px solid #E5E4E1;border-radius:9px;background:#F2F2F0;color:#2E333A;min-height:43px;padding:0 13px;display:inline-flex;align-items:center;justify-content:center;gap:9px;cursor:pointer;font:800 10px "Manrope",Arial,sans-serif;white-space:nowrap;transition:background .17s,border-color .17s}
+.admin .publication-action svg{width:17px;height:17px;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;fill:none;flex:none}
+.admin .publication-action:hover{background:#E8E8E5;border-color:#CECCC7}
+.admin .publication-action-primary{background:#E6EEE9;border-color:#DAE5DE;color:#2D684E}
+.admin .publication-action-primary:hover{background:#D6E8DA;border-color:#BDD6C5}
+.admin .publication-action-open{background:#fff}
+.admin .publication-more-wrapper{position:relative;margin-left:auto}
+.admin .publication-action-more{width:45px;padding:0;background:#F3F3F1}
+.admin .publication-menu[hidden]{display:none!important}
+.admin .publication-menu{position:absolute;z-index:10;right:0;bottom:calc(100% + 7px);width:216px;padding:6px;border:1px solid #D7D2C9;background:white;border-radius:11px;box-shadow:0 12px 32px rgba(34,40,49,.18)}
+.admin .publication-menu button{width:100%;display:flex;align-items:center;gap:10px;min-height:41px;padding:0 12px;text-align:left;background:transparent;border:0;border-radius:7px;color:#30343B;font:700 11px "Manrope",Arial,sans-serif;cursor:pointer}
+.admin .publication-menu button:hover{background:#F2F0EB}
+.admin .publication-menu button.delete{color:#A04444}
+.admin .inventory-empty{padding:55px 22px;background:#fff;border:1px dashed #D0CBC1;border-radius:15px;text-align:center}
+.admin .inventory-empty strong{display:block;color:#222831;font-size:16px;margin-bottom:9px}
+.admin .inventory-empty span{color:#77736D;font-size:12px;line-height:1.7}
+.admin .inventory-collection.view-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:16px}
+.admin .view-grid .publication-card{display:flex;flex-direction:column;gap:14px;padding:12px;min-width:0}
+.admin .view-grid .publication-image{width:100%;height:auto;aspect-ratio:16/10}
+.admin .view-grid .publication-body{padding:1px 5px 4px;flex:1}
+.admin .view-grid .publication-name{font-size:17px}
+.admin .view-grid .publication-price{font-size:20px}
+.admin .view-grid .publication-action{flex:1;min-width:0}
+.admin .view-grid .publication-action-open{display:none}
+.admin .view-grid .publication-more-wrapper{margin-left:0}
+.admin .view-grid .publication-action-more{width:44px}
+@media(max-width:980px){
+ .admin .inventory-collection.view-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .admin .publication-card{grid-template-columns:150px minmax(0,1fr);gap:17px}
+ .admin .publication-image{width:150px;height:170px}
+ .admin .publication-actions{gap:7px}
+ .admin .publication-action{padding:0 11px}
+}
+@media(max-width:690px){
+ .admin .inventory-title{padding:28px 0 16px;align-items:flex-start}
+ .admin .inventory-toolbar{flex-wrap:wrap;gap:10px;padding:10px}
+ .admin .inventory-search{flex:1 1 100%}
+ .admin .inventory-filter{margin-left:0;flex:1}
+ .admin .inventory-filter select{min-width:0;width:100%}
+ .admin .publication-card{grid-template-columns:112px minmax(0,1fr);padding:11px;gap:13px;border-radius:13px}
+ .admin .publication-image{width:112px;height:125px}
+ .admin .publication-body{gap:10px}
+ .admin .publication-kicker{margin-bottom:5px;font-size:8px}
+ .admin .publication-name{font-size:15px}
+ .admin .publication-price{font-size:17px}
+ .admin .publication-specs{font-size:10px}
+ .admin .publication-details{font-size:10px;gap:6px}
+ .admin .publication-actions{grid-column:1/-1}
+ .admin .publication-action{min-height:39px;font-size:10px}
+ .admin .inventory-collection.view-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:510px){
+ .admin .inventory-title .btn{width:100%}
+ .admin .publication-card{display:flex;flex-wrap:wrap;align-items:flex-start}
+ .admin .publication-card>.publication-image{width:101px;height:109px;flex:none}
+ .admin .publication-card>.publication-body{flex:1;min-width:0}
+ .admin .publication-name{font-size:15px}
+ .admin .publication-actions{width:100%}
+ .admin .publication-action{flex:1;padding:0 9px}
+ .admin .publication-action-open{display:none}
+ .admin .inventory-collection.view-grid{grid-template-columns:1fr}
+ .admin .view-grid .publication-card>.publication-image{width:100%;height:auto}
+ .admin .view-grid .publication-action-open{display:inline-flex}
+}
