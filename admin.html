@@ -93,7 +93,7 @@
  <img id="photoLightboxImage" alt="">
  <button type="button" id="photoLightboxNext" class="editor-lightbox-arrow editor-lightbox-next" aria-label="Foto siguiente">›</button>
  <span id="photoLightboxPosition" class="editor-lightbox-position"></span>
-</div><script type="module">import{createClient}from'https://esm.sh/@supabase/supabase-js@2.117.1';import{createInventoryUI}from'/admin-publications.js';const URL='https://hljeiqgrumtlukdvaspz.supabase.co',KEY='sb_publishable_gUvMtgIyXLAwuYFOTV6z-Q_KKpevr63',EMAIL='sancristobalpabloignacio@gmail.com';const s=createClient(URL,KEY);let cars=[],editingImages=[],dragFrom=null;const $=id=>document.getElementById(id);const inventoryUI=createInventoryUI({onAction:adminVehicleAction});const msg=(t,e=false)=>$('loginMsg').innerHTML=t?`<div class="msg ${e?'err':''}">${t}</div>`:'';const slugify=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-'+Date.now().toString(36);function money(c){return c.price==null?'Consultar':new Intl.NumberFormat('es-AR',{style:'currency',currency:c.currency||'USD',maximumFractionDigits:0}).format(Number(c.price))}async function boot(){const{data:{user}}=await s.auth.getUser();if(user?.email?.toLowerCase()===EMAIL){$('login').style.display='none';$('admin').style.display='block';load()}else{$('login').style.display='grid';$('admin').style.display='none'}}$('loginForm').onsubmit=async e=>{e.preventDefault();msg('Ingresando…');const password=$('password').value;let r=await s.auth.signInWithPassword({email:EMAIL,password});if(!r.error){msg('');boot();return}const sign=await s.auth.signUp({email:EMAIL,password});if(sign.error){msg('Contraseña incorrecta. Si ya creaste el acceso, usá la contraseña elegida. Si es tu primer ingreso, revisá que tenga al menos 8 caracteres.',true);return}msg(sign.data.session?'Acceso creado.':'Acceso creado. Revisá el email de administrador y confirmá la cuenta; luego volvé e ingresá con la misma contraseña.');if(sign.data.session)boot()};$('logout').onclick=async()=>{await s.auth.signOut();location.reload()};async function load(){
+</div><script type="module">import{createClient}from'https://esm.sh/@supabase/supabase-js@2.117.1';import{createInventoryUI}from'/admin-publications.js';import{createAdminGallery}from'/admin-gallery.js';const URL='https://hljeiqgrumtlukdvaspz.supabase.co',KEY='sb_publishable_gUvMtgIyXLAwuYFOTV6z-Q_KKpevr63',EMAIL='sancristobalpabloignacio@gmail.com';const s=createClient(URL,KEY);let cars=[],editingCar=null,editorDirty=false,editorBusy=false;const $=id=>document.getElementById(id);const inventoryUI=createInventoryUI({onAction:adminVehicleAction});const gallery=createAdminGallery({onChange:markEditorDirty});const msg=(t,e=false)=>$('loginMsg').innerHTML=t?`<div class="msg ${e?'err':''}">${t}</div>`:'';const slugify=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')+'-'+Date.now().toString(36);function money(c){return c.price==null?'Consultar':new Intl.NumberFormat('es-AR',{style:'currency',currency:c.currency||'USD',maximumFractionDigits:0}).format(Number(c.price))}async function boot(){const{data:{user}}=await s.auth.getUser();if(user?.email?.toLowerCase()===EMAIL){$('login').style.display='none';$('admin').style.display='block';load()}else{$('login').style.display='grid';$('admin').style.display='none'}}$('loginForm').onsubmit=async e=>{e.preventDefault();msg('Ingresando…');const password=$('password').value;let r=await s.auth.signInWithPassword({email:EMAIL,password});if(!r.error){msg('');boot();return}const sign=await s.auth.signUp({email:EMAIL,password});if(sign.error){msg('Contraseña incorrecta. Si ya creaste el acceso, usá la contraseña elegida. Si es tu primer ingreso, revisá que tenga al menos 8 caracteres.',true);return}msg(sign.data.session?'Acceso creado.':'Acceso creado. Revisá el email de administrador y confirmá la cuenta; luego volvé e ingresá con la misma contraseña.');if(sign.data.session)boot()};$('logout').onclick=async()=>{await s.auth.signOut();location.reload()};async function load(){
  const [vr,ar]=await Promise.all([
   s.from('vehicles').select('*').order('created_at',{ascending:false}),
   s.from('analytics_events').select('vehicle_id').eq('event_type','vehicle_view').limit(10000)
@@ -142,4 +142,118 @@ async function adminVehicleAction(c,action){
  $('flash').innerHTML='<div class="msg">Se actualizaron los datos de la publicación.</div>';
  await load();
 }
-function open(c=null){$('formTitle').textContent=c?'Editar publicación':'Publicar auto';$('id').value=c?.id||'';for(const k of ['brand','model','version','year','kilometers','price','transmission','engine','fuel','color','description'])$(k).value=c?.[k]??'';$('currency').value=c?.currency||'USD';$('status').value=c?.status||'available';$('published').checked=c?.published??true;$('featured').checked=c?.featured??false;editingImages=[...(c?.images||[])];if(c?.cover_image&&!editingImages.includes(c.cover_image))editingImages.unshift(c.cover_image);renderPhotos();$('files').value='';$('modal').classList.add('open')}function movePhoto(from,to){if(from===to||from<0||to<0||from>=editingImages.length||to>=editingImages.length)return;const[item]=editingImages.splice(from,1);editingImages.splice(to,0,item);renderPhotos()}function setCover(i){if(i<=0)return;movePhoto(i,0)}function renderPhotos(){$('photos').innerHTML=editingImages.map((x,i)=>`<div class="photo ${i===0?'cover':''}" draggable="true" data-photo-index="${i}"><img src="${x}" alt="Foto ${i+1}">${i===0?'<span class="photo-label">PORTADA</span>':''}<div class="photo-controls">${i>0?`<button type="button" data-cover="${i}">Portada</button>`:''}<button type="button" data-left="${i}" ${i===0?'disabled':''}>←</button><button type="button" data-right="${i}" ${i===editingImages.length-1?'disabled':''}>→</button><button type="button" class="remove" data-rm="${i}">Quitar</button></div></div>`).join('');document.querySelectorAll('[data-cover]').forEach(b=>b.onclick=()=>setCover(Number(b.dataset.cover)));document.querySelectorAll('[data-left]').forEach(b=>b.onclick=()=>movePhoto(Number(b.dataset.left),Number(b.dataset.left)-1));document.querySelectorAll('[data-right]').forEach(b=>b.onclick=()=>movePhoto(Number(b.dataset.right),Number(b.dataset.right)+1));document.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>{editingImages.splice(Number(b.dataset.rm),1);renderPhotos()});document.querySelectorAll('[data-photo-index]').forEach(el=>{el.addEventListener('dragstart',e=>{dragFrom=Number(el.dataset.photoIndex);el.classList.add('dragging');e.dataTransfer.effectAllowed='move'});el.addEventListener('dragend',()=>{dragFrom=null;el.classList.remove('dragging')});el.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move'});el.addEventListener('drop',e=>{e.preventDefault();const to=Number(el.dataset.photoIndex);if(dragFrom!==null)movePhoto(dragFrom,to)})})}$('new').onclick=()=>open();$('close').onclick=()=>$('modal').classList.remove('open');async function upload(files){const urls=[];for(const f of files){const ext=(f.name.split('.').pop()||'jpg').toLowerCase();const path=`${crypto.randomUUID()}.${ext}`;const{error}=await s.storage.from('vehicle-images').upload(path,f,{contentType:f.type,upsert:false});if(error)throw error;urls.push(s.storage.from('vehicle-images').getPublicUrl(path).data.publicUrl)}return urls}$('carForm').onsubmit=async e=>{e.preventDefault();$('saving').textContent='Guardando…';try{const added=await upload([...$('files').files]);const images=[...editingImages,...added];const payload={vehicle_category:'used',brand:$('brand').value.trim(),model:$('model').value.trim(),version:$('version').value.trim()||null,year:Number($('year').value),kilometers:Number($('kilometers').value),price:$('price').value?Number($('price').value):null,currency:$('currency').value,status:$('status').value,transmission:$('transmission').value.trim()||null,engine:$('engine').value.trim()||null,fuel:$('fuel').value.trim()||null,color:$('color').value.trim()||null,description:$('description').value.trim()||null,published:$('published').checked,featured:$('featured').checked,location:'Buenos Aires',images,cover_image:images[0]||null,updated_at:new Date().toISOString()};const id=$('id').value;let r;if(id)r=await s.from('vehicles').update(payload).eq('id',id);else r=await s.from('vehicles').insert({...payload,slug:slugify(`${payload.brand}-${payload.model}-${payload.year}`)});if(r.error)throw r.error;$('modal').classList.remove('open');$('flash').innerHTML='<div class="msg">Publicación guardada correctamente.</div>';await load()}catch(err){$('saving').textContent='';alert(err.message||'No se pudo guardar')}finally{$('saving').textContent=''}};async function del(id){if(!confirm('¿Eliminar esta publicación?'))return;const c=cars.find(x=>x.id===id);const paths=(c?.images||[]).map(u=>u.split('/vehicle-images/')[1]).filter(Boolean);if(paths.length)await s.storage.from('vehicle-images').remove(paths);const{error}=await s.from('vehicles').delete().eq('id',id);if(error)alert(error.message);else load()}boot();</script></body></html>
+function updateEditorMessage(){
+ if(editorBusy)return;
+ $('editorSaveMessage').textContent=editorDirty?'Cambios sin guardar':(editingCar?'Editando publicación':'Nueva publicación');
+ $('saving').textContent=editorDirty?'Revisá los datos y guardá cuando estén listos.':'Los cambios se guardarán cuando confirmes.';
+}
+function markEditorDirty(){if(editorBusy)return;editorDirty=true;updateEditorMessage()}
+function closeEditor(force=false){
+ if(editorBusy&&!force)return;
+ if(editorDirty&&!force&&!confirm('Tenés cambios sin guardar. ¿Querés salir y descartarlos?'))return;
+ gallery.destroy();
+ $('modal').classList.remove('open');
+ document.body.classList.remove('editor-is-open');
+ editingCar=null;editorDirty=false;
+}
+function open(c=null){
+ editingCar=c;editorDirty=false;
+ $('formTitle').textContent=c?'Editar publicación':'Publicar un auto';
+ $('editorSubtitle').textContent=c?'Actualizá la información y las fotografías del auto.':'Completá los datos y prepará las fotos para la publicación.';
+ $('editorSubmit').textContent=c?'Guardar cambios':'Publicar auto';
+ $('id').value=c?.id||'';
+ for(const k of ['brand','model','version','year','kilometers','price','transmission','engine','fuel','color','description'])$(k).value=c?.[k]??'';
+ $('currency').value=c?.currency||'USD';
+ $('status').value=c?.status||'available';
+ $('published').checked=c?.published??true;
+ $('featured').checked=c?.featured??false;
+ let images=[...(c?.images||[])];
+ if(c?.cover_image){
+  const index=images.indexOf(c.cover_image);
+  if(index>=0)images.splice(index,1);
+  images.unshift(c.cover_image);
+ }
+ gallery.setExisting(images);
+ editorBusy=false;
+ $('editorSubmit').disabled=false;
+ gallery.setBusy(false);
+ updateEditorMessage();
+ $('modal').classList.add('open');
+ document.body.classList.add('editor-is-open');
+ const scroll=$('modal').querySelector('.editor-scroll');
+ if(scroll)scroll.scrollTop=0;
+ setTimeout(()=>$('brand').focus(),0);
+}
+$('new').onclick=()=>open();
+$('close').onclick=()=>closeEditor();
+$('cancel').onclick=()=>closeEditor();
+$('modal').addEventListener('click',event=>{if(event.target===$('modal'))closeEditor()});
+document.addEventListener('keydown',event=>{
+ if(event.key==='Escape'&&$('modal').classList.contains('open')&&$('photoLightbox').hidden){
+  event.preventDefault();closeEditor();
+ }
+});
+$('carForm').addEventListener('input',event=>{if(event.target.id!=='files')markEditorDirty()});
+$('carForm').addEventListener('change',event=>{if(event.target.id!=='files')markEditorDirty()});
+$('carForm').onsubmit=async event=>{
+ event.preventDefault();
+ if(editorBusy)return;
+ editorBusy=true;
+ $('editorSubmit').disabled=true;
+ $('editorSaveMessage').textContent='Guardando publicación…';
+ $('saving').textContent='Preparando las imágenes…';
+ gallery.setBusy(true);
+ try{
+  const pending=gallery.snapshot().filter(x=>x.file).length;
+  let completed=0;
+  const images=await gallery.collectImages(async file=>{
+   $('saving').textContent='Subiendo fotografía '+(++completed)+' de '+pending+'…';
+   const ext=({'image/jpeg':'jpg','image/png':'png','image/webp':'webp'})[file.type]||'jpg';
+   const path=crypto.randomUUID()+'.'+ext;
+   const{error}=await s.storage.from('vehicle-images').upload(path,file,{contentType:file.type,upsert:false});
+   if(error)throw error;
+   return s.storage.from('vehicle-images').getPublicUrl(path).data.publicUrl;
+  });
+  $('saving').textContent='Actualizando datos del vehículo…';
+  const payload={
+   vehicle_category:editingCar?.vehicle_category||'used',
+   brand:$('brand').value.trim(),
+   model:$('model').value.trim(),
+   version:$('version').value.trim()||null,
+   year:Number($('year').value),
+   kilometers:Number($('kilometers').value),
+   price:$('price').value?Number($('price').value):null,
+   currency:$('currency').value,
+   status:$('status').value,
+   transmission:$('transmission').value.trim()||null,
+   engine:$('engine').value.trim()||null,
+   fuel:$('fuel').value.trim()||null,
+   color:$('color').value.trim()||null,
+   description:$('description').value.trim()||null,
+   published:$('published').checked,
+   featured:$('featured').checked,
+   location:editingCar?.location||'Buenos Aires',
+   images,
+   cover_image:images[0]||null,
+   updated_at:new Date().toISOString()
+  };
+  const id=$('id').value;
+  let result;
+  if(id)result=await s.from('vehicles').update(payload).eq('id',id);
+  else result=await s.from('vehicles').insert({...payload,slug:slugify([payload.brand,payload.model,payload.year].join('-'))});
+  if(result.error)throw result.error;
+  editorDirty=false;
+  closeEditor(true);
+  $('flash').innerHTML='<div class="msg">Publicación guardada correctamente.</div>';
+  await load();
+ }catch(error){
+  $('editorSaveMessage').textContent='No se pudo guardar';
+  $('saving').textContent='Revisá el error y volvé a intentarlo. Tus fotos seleccionadas siguen acá.';
+  alert(error.message||'No se pudo guardar la publicación.');
+ }finally{
+  editorBusy=false;
+  $('editorSubmit').disabled=false;
+  gallery.setBusy(false);
+ }
+};
+async function del(id){if(!confirm('¿Eliminar esta publicación?'))return;const c=cars.find(x=>x.id===id);const paths=(c?.images||[]).map(u=>u.split('/vehicle-images/')[1]).filter(Boolean);if(paths.length)await s.storage.from('vehicle-images').remove(paths);const{error}=await s.from('vehicles').delete().eq('id',id);if(error)alert(error.message);else load()}boot();</script></body></html>
