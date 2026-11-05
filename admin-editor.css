@@ -1,4 +1,5 @@
 /* San Cristóbal Car House | Editor de vehículos / cargador de imágenes. */
+body.editor-is-open{overflow:hidden}
 .editor-modal{
   position:fixed;inset:0;z-index:80;
   display:none;align-items:center;justify-content:center;
