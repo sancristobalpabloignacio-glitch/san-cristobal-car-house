@@ -96,14 +96,18 @@
 }
 @media(max-width:510px){
  .admin .inventory-title .btn{width:100%}
- .admin .publication-card{display:flex;flex-wrap:wrap;align-items:flex-start}
- .admin .publication-card>.publication-image{width:101px;height:109px;flex:none}
- .admin .publication-card>.publication-body{flex:1;min-width:0}
+ .admin .publication-card{display:grid;grid-template-columns:101px minmax(0,1fr);align-items:start}
+ .admin .publication-card>.publication-image{width:101px;height:109px;grid-column:1;grid-row:1}
+ .admin .publication-card>.publication-body{display:contents}
+ .admin .publication-card .publication-info{grid-column:2;grid-row:1;min-width:0}
  .admin .publication-name{font-size:15px}
- .admin .publication-actions{width:100%}
+ .admin .publication-card .publication-actions{grid-column:1/-1;grid-row:2;width:100%;display:flex;flex-wrap:wrap}
  .admin .publication-action{flex:1;padding:0 9px}
  .admin .publication-action-open{display:none}
  .admin .inventory-collection.view-grid{grid-template-columns:1fr}
+ .admin .view-grid .publication-card{display:flex;flex-direction:column}
  .admin .view-grid .publication-card>.publication-image{width:100%;height:auto}
+ .admin .view-grid .publication-card>.publication-body{display:flex;flex-direction:column}
+ .admin .view-grid .publication-info{min-width:0}
  .admin .view-grid .publication-action-open{display:inline-flex}
 }
