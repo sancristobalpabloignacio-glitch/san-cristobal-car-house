@@ -1,0 +1,271 @@
+/* San Cristóbal Car House | Editor de vehículos / cargador de imágenes. */
+.editor-modal{
+  position:fixed;inset:0;z-index:80;
+  display:none;align-items:center;justify-content:center;
+  padding:clamp(10px,2.2vw,26px);
+  overflow:auto;background:rgba(22,26,31,.78);
+  backdrop-filter:blur(7px);
+}
+.editor-modal.open{display:flex}
+.editor-modal[aria-hidden="true"]{display:none}
+.editor-form{
+  display:flex;flex-direction:column;
+  width:min(1350px,100%);max-height:min(96dvh,1060px);
+  padding:0;margin:auto;overflow:hidden;
+  background:#F6F5F2;border:1px solid rgba(242,240,234,.35);
+  border-radius:19px;box-shadow:0 24px 95px rgba(15,21,27,.32);
+  color:#222831;min-width:0;
+}
+.editor-form *{box-sizing:border-box}
+.editor-form button{cursor:pointer}
+.editor-form button:disabled{cursor:not-allowed;opacity:.55}
+.editor-header{
+  flex-shrink:0;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:24px 32px 23px;
+  background:#fff;border-bottom:1px solid #E5E1D9;
+}
+.editor-header-copy{min-width:0}
+.editor-eyebrow{display:block;margin-bottom:6px;color:#948979;font:800 10px "Manrope",Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.editor-header h2{
+  margin:0;color:#222831;
+  font:600 clamp(28px,3vw,37px)/1.06 "Oxanium","Manrope",Arial,sans-serif;letter-spacing:-.04em;
+}
+.editor-header p{color:#777871;font:400 11px/1.6 "Manrope",Arial,sans-serif;margin:8px 0 0}
+.editor-close{
+  width:43px;height:43px;flex:none;border-radius:12px;border:1px solid #E5E1D9;
+  background:#F7F6F3;color:#464A50;font-size:24px;line-height:1;
+  display:grid;place-items:center;transition:background .2s,color .2s;
+}
+.editor-close:hover{background:#222831;color:white}
+.editor-scroll{min-height:0;overflow:auto;overscroll-behavior:contain;padding:26px 29px 34px}
+.editor-layout{display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);align-items:start;gap:22px}
+.editor-details{display:grid;gap:18px;min-width:0}
+.editor-section{
+  min-width:0;background:#fff;border:1px solid #E4E1DB;
+  border-radius:15px;padding:24px;box-shadow:0 4px 14px rgba(34,40,49,.025);
+}
+.editor-section-title{display:flex;align-items:flex-start;gap:13px;margin-bottom:23px}
+.editor-step{
+  flex:none;display:grid;place-items:center;width:33px;height:33px;
+  border-radius:9px;background:#ECE9E2;color:#766B5D;
+  font:800 11px "Manrope",Arial,sans-serif;letter-spacing:.03em;
+}
+.editor-section-title h3{margin:0 0 4px;color:#222831;font:600 20px/1.2 "Oxanium","Manrope",Arial,sans-serif}
+.editor-section-title p{margin:0;font:400 11px/1.65 "Manrope",Arial,sans-serif;color:#818079}
+.editor-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.editor-field{display:flex;flex-direction:column;gap:7px;min-width:0;color:#4D5051;font:700 11px/1.35 "Manrope",Arial,sans-serif}
+.editor-field.wide{grid-column:1/-1}
+.editor-field label,.editor-field>span{display:block}
+.editor-field .required{color:#988367}
+.editor-field :is(input,select,textarea){
+  width:100%;min-width:0;min-height:47px;appearance:auto;
+  border:1px solid #DBD9D3;border-radius:9px;
+  background:#FCFBFA;color:#222831;
+  outline:0;padding:11px 12px;font:500 12px "Manrope",Arial,sans-serif;
+  transition:background .2s,border .2s,box-shadow .2s;
+}
+.editor-field :is(input,select,textarea):focus{
+  background:#fff;border-color:#948979;
+  box-shadow:0 0 0 3px rgba(148,137,121,.14);
+}
+.editor-field :is(input,textarea)::placeholder{color:#A1A099;font-weight:400}
+.editor-field textarea{resize:vertical;min-height:118px;line-height:1.6}
+.editor-field-note{color:#A29C90;font:400 10px/1.5 "Manrope",Arial,sans-serif}
+.editor-visibility{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:20px;
+}
+.editor-choice{position:relative;display:flex;gap:11px;align-items:center;min-height:75px;
+  border:1px solid #E2DFD8;border-radius:12px;background:#FBFAF8;padding:13px;cursor:pointer;
+  transition:background .17s,border .17s;
+}
+.editor-choice:has(input:checked){border-color:#B9AE9E;background:#F2EFE9}
+.editor-choice input{width:18px;height:18px;flex:none;accent-color:#2B4139;margin:0}
+.editor-choice strong{display:block;font:800 11px/1.4 "Manrope",Arial,sans-serif;color:#222831}
+.editor-choice small{display:block;font:400 10px/1.5 "Manrope",Arial,sans-serif;color:#83827D;margin-top:3px}
+.editor-choice-copy{min-width:0}
+.editor-price-note{margin-top:14px;padding:10px 13px;background:#F8F6F2;border-radius:8px;font:400 10px/1.6 "Manrope",Arial,sans-serif;color:#77736B}
+.editor-photo-section{min-width:0}
+.editor-photo-section .editor-section-title{margin-bottom:16px}
+.editor-gallery-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.editor-gallery-head .editor-section-title{min-width:0}
+.editor-image-counter{
+  display:flex;align-items:center;justify-content:center;
+  min-width:65px;padding:6px 9px;border-radius:999px;
+  background:#ECE9E2;color:#756C60;
+  font:700 10px "Manrope",Arial,sans-serif;white-space:nowrap;
+}
+.editor-cover{height:auto;aspect-ratio:16/9;position:relative;
+  overflow:hidden;background:linear-gradient(145deg,#424A51,#252B31);
+  border-radius:12px;border:1px solid rgba(34,40,49,.1);
+}
+.editor-cover>img{width:100%;height:100%;display:block;object-fit:cover}
+.editor-cover>img[hidden],.editor-cover-placeholder[hidden]{display:none!important}
+.editor-cover-placeholder{
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;
+  position:absolute;inset:0;text-align:center;color:#ECEAE7;padding:25px;
+}
+.editor-cover-placeholder svg{width:45px;height:45px;fill:none;stroke:#C3C1BA;stroke-width:1.2}
+.editor-cover-placeholder strong{font:700 13px "Manrope",Arial,sans-serif}
+.editor-cover-placeholder small{font:400 10px/1.6 "Manrope",Arial,sans-serif;color:#C2C5C7;max-width:210px}
+.editor-cover-tag{position:absolute;top:12px;left:12px;border-radius:6px;
+  padding:8px 10px;background:rgba(34,40,49,.83);color:#fff;
+  font:800 9px "Manrope",Arial,sans-serif;letter-spacing:.08em;backdrop-filter:blur(8px)
+}
+.editor-cover-button{
+  position:absolute;bottom:12px;right:12px;padding:9px 12px;
+  border:1px solid rgba(255,255,255,.48);background:rgba(34,40,49,.75);
+  border-radius:8px;color:#fff;font:700 10px "Manrope",Arial,sans-serif;
+}
+.editor-cover-button:hover{background:#222831}
+.editor-cover-button[hidden]{display:none!important}
+.editor-dropzone{
+  margin-top:15px;min-height:143px;border:1.5px dashed #BEB9B0;border-radius:12px;
+  background:#FAF9F7;padding:19px 13px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;
+  text-align:center;transition:border-color .2s,background .2s;
+}
+.editor-dropzone.is-dragover{border-color:#948979;background:#ECE8DF;box-shadow:inset 0 0 0 2px rgba(148,137,121,.18)}
+.editor-dropzone-icon{width:32px;height:32px;fill:none;stroke:#877B69;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.editor-dropzone strong{color:#30363B;font:700 12px "Manrope",Arial,sans-serif}
+.editor-dropzone small{color:#8F8B84;font:400 10px/1.5 "Manrope",Arial,sans-serif}
+.editor-upload-button{
+  display:inline-flex;align-items:center;justify-content:center;min-height:37px;
+  border-radius:8px;border:1px solid #222831;background:#222831;color:#fff;
+  padding:0 16px;font:800 10px "Manrope",Arial,sans-serif;margin-top:4px;
+}
+.editor-upload-button:hover{background:#393E46}
+.editor-dropzone input[type=file]{display:none}
+.editor-gallery-toolbar{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin:20px 0 12px;flex-wrap:wrap;
+}
+.editor-gallery-toolbar strong{color:#31373B;font:800 11px "Manrope",Arial,sans-serif}
+.editor-gallery-toolbar button{border:1px solid #D5D0C8;border-radius:7px;background:#fff;
+  color:#343940;padding:8px 11px;font:800 10px "Manrope",Arial,sans-serif}
+.editor-gallery-toolbar button:hover{background:#F0EDE8}
+.editor-photo-instructions{color:#85817A;font:400 10px/1.6 "Manrope",Arial,sans-serif;margin:0 0 11px}
+.editor-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.editor-photo-tile{
+  position:relative;min-width:0;aspect-ratio:1/1.05;
+  border:2px solid #E0DDD6;background:#E6E3DC;
+  border-radius:9px;overflow:hidden;cursor:grab;
+}
+.editor-photo-tile.is-cover{border-color:#948979;box-shadow:0 0 0 1px #948979}
+.editor-photo-tile.is-dragging{opacity:.46}
+.editor-photo-tile.is-drop-target{border-color:#5E746A;box-shadow:inset 0 0 0 2px #5E746A}
+.editor-photo-zoom{width:100%;height:100%;display:block;background:transparent;border:0;padding:0;cursor:zoom-in}
+.editor-photo-zoom img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .24s}
+.editor-photo-tile:hover .editor-photo-zoom img{transform:scale(1.045)}
+.editor-photo-number,.editor-photo-cover-label,.editor-photo-new-label{
+  position:absolute;top:7px;border-radius:5px;padding:5px 6px;
+  background:rgba(34,40,49,.77);color:#fff;font:800 9px "Manrope",Arial,sans-serif;
+  backdrop-filter:blur(6px);pointer-events:none;
+}
+.editor-photo-number{left:7px}
+.editor-photo-cover-label{right:6px;background:#948979;color:#fff;font-size:8px}
+.editor-photo-new-label{left:35px;background:rgba(230,234,229,.91);color:#365043;font-size:8px}
+.editor-photo-actions{
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  position:absolute;left:4px;right:4px;bottom:5px;
+  padding:5px 4px;background:rgba(29,35,40,.77);border-radius:7px;
+  backdrop-filter:blur(7px);
+}
+.editor-photo-mini{
+  flex:1;min-width:0;display:grid;place-items:center;height:29px;
+  padding:0;background:rgba(255,255,255,.11);border:0;border-radius:5px;
+  font:800 17px "Manrope",Arial,sans-serif;color:#fff;cursor:pointer;
+}
+.editor-photo-mini:hover:not(:disabled){background:rgba(255,255,255,.31)}
+.editor-photo-mini.is-primary{color:#E8D6B4}
+.editor-photo-mini.is-remove{background:rgba(158,58,58,.65)}
+.editor-photo-mini.is-remove:hover:not(:disabled){background:#AC3E3E}
+.editor-photo-mini:disabled{opacity:.25}
+.editor-photo-error{
+  margin:12px 0 0;padding:10px 12px;border:1px solid #E5C4BD;
+  background:#FFF1ED;border-radius:8px;color:#98443B;
+  font:600 10px/1.6 "Manrope",Arial,sans-serif;
+}
+.editor-photo-error[hidden]{display:none}
+.editor-gallery-tip{margin:14px 0 0;padding:12px 13px;background:#F7F5F1;border:1px solid #E8E4DC;border-radius:9px;
+  color:#77716A;font:400 10px/1.55 "Manrope",Arial,sans-serif;
+}
+.editor-gallery-tip strong{color:#4B504E}
+.editor-footer{
+  display:flex;align-items:center;justify-content:space-between;gap:15px;flex-shrink:0;
+  margin:0;padding:18px 32px;background:#fff;border-top:1px solid #E4E1DB;
+}
+.editor-footer-message{flex:1;display:flex;flex-direction:column;gap:4px;color:#666A68;font:500 11px "Manrope",Arial,sans-serif}
+.editor-footer-message strong{color:#222831;font-size:12px}
+.editor-footer .editor-footer-buttons{display:flex;gap:11px;align-items:center}
+.editor-footer-button{
+  padding:0 20px;min-height:45px;border-radius:9px;
+  font:800 11px "Manrope",Arial,sans-serif;
+  letter-spacing:0;text-transform:none;white-space:nowrap;
+}
+.editor-footer-cancel{border:1px solid #D9D6D0;background:#fff;color:#3B4147}
+.editor-footer-cancel:hover{background:#F3F0EC}
+.editor-footer-save{border:1px solid #222831;background:#222831;color:white;min-width:185px}
+.editor-footer-save:hover{background:#393E46}
+.editor-footer-save:disabled{background:#9E9E9E;border-color:#9E9E9E}
+.editor-lightbox[hidden]{display:none!important}
+.editor-lightbox{
+  position:fixed;inset:0;z-index:200;display:flex;
+  align-items:center;justify-content:center;background:rgba(14,18,22,.96);
+  padding:60px 68px;
+}
+.editor-lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 8px 50px rgba(0,0,0,.25)}
+.editor-lightbox-close,.editor-lightbox-arrow{
+  position:absolute;border:1px solid rgba(255,255,255,.25);border-radius:50%;
+  background:rgba(255,255,255,.1);color:#fff;
+  display:grid;place-items:center;cursor:pointer;
+}
+.editor-lightbox-close{top:18px;right:25px;width:42px;height:42px;font-size:25px}
+.editor-lightbox-arrow{top:50%;transform:translateY(-50%);width:42px;height:42px;font-size:29px}
+.editor-lightbox-prev{left:17px}
+.editor-lightbox-next{right:17px}
+.editor-lightbox-close:hover,.editor-lightbox-arrow:hover{background:rgba(255,255,255,.24)}
+.editor-lightbox-position{position:absolute;bottom:19px;left:50%;transform:translateX(-50%);
+  color:#DDD9D0;font:700 11px "Manrope",Arial,sans-serif;letter-spacing:.12em}
+.editor-form input:focus-visible,.editor-form button:focus-visible,.editor-lightbox button:focus-visible{
+  outline:2px solid #948979;outline-offset:2px;
+}
+@media(max-width:1100px){
+ .editor-layout{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+ .editor-section{padding:19px}
+ .editor-photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .editor-scroll{padding:20px}
+}
+@media(max-width:800px){
+ .editor-form{max-height:97dvh}
+ .editor-layout{grid-template-columns:minmax(0,1fr);gap:14px}
+ .editor-photo-section{order:-1}
+ .editor-photo-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .editor-gallery-head{align-items:center}
+ .editor-cover{max-height:330px}
+ .editor-cover>img{max-height:330px}
+ .editor-dropzone{min-height:116px}
+}
+@media(max-width:590px){
+ .editor-modal{padding:0;align-items:stretch}
+ .editor-form{width:100%;height:100dvh;max-height:100dvh;border-radius:0;margin:0;border:0}
+ .editor-header{padding:18px 17px 15px}
+ .editor-header h2{font-size:29px}
+ .editor-header p{font-size:10px}
+ .editor-close{width:38px;height:38px}
+ .editor-scroll{padding:13px 12px 20px}
+ .editor-section{padding:17px 14px;border-radius:12px}
+ .editor-fields{gap:12px}
+ .editor-field :is(input,select,textarea){font-size:16px;min-height:45px;padding:10px}
+ .editor-photo-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+ .editor-cover{max-height:300px}
+ .editor-cover>img{max-height:300px}
+ .editor-visibility{gap:8px}
+ .editor-choice{padding:10px;gap:8px}
+ .editor-footer{padding:12px 13px;flex-wrap:wrap}
+ .editor-footer-message{min-width:100%;font-size:10px}
+ .editor-footer-buttons{width:100%}
+ .editor-footer-buttons button{flex:1;min-width:0;padding:0 10px}
+ .editor-lightbox{padding:58px 13px}
+ .editor-lightbox-arrow{top:auto;bottom:15px;transform:none}
+ .editor-lightbox-position{bottom:27px}
+}
